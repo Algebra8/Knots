@@ -1,8 +1,8 @@
 *.DS_Store
 *.pyc
-dist/*
-build/*
-moore_braidgenerator.egg-info
+dist/
+build/
+moore_braidgenerator.egg-info/
 
 
 # test-related
