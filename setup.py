@@ -1,0 +1,33 @@
+from setuptools import setup
+from setuptools import find_packages
+
+with open("README.md", "r") as fh:
+    long_description = fh.read()
+
+setup(
+    name="moore_braidgenerator",
+    version="1.0.4",
+    description="Professor Moore's Braid Generator",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url="https://github.com/pypa/sampleproject",
+    author="Milad Nasrollahi",
+    author_email="algebra8@yahoo.com",
+    license="MIT",
+    classifiers=[
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.7",
+        'Topic :: Software Development :: Libraries',
+        'Topic :: Software Development :: Libraries :: Python Modules',
+        'Intended Audience :: Developers',
+        'Intended Audience :: Education',
+        'Intended Audience :: Science/Research',
+    ],
+    packages=find_packages(),
+    include_package_data=True,
+    install_requires=["pandas>=0.23.4"],
+    extras_require={
+        'tests': ['unittest'],
+    },
+)
