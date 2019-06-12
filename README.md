@@ -316,9 +316,8 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-- **Professor Allison Moore** - _Initial work_ - [allisonhmoore](https://github.com/allisonhmoore)
 - **Milad Michael Nasrollahi** - _Initial work_ - [Algebra8](https://github.com/Algebra8)
-- **Shawn Witte, PhD Candidate** - _Initial work_ - [Minirogue](https://github.com/Minirogue)
+- **Shawn Witte** - _Initial work_ - [Minirogue](https://github.com/Minirogue)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
