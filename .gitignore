@@ -1,0 +1,11 @@
+*.DS_Store
+*.pyc
+dist/*
+build/*
+moore_braidgenerator.egg-info
+
+
+# test-related
+.coverage
+.cache
+.pytest_cache
