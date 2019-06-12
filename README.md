@@ -20,11 +20,57 @@ If downloading through pip then only _Pandas_ is required. Otherwise, consider t
 
 #### Installation with pip
 
-Need to upload to piplib
+The package **moore_braidgenerator** is currently only available on _TestPypi_. To download it via pip, simply run the command given below in a virtual environment. To learn how to set up a virtual Python environment, refer to the [documentation](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/) for creating virtual environments in Python3 or follow the code below.
+
+```
+# Install virtualenv globally
+$ python3 -m pip install --user virtualenv
+
+# Create virtual environment in ~/Desktop
+# Should create folder ~/Desktop/env
+$ python3 -m venv env
+
+# Activate virtualenv
+$ source env/bin/activate
+
+# Check that the virtualenv is being used
+# Should output "../env/bin/python"
+$ which python
+
+
+```
+
+> Note that since this package exists in _TestPypi_, whereby dependencies are not allowed, and requires the _Pandas_ dependency, it is imperative to first download _Pandas_ in the virtual environment.
+
+After the virtual environment is set up, install the dependencies.
+
+```
+$ pip install pandas
+```
+
+Finally, install the actual package from pip's _TestPypi_ imports index url.
+
+```
+$ python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps moore_braidgenerator
+```
+
+To start the process, simply create a script or module in any directory in the virtual environment that the **moore_braidgenerator** package was installed in and import the required modules as follows:
+
+```
+from moore_braidgenerator import MarkovChain
+from moore_braidgenerator import BraidWord
+import pandas as pd
+```
+
+From here please refer to the setup section below for reference on how to use the braid generator package to generate braid isomorphisms.
+
+> Due to current structure conflicts between the installable package and the code from the repository, it is important to ignore the import methods used in the setup below when installing the package from _TestPypi_.
 
 #### Importing modules from repository
 
 To use the following scripts straight from the github repository, it is necessary to pull the modules listed in **prerequisites** into your current directory. Once this is done, the _markovchain_ script can be imported into any script that exists in the current directory. Note that the method `topandas` in _markovchain_ requires _pandas_.
+
+#### Setting up the Braid Generator
 
 To create a Markov Chain, simply call MarkovChain with at least the `braidword` argument given. The Markov Chain initializor has default values of
 nine and ten for the `maxgen` and `maxlen` parameters, respectively.
