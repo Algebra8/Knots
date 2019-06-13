@@ -372,19 +372,21 @@ class MarkovChain:
             The format in the .txt is vertical, as follows:
 
             isomorph[1] \
-            isomorph[2] \
+
             . \
+
             . \
-            . \
+
             isomorph[n] \
 
             (`newline`) \
-            
+
             log[1] \
-            log[2] \
+
             . \
+
             . \
-            . \
+            
             log[n]
 
         Parameters
