@@ -11,17 +11,17 @@ class BraidWord:
 
 	Parameters
 	----------
-	initword : :obj:`list`
-		List containing generators to be used as initial word.
+		initword : :obj:`list`
+			List containing generators to be used as initial word.
 
 	Attributes
 	----------
-	word : :obj:`list`
-		`word` of BraidWord, made up of list containing integer generators.
-	largestGenerator : :obj:`int`
-		Largest generator in `word`.
-	genCount : :obj:`list`
-		Array of quantity of generators in `word`.
+		word : :obj:`list`
+			`word` of BraidWord, made up of list containing integer generators.
+		largestGenerator : :obj:`int`
+			Largest generator in `word`.
+		genCount : :obj:`list`
+			Array of quantity of generators in `word`.
 
 	"""
 	@checkparams_braidword
