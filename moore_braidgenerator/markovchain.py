@@ -376,7 +376,7 @@ class MarkovChain:
             . \
             . \
             isomorph[n] \
-            `\n`
+            (`newline`) \
             log[1] \
             log[2] \
             . \
