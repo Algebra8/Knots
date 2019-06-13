@@ -154,8 +154,16 @@
 <dt id="moore_braidgenerator.braidword.BraidWord">
 <em class="property">class </em><code class="sig-prename descclassname">moore_braidgenerator.braidword.</code><code class="sig-name descname">BraidWord</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord" title="Permalink to this definition">¶</a></dt>
 <dd><p>Encapsulation of a mathematical braid.</p>
-<dl class="simple">
+<dl>
 <dt>BraidWord contains a word which consists of a list of generators and</dt><dd><p>is a component to be used in the MarkovChain.</p>
+<dl class="simple">
+<dt>word<span class="classifier">list</span></dt><dd><p><cite>word</cite> of BraidWord.</p>
+</dd>
+<dt>largestGenerator<span class="classifier">int</span></dt><dd><p>Largest generator in <cite>word</cite>.</p>
+</dd>
+<dt>genCount<span class="classifier">list</span></dt><dd><p>Array of quantity of generators in <cite>word</cite>.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 <dl class="method">
@@ -178,8 +186,8 @@
 <dl class="method">
 <dt id="moore_braidgenerator.braidword.BraidWord.canDestabilize">
 <code class="sig-name descname">canDestabilize</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.canDestabilize" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a boolean stating if self.destabilize() is a valid move.</p>
-<p>For consistent Markov probabilities we only consider search
+<dd><p>Returns a boolean stating if self.destabilize() is a valid move.
+For consistent Markov probabilities we only consider search
 for <cite>largestGenerator</cite> to exist at the end of <cite>word</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -229,8 +237,8 @@ for <cite>largestGenerator</cite> to exist at the end of <cite>word</cite>.</p>
 <dt id="moore_braidgenerator.braidword.BraidWord.cancel">
 <code class="sig-name descname">cancel</code><span class="sig-paren">(</span><em class="sig-param">index</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.cancel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Performs a cancelation of the generators at
-index and (index+1)%length and decreases self.length by 2.</p>
-<p>Returns boolean to trigger logs in MarkovChain if True.</p>
+index and (index+1)%length and decreases self.length by 2.
+Returns boolean to trigger logs in MarkovChain if True.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – Index where cancel is to be performed.</p>
@@ -247,8 +255,8 @@ index and (index+1)%length and decreases self.length by 2.</p>
 <dl class="method">
 <dt id="moore_braidgenerator.braidword.BraidWord.conjugate">
 <code class="sig-name descname">conjugate</code><span class="sig-paren">(</span><em class="sig-param">index</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.conjugate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Conjugate the word by amount.</p>
-<p>Returns boolean to trigger logs in MarkovChain if True.</p>
+<dd><p>Conjugate the word by amount. Returns boolean to
+trigger logs in MarkovChain if True.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – Index where conjugate is to be performed.</p>
@@ -299,10 +307,9 @@ Returns boolean to trigger logs in MarkovChain if True.</p>
 <dl class="method">
 <dt id="moore_braidgenerator.braidword.BraidWord.insert">
 <code class="sig-name descname">insert</code><span class="sig-paren">(</span><em class="sig-param">index</em>, <em class="sig-param">generator</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.insert" title="Permalink to this definition">¶</a></dt>
-<dd><p>Insert a generator and its inverse into word.</p>
-<p>Inserts a generator and its inverse at index.
-Increases self.length by 2.
-Returns boolean to trigger logs in MarkovChain if True.</p>
+<dd><p>Insert a generator and its inverse into word. Will insert
+the given generator and its inverse at index and increases
+self.length by 2. Returns boolean to trigger logs in MarkovChain if True.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
