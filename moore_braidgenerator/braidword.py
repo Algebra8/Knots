@@ -9,6 +9,15 @@ class BraidWord:
 
     BraidWord contains a word which consists of a list of generators and
 	is a component to be used in the MarkovChain.
+
+	Attributes
+	----------
+	word : list
+		`word` of BraidWord.
+	largestGenerator : int
+		Largest generator in `word`.
+	genCount : list
+		Array of quantity of generators in `word`.
     """
 	@checkparams_braidword
 	def __init__(self, initword: list):
@@ -19,15 +28,6 @@ class BraidWord:
 		initword : list
 			List containing generators to be used as initial word.
 
-		Attributes
-		----------
-		word : list
-			`word` of BraidWord.
-		largestGenerator : int
-			Largest generator in `word`.
-		genCount : list
-			Array of quantity of generators in `word`.
-			E.g. if word=[1, 2, 4], then genCount=[1, 1, 0, 1]
 		"""
 		self.word = initword
 		# self.length = self.wordlength()
@@ -47,7 +47,8 @@ class BraidWord:
 		return genCount
 
 	def length(self) -> int:
-		"""Dynamically returns the length of the word.
+		"""
+		Dynamically returns the length of the word.
 
 		Returns
 		-------
@@ -57,7 +58,8 @@ class BraidWord:
 		return len(self.word)
 
 	def canCancel(self, index) -> bool:
-		"""Returns a boolean stating if self.cancel(index) is a valid move.
+		"""
+		Returns a boolean stating if self.cancel(index) is a valid move.
 
 		Parameters
 		----------
@@ -78,7 +80,8 @@ class BraidWord:
 			return False
 
 	def canTranspose(self, index) -> bool:
-		"""Returns a boolean stating if self.transpose(index) is a valid move.
+		"""
+		Returns a boolean stating if self.transpose(index) is a valid move.
 
 		Parameters
 		----------
@@ -97,7 +100,8 @@ class BraidWord:
 			return False
 
 	def canFlip(self, index: int) -> bool:
-		"""Returns a boolean stating if self.flip(index) is a valid move.
+		"""
+		Returns a boolean stating if self.flip(index) is a valid move.
 
 		Parameters
 		----------
@@ -121,8 +125,8 @@ class BraidWord:
 			return False
 
 	def canDestabilize(self) -> bool:
-		"""Returns a boolean stating if self.destabilize() is a valid move.
-
+		"""
+		Returns a boolean stating if self.destabilize() is a valid move.
 		For consistent Markov probabilities we only consider search
 		for `largestGenerator` to exist at the end of `word`.
 
@@ -143,9 +147,9 @@ class BraidWord:
 				return False
 
 	def conjugate(self, index) -> bool:
-		"""Conjugate the word by amount.
-
-		Returns boolean to trigger logs in MarkovChain if True.
+		"""
+		Conjugate the word by amount. Returns boolean to
+		trigger logs in MarkovChain if True.
 
 		Parameters
 		----------
@@ -160,9 +164,9 @@ class BraidWord:
 		return True
 
 	def cancel(self, index) -> bool:
-		"""Performs a cancelation of the generators at
+		"""
+		Performs a cancelation of the generators at
 		index and (index+1)%length and decreases self.length by 2.
-
 		Returns boolean to trigger logs in MarkovChain if True.
 
 		Parameters
@@ -187,11 +191,10 @@ class BraidWord:
 			return False
 
 	def insert(self, index, generator) -> bool:
-		"""Insert a generator and its inverse into word.
-
-		Inserts a generator and its inverse at index.
-		Increases self.length by 2.
-		Returns boolean to trigger logs in MarkovChain if True.
+		"""
+		Insert a generator and its inverse into word. Will insert
+		the given generator and its inverse at index and increases
+		self.length by 2. Returns boolean to trigger logs in MarkovChain if True.
 
 		Parameters
 		----------
