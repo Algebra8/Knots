@@ -5,7 +5,8 @@ from copy import copy, deepcopy
 from moore_braidgenerator.decorators.braidword import checkparams_braidword
 
 class BraidWord:
-	"""BraidWord is an encapsulation of a mathematical braid.
+	"""
+	BraidWord is an encapsulation of a mathematical braid.
     It contains a word which consists of a list of generators.
 	The BraidWord is a component to be used in the MarkovChain.
 
@@ -32,6 +33,12 @@ class BraidWord:
     """
 	@checkparams_braidword
 	def __init__(self, initword: list):
+		"""
+		Constructor for BraidWord.
+
+		:type initword: list
+		:param initword: word to be encapsulated in BraidWord
+		"""
 		self.word = initword
 		# self.length = self.wordlength()
 		self.largestGenerator = max(list(map(abs, initword)))
@@ -74,7 +81,7 @@ class BraidWord:
 			return False
 
 	def canTranspose(self, index) -> bool:
-		"""bool: returns a boolean stating if self.transpose(index) is a valid move.
+		"""Returns a boolean stating if self.transpose(index) is a valid move.
 
 		Args:
 			index (int): Index where canTranspose is to be checked.
