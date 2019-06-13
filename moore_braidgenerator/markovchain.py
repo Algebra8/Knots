@@ -16,17 +16,17 @@ class MarkovChain:
     Parameters
 	----------
         braidword : :obj:`BraidWord`
-            A BraidWord to have isomorphs generated \
-            from it. Note that a simple Python list can be given as a \
-            parameter as well, which will be converted to a BraidWord behind \
+            A BraidWord to have isomorphs generated
+            from it. Note that a simple Python list can be given as a
+            parameter as well, which will be converted to a BraidWord behind
             the scenes.
 
         maxgen : :obj:`int`
-            The maximum absolute value a generator can be in the \
+            The maximum absolute value a generator can be in the
             BraidWord and its subsequent isomorphisms.
 
         maxlen : :obj:`int`
-            The maxmimum length of that any subsequent isomorphs \
+            The maxmimum length of that any subsequent isomorphs
             can reach.
 
     Attributes
@@ -72,17 +72,18 @@ class MarkovChain:
         Parameters
     	----------
             movetype : :obj:`int`
-                Markov Move[i] for i in [0, 6], inclusive. There \
-                are 7 Markov Moves that determine the braid-to-isomorph modification.
+                Markov Move[i] for i in [0, 6], inclusive. There
+                are 7 Markov Moves that determine the braid-to-isomorph
+                modification.
             name : :obj:`str`
                 The name of the Markov Move.
             result : :obj:`bool`
-                Boolean representing whether the move was successfully \
+                Boolean representing whether the move was successfully
                 executed or not.
 
         Returns
 		-------
-            String of log for BraidWord.word at Markov Move [i] for \
+            String of log for BraidWord.word at Markov Move [i] for
             i in [0, 6], inclusive.
 
         """
@@ -108,12 +109,12 @@ class MarkovChain:
         Parameters
 		----------
             num_isomorphs : :obj:`int`
-                Number of isomorphs to be modeled from \
+                Number of isomorphs to be modeled from
                 the BraidWord given to the Markov Chain.
 
             msteps : :obj:`int`
-                The number of steps to be taken until an isomorph \
-                is considered to be complete. That is, msteps many iterations \
+                The number of steps to be taken until an isomorph
+                is considered to be complete. That is, msteps many iterations
                 of the model process take place on a given BraidWord.
 
         Returns
@@ -228,7 +229,7 @@ class MarkovChain:
         Parameters
 		----------
             braidword : :obj:`BraidWord`
-                The new BraidWord to replace the old \
+                The new BraidWord to replace the old
                 BraidWord.
 
         Returns
@@ -276,12 +277,12 @@ class MarkovChain:
         Parameters
 		----------
             as_word : :obj:`bool`
-                Determines if isomorphs should be returned \
+                Determines if isomorphs should be returned
                 as words or BraidWords.
 
         Returns
 		-------
-            If True returns isomorphs as words (list). \
+            If True returns isomorphs as words (list).
             Otherwise returns them as BraidWords (of class BraidWord).
 
         """
@@ -306,13 +307,13 @@ class MarkovChain:
         Parameters
 		----------
             only_isomorphs : :obj:`bool`
-                Determines if only isomorphs \
+                Determines if only isomorphs
                 should be returned or both isomorphs and logs.
 
         Returns
 		-------
-            If only_isomorphs=True returns a pandas dataframe of \
-            only isomorphs. Otherwise will return a pandas dataframe \
+            If only_isomorphs=True returns a pandas dataframe of
+            only isomorphs. Otherwise will return a pandas dataframe
             with both isomorphs and logs.
 
         """
@@ -337,13 +338,13 @@ class MarkovChain:
             path_or_filename : :obj:`str`
                 Path or filename to store csv.
             only_isomorphs : :obj:`bool`
-                Determines if only isomorphs should be returned or \
+                Determines if only isomorphs should be returned or
                 both isomorphs and logs.
 
         Returns
 		-------
-            A csv file containing a dataframe with either only \
-            isomorphs or both isomorphs and logs, depending on parameter \
+            A csv file containing a dataframe with either only
+            isomorphs or both isomorphs and logs, depending on parameter
             passed to only_isomorphs.
 
         """
@@ -371,17 +372,17 @@ class MarkovChain:
         ----
             The format in the .txt is vertical, as follows:
 
-            isomorph[1] \
+            isomorph[1]
 
-            ...\
+            ...
 
-            isomorph[n] \
+            isomorph[n]
 
-            (`newline`) \
+            (`newline`)
 
-            log[1] \
+            log[1]
 
-            ...\
+            ...
 
             log[n]
 
@@ -390,13 +391,13 @@ class MarkovChain:
             path_or_filename : :obj:`str`
                 Path or filename to store txt.
             only_isomorphs : :obj:`bool`
-                Determines if only isomorphs should be returned \
-                or both isomorphs and logs.
+                Determines if only isomorphs should be returned
+            or both isomorphs and logs.
 
         Returns
 		-------
-            A txt file containing a either only isomorphs or both isomorphs \
-            and logs, depending on parameter passed to only_isomorphs.
+            A txt file containing a either only isomorphs or both isomorphs
+        and logs, depending on parameter passed to only_isomorphs.
 
         """
 
