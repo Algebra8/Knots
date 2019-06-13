@@ -1,0 +1,429 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>BraidWord Methods and Code &mdash; moore_braidgenerator  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="MarkovChain Methods and Code" href="markovchain.html" />
+    <link rel="prev" title="moore_braidgenerator Documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> moore_braidgenerator
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">BraidWord Methods and Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markovchain.html">MarkovChain Methods and Code</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">moore_braidgenerator</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>BraidWord Methods and Code</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/braidword.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-moore_braidgenerator.braidword">
+<span id="braidword-methods-and-code"></span><h1>BraidWord Methods and Code<a class="headerlink" href="#module-moore_braidgenerator.braidword" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="moore_braidgenerator.braidword.BraidWord">
+<em class="property">class </em><code class="sig-prename descclassname">moore_braidgenerator.braidword.</code><code class="sig-name descname">BraidWord</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>BraidWord is an encapsulation of a mathematical braid.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>It contains a word which consists of a list of generators.</dt><dd><p>The BraidWord is a component to be used in the MarkovChain.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>initword</strong> (<em>list</em>) – A list containing generators. Zeros
+are not allowed.</p>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="moore_braidgenerator.braidword.BraidWord.word">
+<code class="sig-name descname">word</code><a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.word" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list containing generators.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="moore_braidgenerator.braidword.BraidWord.largestGenerator">
+<code class="sig-name descname">largestGenerator</code><a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.largestGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>The largest generator of the absolute value
+of generators in the word.
+genCount (list): A list containing quantities of generators that
+exist in word, indexed from generator number minus one.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="moore_braidgenerator.braidword.BraidWord.Examples">
+<code class="sig-name descname">Examples</code><a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.Examples" title="Permalink to this definition">¶</a></dt>
+<dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">BraidWord</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span><span class="o">.</span><span class="n">genCount</span>
+<span class="go">[1, 1, 0, 1]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">BraidWord</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span><span class="o">.</span><span class="n">largestGenerator</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">BraidWord</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span><span class="o">.</span><span class="n">word</span>
+<span class="go">[1, 2, 4]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="moore_braidgenerator.braidword.BraidWord.canCancel">
+<code class="sig-name descname">canCancel</code><span class="sig-paren">(</span><em class="sig-param">index</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.canCancel" title="Permalink to this definition">¶</a></dt>
+<dd><p>bool: returns a boolean stating if self.cancel(index) is a valid move.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – Index where canCancel is to be checked.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if successful at index, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="moore_braidgenerator.braidword.BraidWord.canDestabilize">
+<code class="sig-name descname">canDestabilize</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.canDestabilize" title="Permalink to this definition">¶</a></dt>
+<dd><p>bool: returns a boolean stating if self.destabilize() is a valid move.
+For consistent Markov probabilities we only consider end of word.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if successful, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="moore_braidgenerator.braidword.BraidWord.canFlip">
+<code class="sig-name descname">canFlip</code><span class="sig-paren">(</span><em class="sig-param">index: int</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.canFlip" title="Permalink to this definition">¶</a></dt>
+<dd><p>bool: returns a boolean stating if self.flip(index) is a valid move.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – Index where canFlip is to be checked.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if successful at index, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="moore_braidgenerator.braidword.BraidWord.canTranspose">
+<code class="sig-name descname">canTranspose</code><span class="sig-paren">(</span><em class="sig-param">index</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.canTranspose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a boolean stating if self.transpose(index) is a valid move.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – Index where canTranspose is to be checked.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if successful at index, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="moore_braidgenerator.braidword.BraidWord.cancel">
+<code class="sig-name descname">cancel</code><span class="sig-paren">(</span><em class="sig-param">index</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.cancel" title="Permalink to this definition">¶</a></dt>
+<dd><p>bool: performs a cancelation of the generators at
+index and (index+1)%length and decreases self.length by 2.
+Returns boolean to trigger logs in MarkovChain if True.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – Index where cancel is to be performed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if successful at index, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="moore_braidgenerator.braidword.BraidWord.conjugate">
+<code class="sig-name descname">conjugate</code><span class="sig-paren">(</span><em class="sig-param">index</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.conjugate" title="Permalink to this definition">¶</a></dt>
+<dd><p>bool: conjugate the word by amount. Returns boolean
+to trigger logs in MarkovChain if True.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – Index where conjugate is to be performed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if successful at index, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="moore_braidgenerator.braidword.BraidWord.destabilize">
+<code class="sig-name descname">destabilize</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.destabilize" title="Permalink to this definition">¶</a></dt>
+<dd><p>bool: destabilize the braid word and decrease self.length by 1, and
+possibly decrease self.largestGenerator. Returns boolean to trigger
+logs in MarkovChain if True.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if successful index, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="moore_braidgenerator.braidword.BraidWord.flip">
+<code class="sig-name descname">flip</code><span class="sig-paren">(</span><em class="sig-param">index: int</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.flip" title="Permalink to this definition">¶</a></dt>
+<dd><p>bool: flips generators at index, (index+1)%length, and (index+2)%length.
+Returns boolean to trigger logs in MarkovChain if True.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – Index where flip is to be performed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if successful at index, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="moore_braidgenerator.braidword.BraidWord.insert">
+<code class="sig-name descname">insert</code><span class="sig-paren">(</span><em class="sig-param">index</em>, <em class="sig-param">generator</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>bool: inserts a generator and its inverse at index and increases self.length by 2.
+Returns boolean to trigger logs in MarkovChain if True.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> (<em>int</em>) – Index where insert is to be performed.</p></li>
+<li><p><strong>generator</strong> (<em>int</em>) – generator to insert into word.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if successful at index, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="moore_braidgenerator.braidword.BraidWord.length">
+<code class="sig-name descname">length</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.length" title="Permalink to this definition">¶</a></dt>
+<dd><p>int: dynamically returns the length of the word.
+:returns: Length of word.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="moore_braidgenerator.braidword.BraidWord.stabilize">
+<code class="sig-name descname">stabilize</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.stabilize" title="Permalink to this definition">¶</a></dt>
+<dd><p>bool: stabilize the braid word, increase self.length by 1, and increase self.largestGenerator.
+Returns boolean to trigger logs in MarkovChain if True.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>True if successful, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="moore_braidgenerator.braidword.BraidWord.transpose">
+<code class="sig-name descname">transpose</code><span class="sig-paren">(</span><em class="sig-param">index</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.transpose" title="Permalink to this definition">¶</a></dt>
+<dd><p>bool: transposes generators at index and (index+1)%length.
+Returns boolean to trigger logs in MarkovChain if True.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – Index where transpose is to be performed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True if successful at index, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="markovchain.html" class="btn btn-neutral float-right" title="MarkovChain Methods and Code" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="moore_braidgenerator Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Professor Allison Moore, Milad Michael Nasrollahi, Shawn Witte
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
