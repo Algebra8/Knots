@@ -373,9 +373,7 @@ class MarkovChain:
 
             isomorph[1] \
 
-            . \
-
-            . \
+            ...\
 
             isomorph[n] \
 
@@ -383,10 +381,8 @@ class MarkovChain:
 
             log[1] \
 
-            . \
+            ...\
 
-            . \
-            
             log[n]
 
         Parameters
