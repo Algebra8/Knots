@@ -153,19 +153,47 @@
 <dl class="class">
 <dt id="moore_braidgenerator.braidword.BraidWord">
 <em class="property">class </em><code class="sig-prename descclassname">moore_braidgenerator.braidword.</code><code class="sig-name descname">BraidWord</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord" title="Permalink to this definition">¶</a></dt>
-<dd><p>Encapsulation of a mathematical braid.</p>
-<dl>
-<dt>BraidWord contains a word which consists of a list of generators and</dt><dd><p>is a component to be used in the MarkovChain.</p>
-<dl class="simple">
-<dt>word<span class="classifier">list</span></dt><dd><p><cite>word</cite> of BraidWord.</p>
-</dd>
-<dt>largestGenerator<span class="classifier">int</span></dt><dd><p>Largest generator in <cite>word</cite>.</p>
-</dd>
-<dt>genCount<span class="classifier">list</span></dt><dd><p>Array of quantity of generators in <cite>word</cite>.</p>
+<dd><p>Encapsulation of a mathematical braid. BraidWord contains a word
+which consists of a list of generators and is a component to be
+used in the MarkovChain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>initword</strong> (<em>list</em>) – List containing generators to be used as initial word.</p>
 </dd>
 </dl>
+<dl class="attribute">
+<dt id="moore_braidgenerator.braidword.BraidWord.word">
+<code class="sig-name descname">word</code><a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.word" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>word</cite> of BraidWord, made up of list containing integer generators.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="moore_braidgenerator.braidword.BraidWord.largestGenerator">
+<code class="sig-name descname">largestGenerator</code><a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.largestGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Largest generator in <cite>word</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="moore_braidgenerator.braidword.BraidWord.genCount">
+<code class="sig-name descname">genCount</code><a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.genCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Array of quantity of generators in <cite>word</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="method">
 <dt id="moore_braidgenerator.braidword.BraidWord.canCancel">
 <code class="sig-name descname">canCancel</code><span class="sig-paren">(</span><em class="sig-param">index</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.canCancel" title="Permalink to this definition">¶</a></dt>
