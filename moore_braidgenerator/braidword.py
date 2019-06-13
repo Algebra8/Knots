@@ -50,7 +50,7 @@ class BraidWord:
 		return genCount
 
 	def length(self) -> int:
-    	"""int: dynamically returns the length of the word.
+		"""int: dynamically returns the length of the word.
 		Returns:
 			Length of word.
 		"""

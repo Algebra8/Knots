@@ -76,7 +76,6 @@ class MarkovChain:
         Returns:
             String of log for BraidWord.word at Markov Move [i] for
             i in [0, 6], inclusive.
-
         """
         beg = f"MoveType: {str(movetype)}, "
         tmp = f"Attempted {name}: "
