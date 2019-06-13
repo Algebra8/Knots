@@ -16,17 +16,17 @@ class MarkovChain:
     Parameters
 	----------
         braidword : :obj:`BraidWord`
-            A BraidWord to have isomorphs generated
-            from it. Note that a simple Python list can be given as a
-            parameter as well, which will be converted to a BraidWord behind
-            the scenes. \
+            A BraidWord to have isomorphs generated \
+            from it. Note that a simple Python list can be given as a \
+            parameter as well, which will be converted to a BraidWord behind \
+            the scenes.
 
         maxgen : :obj:`int`
-            The maximum absolute value a generator can be in the
+            The maximum absolute value a generator can be in the \
             BraidWord and its subsequent isomorphisms.
 
         maxlen : :obj:`int`
-            The maxmimum length of that any subsequent isomorphs
+            The maxmimum length of that any subsequent isomorphs \
             can reach.
 
     Attributes
@@ -34,7 +34,8 @@ class MarkovChain:
         braidagg : :obj:`dictionary`
             Dictionary that holds isomorphs and logs.
 
-	Examples:
+	Examples
+    --------
 		>>> mc = MarkovChain(braidword=[1, 2, 3], maxgen=9, maxlen=10)
         >>> mc.braid.word
 		[1, 2, 3]
@@ -76,12 +77,12 @@ class MarkovChain:
             name : :obj:`str`
                 The name of the Markov Move.
             result : :obj:`bool`
-                Boolean representing whether the move was successfully
+                Boolean representing whether the move was successfully \
                 executed or not.
 
         Returns
 		-------
-            String of log for BraidWord.word at Markov Move [i] for
+            String of log for BraidWord.word at Markov Move [i] for \
             i in [0, 6], inclusive.
 
         """
@@ -275,7 +276,7 @@ class MarkovChain:
         Parameters
 		----------
             as_word : :obj:`bool`
-                Determines if isomorphs should be returned
+                Determines if isomorphs should be returned \
                 as words or BraidWords.
 
         Returns
@@ -310,8 +311,8 @@ class MarkovChain:
 
         Returns
 		-------
-            If only_isomorphs=True returns a pandas dataframe of
-            only isomorphs. Otherwise will return a pandas dataframe
+            If only_isomorphs=True returns a pandas dataframe of \
+            only isomorphs. Otherwise will return a pandas dataframe \
             with both isomorphs and logs.
 
         """
@@ -336,13 +337,13 @@ class MarkovChain:
             path_or_filename : :obj:`str`
                 Path or filename to store csv.
             only_isomorphs : :obj:`bool`
-                Determines if only isomorphs should be returned or
+                Determines if only isomorphs should be returned or \
                 both isomorphs and logs.
 
         Returns
 		-------
-            A csv file containing a dataframe with either only
-            isomorphs or both isomorphs and logs, depending on parameter
+            A csv file containing a dataframe with either only \
+            isomorphs or both isomorphs and logs, depending on parameter \
             passed to only_isomorphs.
 
         """
@@ -368,19 +369,19 @@ class MarkovChain:
 
         Note
         ----
-            The format in the .txt is vertical, as follows:
-            isomorph[1]
-            isomorph[2]
-            .
-            .
-            .
-            isomorph[n]
-
-            log[1]
-            log[2]
-            .
-            .
-            .
+            The format in the .txt is vertical, as follows: \
+            isomorph[1] \
+            isomorph[2] \
+            . \
+            . \
+            . \
+            isomorph[n] \
+            \
+            log[1] \
+            log[2] \
+            . \
+            . \
+            . \
             log[n]
 
         Parameters
@@ -388,12 +389,12 @@ class MarkovChain:
             path_or_filename : :obj:`str`
                 Path or filename to store txt.
             only_isomorphs : :obj:`bool`
-                Determines if only isomorphs should be returned
+                Determines if only isomorphs should be returned \
                 or both isomorphs and logs.
 
         Returns
 		-------
-            A txt file containing a either only isomorphs or both isomorphs
+            A txt file containing a either only isomorphs or both isomorphs \
             and logs, depending on parameter passed to only_isomorphs.
 
         """
