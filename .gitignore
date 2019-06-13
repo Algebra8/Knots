@@ -4,7 +4,7 @@ dist/
 build/
 __pycache__/
 moore_braidgenerator.egg-info/
-
+!docs/build
 
 # test-related
 .coverage
