@@ -8,7 +8,7 @@ from moore_braidgenerator.decorators.markovchain import checkparams_markovchain
 
 
 class MarkovChain:
-    """MarkovChain is an encapsulation of the Markov Chain.
+    r"""MarkovChain is an encapsulation of the Markov Chain.
     It takes a BraidWord and allows modelling, which creates
     a specified number of isomorphs along with the logs pertaining
     to that isomorph (i.e. which Markov Move was made at some iteration).
@@ -65,7 +65,7 @@ class MarkovChain:
 
     @staticmethod
     def log_message(movetype: int, name: str, result: bool) -> str:
-        """
+        r"""
         Function to dynamically create log of move @mstep
 
         Parameters
@@ -97,7 +97,7 @@ class MarkovChain:
         return beg + tmp
 
     def model(self, num_isomorphs: int = 1, msteps: int = 100):
-        """
+        r"""
         Method to model the BraidWord and generate isomorphs and logs.
         A random number is picked between (0, 6), inclusive, determining the
         Markov Move to perform. Another random number is picked from
@@ -211,7 +211,7 @@ class MarkovChain:
         return
 
     def clear_model(self):
-        """
+        r"""
         Method to clear braid instance. That is, it clears `braidagg`.
 
         """
@@ -223,7 +223,7 @@ class MarkovChain:
         }
 
     def new_braidword(braidword: BraidWord):
-        """
+        r"""
         Method to set a new BraidWord.
 
         Parameters
@@ -250,7 +250,7 @@ class MarkovChain:
             self.braid = deepcopy(braidword)
 
     def aggregate(self):
-        """
+        r"""
         Method to return a dictionary of MarkovChain instance's
         isomorphs and logs, both contained in their respective lists.
         That is, returns self.braidagg.
@@ -259,7 +259,7 @@ class MarkovChain:
         return deepcopy(self.braidagg)
 
     def logs(self):
-        """
+        r"""
         Method to return MarkovChain instance logs in a list.
 
         Note that the length of the list is equal to the number of
@@ -273,7 +273,7 @@ class MarkovChain:
         return deepcopy(self.braidagg['logs'])
 
     def isomorphs(self, as_word=False):
-        """
+        r"""
         Method to return MarkovChain instance isomorphs in a list.
 
         Parameters
@@ -303,7 +303,7 @@ class MarkovChain:
             return
 
     def topandas(self, only_isomorphs=False):
-        """
+        r"""
         Method to export logs, isomorphs to pandas df.
 
         Parameters
@@ -328,7 +328,7 @@ class MarkovChain:
         return df.copy()
 
     def tocsv(self, path_or_filename="", only_isomorphs=False):
-        """
+        r"""
         Method to export logs, isomorphs to csv.
         If path_or_filename not given, will export the csv to
         current directory with the name `Isomorphs.csv` or
@@ -363,7 +363,7 @@ class MarkovChain:
         return
 
     def totxt(self, path_or_filename="", only_isomorphs=False):
-        """
+        r"""
         Method to export logs, isomorphs to a txt file.
 
         If path_or_filename not given, will export the csv to
