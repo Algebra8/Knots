@@ -67,7 +67,7 @@ class MarkovChain:
     @staticmethod
     def log_message(movetype: int, name: str, result: bool) -> str:
         r"""
-        Function to dynamically create log of move @mstep
+        Function to dynamically create log of Markov Move @[mstep]
 
         Parameters
     	----------
@@ -376,7 +376,7 @@ class MarkovChain:
             . \
             . \
             isomorph[n] \
-            \
+            `\n`
             log[1] \
             log[2] \
             . \

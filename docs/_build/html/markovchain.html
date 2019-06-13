@@ -158,27 +158,25 @@ a specified number of isomorphs along with the logs pertaining
 to that isomorph (i.e. which Markov Move was made at some iteration).</p>
 <dl>
 <dt>Parameters</dt><dd><dl>
-<dt>braidword<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BraidWord</span></code></span></dt><dd><p>A BraidWord to have isomorphs generated
-from it. Note that a simple Python list can be given as a
-parameter as well, which will be converted to a BraidWord behind
-the scenes. </p>
+<dt>braidword<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BraidWord</span></code></span></dt><dd><p>A BraidWord to have isomorphs generated from it. Note that a simple Python list can be given as a parameter as well, which will be converted to a BraidWord behind the scenes.</p>
 </dd>
-<dt>maxgen<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></span></dt><dd><p>The maximum absolute value a generator can be in the
-BraidWord and its subsequent isomorphisms.</p>
+<dt>maxgen<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></span></dt><dd><p>The maximum absolute value a generator can be in the BraidWord and its subsequent isomorphisms.</p>
 </dd>
-<dt>maxlen<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></span></dt><dd><p>The maxmimum length of that any subsequent isomorphs
-can reach.</p>
+<dt>maxlen<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></span></dt><dd><p>The maxmimum length of that any subsequent isomorphs can reach.</p>
 </dd>
 </dl>
 </dd>
 <dt>Attributes</dt><dd><dl>
 <dt>braidagg<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dictionary</span></code></span></dt><dd><p>Dictionary that holds isomorphs and logs.</p>
 </dd>
-<dt>Examples:</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">MarkovChain</span><span class="p">(</span><span class="n">braidword</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">maxgen</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">maxlen</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
+</dl>
+<p>Examples</p>
 </dd>
 </dl>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">MarkovChain</span><span class="p">(</span><span class="n">braidword</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">maxgen</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">maxlen</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">braid</span><span class="o">.</span><span class="n">word</span>
 <span class="go">        [1, 2, 3]</span>
 </pre></div>
@@ -191,8 +189,7 @@ can reach.</p>
 <span class="go">10</span>
 </pre></div>
 </div>
-</dd>
-</dl>
+</div></blockquote>
 <dl class="method">
 <dt id="moore_braidgenerator.markovchain.MarkovChain.aggregate">
 <code class="sig-name descname">aggregate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#moore_braidgenerator.markovchain.MarkovChain.aggregate" title="Permalink to this definition">¶</a></dt>
@@ -215,8 +212,7 @@ That is, returns self.braidagg.</p>
 <dt>Parameters</dt><dd><blockquote>
 <div></div></blockquote>
 <dl>
-<dt>as_word<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></span></dt><dd><p>Determines if isomorphs should be returned
-as words or BraidWords.</p>
+<dt>as_word<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></span></dt><dd><p>Determines if isomorphs should be returned as words or BraidWords.</p>
 </dd>
 </dl>
 </dd>
@@ -236,16 +232,14 @@ as words or BraidWords.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>movetype</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – Markov Move[i] for i in [0, 6], inclusive. There are 7 Markov Moves that determine the braid-to-isomorph modification.</p></li>
 <li><p><strong>name</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – The name of the Markov Move.</p></li>
-<li><p><strong>result</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>) – Boolean representing whether the move was successfully
-executed or not.</p></li>
+<li><p><strong>result</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>) – Boolean representing whether the move was successfully executed or not.</p></li>
 </ul>
 </dd>
 </dl>
 <dl>
 <dt>Returns</dt><dd><blockquote>
 <div></div></blockquote>
-<p>String of log for BraidWord.word at Markov Move [i] for
-i in [0, 6], inclusive.</p>
+<p>String of log for BraidWord.word at Markov Move [i] for i in [0, 6], inclusive.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -321,16 +315,13 @@ by the parameter passed to only_isomorphs.</p>
 <dl>
 <dt>path_or_filename<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></span></dt><dd><p>Path or filename to store csv.</p>
 </dd>
-<dt>only_isomorphs<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></span></dt><dd><p>Determines if only isomorphs should be returned or
-both isomorphs and logs.</p>
+<dt>only_isomorphs<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></span></dt><dd><p>Determines if only isomorphs should be returned or both isomorphs and logs.</p>
 </dd>
 </dl>
 </dd>
 <dt>Returns</dt><dd><blockquote>
 <div></div></blockquote>
-<p>A csv file containing a dataframe with either only
-isomorphs or both isomorphs and logs, depending on parameter
-passed to only_isomorphs.</p>
+<p>A csv file containing a dataframe with either only isomorphs or both isomorphs and logs, depending on parameter passed to only_isomorphs.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -349,9 +340,7 @@ passed to only_isomorphs.</p>
 </dd>
 <dt>Returns</dt><dd><blockquote>
 <div></div></blockquote>
-<p>If only_isomorphs=True returns a pandas dataframe of
-only isomorphs. Otherwise will return a pandas dataframe
-with both isomorphs and logs.</p>
+<p>If only_isomorphs=True returns a pandas dataframe of only isomorphs. Otherwise will return a pandas dataframe with both isomorphs and logs.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -366,19 +355,7 @@ current directory with the name <cite>Isomorphs.txt</cite> or
 by the parameter passed to only_isomorphs.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The format in the .txt is vertical, as follows:
-isomorph[1]
-isomorph[2]
-.
-.
-.
-isomorph[n]</p>
-<p>log[1]
-log[2]
-.
-.
-.
-log[n]</p>
+<p>The format in the .txt is vertical, as follows: isomorph[1] isomorph[2] … isomorph[n] log[1] log[2] … log[n]</p>
 </div>
 <dl>
 <dt>Parameters</dt><dd><blockquote>
@@ -386,15 +363,13 @@ log[n]</p>
 <dl>
 <dt>path_or_filename<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></span></dt><dd><p>Path or filename to store txt.</p>
 </dd>
-<dt>only_isomorphs<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></span></dt><dd><p>Determines if only isomorphs should be returned
-or both isomorphs and logs.</p>
+<dt>only_isomorphs<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></span></dt><dd><p>Determines if only isomorphs should be returned or both isomorphs and logs.</p>
 </dd>
 </dl>
 </dd>
 <dt>Returns</dt><dd><blockquote>
 <div></div></blockquote>
-<p>A txt file containing a either only isomorphs or both isomorphs
-and logs, depending on parameter passed to only_isomorphs.</p>
+<p>A txt file containing a either only isomorphs or both isomorphs and logs, depending on parameter passed to only_isomorphs.</p>
 </dd>
 </dl>
 </dd></dl>

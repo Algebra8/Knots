@@ -158,7 +158,7 @@ which consists of a list of generators and is a component to be
 used in the MarkovChain.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>initword</strong> (<em>list</em>) – List containing generators to be used as initial word.</p>
+<dd class="field-odd"><p><strong>initword</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>) – List containing generators to be used as initial word.</p>
 </dd>
 </dl>
 <dl class="attribute">
@@ -167,7 +167,7 @@ used in the MarkovChain.</p>
 <dd><p><cite>word</cite> of BraidWord, made up of list containing integer generators.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>list</p>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -178,7 +178,7 @@ used in the MarkovChain.</p>
 <dd><p>Largest generator in <cite>word</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>int</p>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -189,7 +189,7 @@ used in the MarkovChain.</p>
 <dd><p>Array of quantity of generators in <cite>word</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>list</p>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -200,13 +200,13 @@ used in the MarkovChain.</p>
 <dd><p>Returns a boolean stating if self.cancel(index) is a valid move.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – Index where canCancel is to be checked.</p>
+<dd class="field-odd"><p><strong>index</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – Index where canCancel is to be checked.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>True if successful at index, False otherwise.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>bool</p>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -222,7 +222,7 @@ for <cite>largestGenerator</cite> to exist at the end of <cite>word</cite>.</p>
 <dd class="field-odd"><p>True if successful at index, False otherwise.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>bool</p>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -233,13 +233,13 @@ for <cite>largestGenerator</cite> to exist at the end of <cite>word</cite>.</p>
 <dd><p>Returns a boolean stating if self.flip(index) is a valid move.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – Index where canFlip is to be checked.</p>
+<dd class="field-odd"><p><strong>index</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – Index where canFlip is to be checked.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>True if successful at index, False otherwise.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>bool</p>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -250,13 +250,13 @@ for <cite>largestGenerator</cite> to exist at the end of <cite>word</cite>.</p>
 <dd><p>Returns a boolean stating if self.transpose(index) is a valid move.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – Index where canTranspose is to be checked.</p>
+<dd class="field-odd"><p><strong>index</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – Index where canTranspose is to be checked.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>True if successful at index, False otherwise.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>bool</p>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -269,13 +269,13 @@ index and (index+1)%length and decreases self.length by 2.
 Returns boolean to trigger logs in MarkovChain if True.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – Index where cancel is to be performed.</p>
+<dd class="field-odd"><p><strong>index</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – Index where cancel is to be performed.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>True if successful at index, False otherwise.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>bool</p>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -287,13 +287,13 @@ Returns boolean to trigger logs in MarkovChain if True.</p>
 trigger logs in MarkovChain if True.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – Index where conjugate is to be performed.</p>
+<dd class="field-odd"><p><strong>index</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – Index where conjugate is to be performed.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>True if successful at index, False otherwise.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>bool</p>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -309,7 +309,7 @@ logs in MarkovChain if True.</p>
 <dd class="field-odd"><p>True if successful at index, False otherwise.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>bool</p>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -321,13 +321,13 @@ logs in MarkovChain if True.</p>
 Returns boolean to trigger logs in MarkovChain if True.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – Index where flip is to be performed.</p>
+<dd class="field-odd"><p><strong>index</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – Index where flip is to be performed.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>True if successful at index, False otherwise.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>bool</p>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -341,15 +341,15 @@ self.length by 2. Returns boolean to trigger logs in MarkovChain if True.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>index</strong> (<em>int</em>) – Index where cancel is to be performed.</p></li>
-<li><p><strong>generator</strong> (<em>int</em>) – Generator to insert into word.</p></li>
+<li><p><strong>index</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – Index where cancel is to be performed.</p></li>
+<li><p><strong>generator</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – Generator to insert into word.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>True if successful at index, False otherwise.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>bool</p>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -363,7 +363,7 @@ self.length by 2. Returns boolean to trigger logs in MarkovChain if True.</p>
 <dd class="field-odd"><p>Getter method that returns the length of the word.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>int</p>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -378,7 +378,7 @@ Returns boolean to trigger logs in MarkovChain if True.</p>
 <dd class="field-odd"><p>True if successful at index, False otherwise.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>bool</p>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -390,13 +390,13 @@ Returns boolean to trigger logs in MarkovChain if True.</p>
 Returns boolean to trigger logs in MarkovChain if True.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>index</strong> (<em>int</em>) – Index where transpose is to be performed.</p>
+<dd class="field-odd"><p><strong>index</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – Index where transpose is to be performed.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>True if successful at index, False otherwise.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>bool</p>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></p>
 </dd>
 </dl>
 </dd></dl>
