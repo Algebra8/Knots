@@ -371,7 +371,7 @@ def test_logs(self):
 
 ## Documentation
 
-For more information about methods and code fragments, please refer to the [documentation](http://htmlpreview.github.com/?https://github.com/Algebra8/Knots/blob/master/index.html).
+For more information about methods and code fragments, please refer to the [documentation](http://htmlpreview.github.com/?https://github.com/Algebra8/Knots/blob/master/docs/build/html/index.html).
 
 ## Contributing
 
