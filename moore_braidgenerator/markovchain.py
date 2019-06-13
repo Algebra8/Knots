@@ -19,19 +19,19 @@ class MarkovChain:
             A BraidWord to have isomorphs generated
             from it. Note that a simple Python list can be given as a
             parameter as well, which will be converted to a BraidWord behind
-            the scenes.
+            the scenes. \
 
-        maxgen : int
+        maxgen : :obj:`int`
             The maximum absolute value a generator can be in the
             BraidWord and its subsequent isomorphisms.
 
-        maxlen : int
+        maxlen : :obj:`int`
             The maxmimum length of that any subsequent isomorphs
             can reach.
 
     Attributes
 	----------
-        braidagg : dictionary
+        braidagg : :obj:`dictionary`
             Dictionary that holds isomorphs and logs.
 
 	Examples:
@@ -70,14 +70,12 @@ class MarkovChain:
 
         Parameters
     	----------
-            movetype : int
-                Markov Move[i] for i in [0, 6], inclusive. There
+            movetype : :obj:`int`
+                Markov Move[i] for i in [0, 6], inclusive. There \
                 are 7 Markov Moves that determine the braid-to-isomorph modification.
-
-            name : str
+            name : :obj:`str`
                 The name of the Markov Move.
-
-            result : bool
+            result : :obj:`bool`
                 Boolean representing whether the move was successfully
                 executed or not.
 
@@ -108,13 +106,13 @@ class MarkovChain:
 
         Parameters
 		----------
-            num_isomorphs : int
-                Number of isomorphs to be modeled from
+            num_isomorphs : :obj:`int`
+                Number of isomorphs to be modeled from \
                 the BraidWord given to the Markov Chain.
 
-            msteps : int
-                The number of steps to be taken until an isomorph
-                is considered to be complete. That is, msteps many iterations
+            msteps : :obj:`int`
+                The number of steps to be taken until an isomorph \
+                is considered to be complete. That is, msteps many iterations \
                 of the model process take place on a given BraidWord.
 
         Returns
@@ -229,7 +227,7 @@ class MarkovChain:
         Parameters
 		----------
             braidword : :obj:`BraidWord`
-                The new BraidWord to replace the old
+                The new BraidWord to replace the old \
                 BraidWord.
 
         Returns
@@ -261,10 +259,8 @@ class MarkovChain:
     def logs(self):
         r"""
         Method to return MarkovChain instance logs in a list.
-
         Note that the length of the list is equal to the number of
         isomorphisms requested in the num_isomorphs argument of model.
-
         Each log represents the logs undergone to create a specific
         isomorphism and is held in a dictionary. The size of the
         dictionary is equal to the argument passed for msteps in model.
@@ -278,13 +274,13 @@ class MarkovChain:
 
         Parameters
 		----------
-            as_word : bool
+            as_word : :obj:`bool`
                 Determines if isomorphs should be returned
                 as words or BraidWords.
 
         Returns
 		-------
-            If True returns isomorphs as words (list).
+            If True returns isomorphs as words (list). \
             Otherwise returns them as BraidWords (of class BraidWord).
 
         """
@@ -308,8 +304,8 @@ class MarkovChain:
 
         Parameters
 		----------
-            only_isomorphs : bool
-                Determines if only isomorphs
+            only_isomorphs : :obj:`bool`
+                Determines if only isomorphs \
                 should be returned or both isomorphs and logs.
 
         Returns
@@ -337,10 +333,9 @@ class MarkovChain:
 
         Parameters
 		----------
-            path_or_filename : str
+            path_or_filename : :obj:`str`
                 Path or filename to store csv.
-
-            only_isomorphs : bool
+            only_isomorphs : :obj:`bool`
                 Determines if only isomorphs should be returned or
                 both isomorphs and logs.
 
@@ -390,9 +385,9 @@ class MarkovChain:
 
         Parameters
 		----------
-            path_or_filename : str
+            path_or_filename : :obj:`str`
                 Path or filename to store txt.
-            only_isomorphs : bool
+            only_isomorphs : :obj:`bool`
                 Determines if only isomorphs should be returned
                 or both isomorphs and logs.
 
