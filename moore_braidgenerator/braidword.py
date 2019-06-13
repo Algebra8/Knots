@@ -5,11 +5,6 @@ from copy import copy, deepcopy
 from moore_braidgenerator.decorators.braidword import checkparams_braidword
 
 class BraidWord:
-	"""Encapsulation of a mathematical braid.
-
-    BraidWord contains a word which consists of a list of generators and
-	is a component to be used in the MarkovChain.
-    """
 	@checkparams_braidword
 	def __init__(self, initword: list):
 		"""Constructor for BraidWord.
