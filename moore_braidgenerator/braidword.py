@@ -5,26 +5,26 @@ from copy import copy, deepcopy
 from moore_braidgenerator.decorators.braidword import checkparams_braidword
 
 class BraidWord:
+	"""Encapsulation of a mathematical braid. BraidWord contains a word
+	which consists of a list of generators and is a component to be
+	used in the MarkovChain.
+
+	Parameters
+	----------
+	initword : list
+		List containing generators to be used as initial word.
+
+	Attributes
+	----------
+	word : list
+		`word` of BraidWord, made up of list containing integer generators.
+	largestGenerator : int
+		Largest generator in `word`.
+	genCount : list
+		Array of quantity of generators in `word`.
+	"""
 	@checkparams_braidword
 	def __init__(self, initword: list):
-		"""Encapsulation of a mathematical braid. BraidWord contains a word
-		which consists of a list of generators and is a component to be
-		used in the MarkovChain.
-
-		Parameters
-		----------
-		initword : list
-			List containing generators to be used as initial word.
-
-		Attributes
-		----------
-		word : list
-			`word` of BraidWord, made up of list containing integer generators.
-		largestGenerator : int
-			Largest generator in `word`.
-		genCount : list
-			Array of quantity of generators in `word`.
-	    """
 		self.word = initword
 		# self.length = self.wordlength()
 		self.largestGenerator = max(list(map(abs, initword)))
