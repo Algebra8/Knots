@@ -22,6 +22,7 @@ class BraidWord:
 		Largest generator in `word`.
 	genCount : list
 		Array of quantity of generators in `word`.
+
 	"""
 	@checkparams_braidword
 	def __init__(self, initword: list):
