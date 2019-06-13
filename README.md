@@ -8,13 +8,30 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-If downloading through pip then only _Pandas_ is required. Otherwise, consider the list below.
+If downloading through pip then only _pandas_ is required. Otherwise, consider the list below.
 
-- markovchain.py (repository)
-- braidword.py (repository)
-- decorators/braidword.py (repository)
-- decorators/markovchain.py (repository)
+- moore_braidgenerator (repository)
 - pandas
+
+```
+.
+├── LICENSE
+├── README.md
+├── moore_braidgenerator
+│   ├── __init__.py
+│   ├── braidword.py
+│   ├── decorators
+│   │   ├── __init__.py
+│   │   ├── braidword.py
+│   │   └── markovchain.py
+│   └── markovchain.py
+├── setup.py
+└── tests
+    ├── test_braidword.py
+    └── test_markovchain.py
+```
+
+> The tree represents the hierarchy of the github repository.
 
 ### Installation and setup
 
@@ -40,7 +57,7 @@ $ which python
 
 ```
 
-> Note that since this package exists in _TestPypi_, whereby dependencies are not allowed, and requires the _Pandas_ dependency, it is imperative to first download _Pandas_ in the virtual environment.
+> Note that since this package exists in _TestPypi_, whereby dependencies are not allowed, and requires the _pandas_ dependency, it is imperative to first download _pandas_ in the virtual environment.
 
 After the virtual environment is set up, install the dependencies.
 
@@ -68,11 +85,11 @@ From here please refer to the setup section below for reference on how to use th
 
 #### Importing modules from repository
 
-To use the following scripts straight from the github repository, it is necessary to pull the modules listed in **prerequisites** into your current directory. Once this is done, the _markovchain_ script can be imported into any script that exists in the current directory. Note that the method `topandas` in _markovchain_ requires _pandas_.
+To use the following scripts straight from the github repository, it is necessary to clone the repository onto the user's system and pull the package **moore_braidgenerator** into the desired working directory. Please refer to **Prerequisites** for additional dependencies that need installing. Once this is done, the `MarkovChain` can be imported into any script that exists in the working directory. Note that the method `topandas` in _MarkovChain_ requires _pandas_.
 
 #### Setting up the Braid Generator
 
-To create a Markov Chain, simply call MarkovChain with at least the `braidword` argument given. The Markov Chain initializor has default values of
+To create a Markov Chain, simply call `MarkovChain` with at least the `braidword` argument given. The `MarkovChain` initializor has default values of
 nine and ten for the `maxgen` and `maxlen` parameters, respectively.
 
 ```
@@ -362,8 +379,9 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
+- **Professor Allison Moore** - _Initial work_ - [allisonhmoore](https://github.com/allisonhmoore)
 - **Milad Michael Nasrollahi** - _Initial work_ - [Algebra8](https://github.com/Algebra8)
-- **Shawn Witte** - _Initial work_ - [Minirogue](https://github.com/Minirogue)
+- **Shawn Witte, PhD Candidate** - _Initial work_ - [Minirogue](https://github.com/Minirogue)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
