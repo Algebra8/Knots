@@ -156,57 +156,33 @@
 It takes a BraidWord and allows modelling, which creates
 a specified number of isomorphs along with the logs pertaining
 to that isomorph (i.e. which Markov Move was made at some iteration).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>braidword</strong> (<a class="reference internal" href="braidword.html#moore_braidgenerator.braidword.BraidWord" title="moore_braidgenerator.braidword.BraidWord"><em>BraidWord</em></a>) – A BraidWord to have isomorphs generated</p></li>
-<li><p><strong>it. Note that a simple Python list can be given as a</strong> (<em>from</em>) – </p></li>
-<li><p><strong>as well</strong><strong>, </strong><strong>which will be converted to a BraidWord behind</strong> (<em>parameter</em>) – </p></li>
-<li><p><strong>scenes.</strong> (<em>the</em>) – </p></li>
-<li><p><strong>maxgen</strong> (<em>int</em>) – The maximum absolute value a generator can be in the</p></li>
-<li><p><strong>and its subsequent isomorphisms.</strong> (<a class="reference internal" href="braidword.html#moore_braidgenerator.braidword.BraidWord" title="moore_braidgenerator.braidword.BraidWord"><em>BraidWord</em></a>) – </p></li>
-<li><p><strong>maxlen</strong> (<em>int</em>) – The maxmimum length of that any subsequent isomorphs</p></li>
-<li><p><strong>reach.</strong> (<em>can</em>) – </p></li>
-</ul>
+<dl>
+<dt>Parameters</dt><dd><dl>
+<dt>braidword<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BraidWord</span></code></span></dt><dd><p>A BraidWord to have isomorphs generated
+from it. Note that a simple Python list can be given as a
+parameter as well, which will be converted to a BraidWord behind
+the scenes.</p>
+</dd>
+<dt>maxgen<span class="classifier">int</span></dt><dd><p>The maximum absolute value a generator can be in the
+BraidWord and its subsequent isomorphisms.</p>
+</dd>
+<dt>maxlen<span class="classifier">int</span></dt><dd><p>The maxmimum length of that any subsequent isomorphs
+can reach.</p>
 </dd>
 </dl>
-<dl class="attribute">
-<dt id="moore_braidgenerator.markovchain.MarkovChain.word">
-<code class="sig-name descname">word</code><a class="headerlink" href="#moore_braidgenerator.markovchain.MarkovChain.word" title="Permalink to this definition">¶</a></dt>
-<dd><p>A list containing generators.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>list</p>
 </dd>
-</dl>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="moore_braidgenerator.markovchain.MarkovChain.largestGenerator">
-<code class="sig-name descname">largestGenerator</code><a class="headerlink" href="#moore_braidgenerator.markovchain.MarkovChain.largestGenerator" title="Permalink to this definition">¶</a></dt>
-<dd><p>The largest generator of the absolute value
-of generators in the word.
-genCount (list): A list containing quantities of generators that
-exist in word, indexed from generator number minus one.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>int</p>
+<dt>Attributes</dt><dd><dl>
+<dt>braidagg<span class="classifier">dictionary</span></dt><dd><p>Dictionary that holds isomorphs and logs.</p>
 </dd>
-</dl>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="moore_braidgenerator.markovchain.MarkovChain.Examples">
-<code class="sig-name descname">Examples</code><a class="headerlink" href="#moore_braidgenerator.markovchain.MarkovChain.Examples" title="Permalink to this definition">¶</a></dt>
-<dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">MarkovChain</span><span class="p">(</span><span class="n">braidword</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">maxgen</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">maxlen</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<dt>Examples:</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">MarkovChain</span><span class="p">(</span><span class="n">braidword</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">maxgen</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">maxlen</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
-</dd></dl>
-
-<dl class="attribute">
-<dt>
-<code class="sig-name descname">&gt;&gt;&gt; mc.braid.word</code></dt>
-<dd><p>[1, 2, 3]</p>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">braid</span><span class="o">.</span><span class="n">word</span>
+<span class="go">        [1, 2, 3]</span>
+</pre></div>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">maxgen</span>
 <span class="go">9</span>
 </pre></div>
@@ -215,8 +191,8 @@ exist in word, indexed from generator number minus one.</p>
 <span class="go">10</span>
 </pre></div>
 </div>
-</dd></dl>
-
+</dd>
+</dl>
 <dl class="method">
 <dt id="moore_braidgenerator.markovchain.MarkovChain.aggregate">
 <code class="sig-name descname">aggregate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#moore_braidgenerator.markovchain.MarkovChain.aggregate" title="Permalink to this definition">¶</a></dt>
@@ -228,22 +204,25 @@ That is, returns self.braidagg.</p>
 <dl class="method">
 <dt id="moore_braidgenerator.markovchain.MarkovChain.clear_model">
 <code class="sig-name descname">clear_model</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#moore_braidgenerator.markovchain.MarkovChain.clear_model" title="Permalink to this definition">¶</a></dt>
-<dd><p>Method to clear braid instance. That is, it clears self.braidagg.</p>
+<dd><p>Method to clear braid instance. That is, it clears <cite>braidagg</cite>.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="moore_braidgenerator.markovchain.MarkovChain.isomorphs">
 <code class="sig-name descname">isomorphs</code><span class="sig-paren">(</span><em class="sig-param">as_word=False</em><span class="sig-paren">)</span><a class="headerlink" href="#moore_braidgenerator.markovchain.MarkovChain.isomorphs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Method to return MarkovChain instance isomorphs in a list.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>as_word</strong> (<em>bool</em>) – Determines if isomorphs should be returned</p></li>
-<li><p><strong>words</strong><strong> or </strong><strong>BraidWords.</strong> (<em>as</em>) – </p></li>
-</ul>
+<dl>
+<dt>Parameters</dt><dd><blockquote>
+<div></div></blockquote>
+<dl class="simple">
+<dt>as_word<span class="classifier">bool</span></dt><dd><p>Determines if isomorphs should be returned
+as words or BraidWords.</p>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>If True returns isomorphs as words (list).
+</dl>
+</dd>
+<dt>Returns</dt><dd><blockquote>
+<div></div></blockquote>
+<p>If True returns isomorphs as words (list).
 Otherwise returns them as BraidWords (of class BraidWord).</p>
 </dd>
 </dl>
@@ -256,15 +235,18 @@ Otherwise returns them as BraidWords (of class BraidWord).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>movetype</strong> (<em>int</em>) – Markov Move[i] for i in [0, 6], inclusive. There</p></li>
-<li><p><strong>7 Markov Moves that determine the braid-to-isomorph modification.</strong> (<em>are</em>) – </p></li>
+<li><p><strong>movetype</strong> (<em>int</em>) – Markov Move[i] for i in [0, 6], inclusive. There
+are 7 Markov Moves that determine the braid-to-isomorph modification.</p></li>
 <li><p><strong>name</strong> (<em>str</em>) – The name of the Markov Move.</p></li>
-<li><p><strong>result</strong> (<em>bool</em>) – Boolean representing whether the move was successfully</p></li>
-<li><p><strong>or not.</strong> (<em>executed</em>) – </p></li>
+<li><p><strong>result</strong> (<em>bool</em>) – Boolean representing whether the move was successfully
+executed or not.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>String of log for BraidWord.word at Markov Move [i] for
+</dl>
+<dl>
+<dt>Returns</dt><dd><blockquote>
+<div></div></blockquote>
+<p>String of log for BraidWord.word at Markov Move [i] for
 i in [0, 6], inclusive.</p>
 </dd>
 </dl>
@@ -284,26 +266,29 @@ dictionary is equal to the argument passed for msteps in model.</p>
 <dl class="method">
 <dt id="moore_braidgenerator.markovchain.MarkovChain.model">
 <code class="sig-name descname">model</code><span class="sig-paren">(</span><em class="sig-param">num_isomorphs: int = 1</em>, <em class="sig-param">msteps: int = 100</em><span class="sig-paren">)</span><a class="headerlink" href="#moore_braidgenerator.markovchain.MarkovChain.model" title="Permalink to this definition">¶</a></dt>
-<dd><p>Method to model the BraidWord and generate isomorphs and logs.</p>
-<p>A random number is picked between (0, 6), inclusive, determining the
-Markov Move to perform.</p>
-<p>Another random number is picked from range(len(BraidWord.word)) that
-represents the index of BraidWord.word to perform the Markov Move on.</p>
-<p>The isomorph is generated by picking a random index from the set
-of possible indices for BraidWord.word and a random Markov Move that
-acts on BraidWord.word at the given index.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>num_isomorphs</strong> (<em>int</em>) – Number of isomorphs to be modeled from</p></li>
-<li><p><strong>BraidWord given to the Markov Chain.</strong> (<em>the</em>) – </p></li>
-<li><p><strong>msteps</strong> (<em>int</em>) – The number of steps to be taken until an isomorph</p></li>
-<li><p><strong>considered to be complete. That is</strong><strong>, </strong><strong>msteps many iterations</strong> (<em>is</em>) – </p></li>
-<li><p><strong>the model process take place on a given BraidWord.</strong> (<em>of</em>) – </p></li>
-</ul>
+<dd><p>Method to model the BraidWord and generate isomorphs and logs.
+A random number is picked between (0, 6), inclusive, determining the
+Markov Move to perform. Another random number is picked from
+range(len(BraidWord.word)) that represents the index of BraidWord.word
+to perform the Markov Move on. The isomorph is generated by picking a
+random index from the set of possible indices for BraidWord.word and a
+random Markov Move that acts on BraidWord.word at the given index.</p>
+<dl>
+<dt>Parameters</dt><dd><blockquote>
+<div></div></blockquote>
+<dl class="simple">
+<dt>num_isomorphs<span class="classifier">int</span></dt><dd><p>Number of isomorphs to be modeled from
+the BraidWord given to the Markov Chain.</p>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Appends isomorph and log to self.braidagg.</p>
+<dt>msteps<span class="classifier">int</span></dt><dd><p>The number of steps to be taken until an isomorph
+is considered to be complete. That is, msteps many iterations
+of the model process take place on a given BraidWord.</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns</dt><dd><blockquote>
+<div></div></blockquote>
+<p>Appends isomorph and log to self.braidagg.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -312,15 +297,18 @@ acts on BraidWord.word at the given index.</p>
 <dt id="moore_braidgenerator.markovchain.MarkovChain.new_braidword">
 <code class="sig-name descname">new_braidword</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#moore_braidgenerator.markovchain.MarkovChain.new_braidword" title="Permalink to this definition">¶</a></dt>
 <dd><p>Method to set a new BraidWord.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>braidword</strong> (<a class="reference internal" href="braidword.html#moore_braidgenerator.braidword.BraidWord" title="moore_braidgenerator.braidword.BraidWord"><em>BraidWord</em></a>) – The new BraidWord to replace the old</p></li>
-<li><p><strong>BraidWord.</strong> – </p></li>
-</ul>
+<dl>
+<dt>Parameters</dt><dd><blockquote>
+<div></div></blockquote>
+<dl>
+<dt>braidword<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BraidWord</span></code></span></dt><dd><p>The new BraidWord to replace the old
+BraidWord.</p>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Replaces self.braid with braidword.</p>
+</dl>
+</dd>
+<dt>Returns</dt><dd><blockquote>
+<div></div></blockquote>
+<p>Replaces self.braid with braidword.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -328,21 +316,25 @@ acts on BraidWord.word at the given index.</p>
 <dl class="method">
 <dt id="moore_braidgenerator.markovchain.MarkovChain.tocsv">
 <code class="sig-name descname">tocsv</code><span class="sig-paren">(</span><em class="sig-param">path_or_filename=''</em>, <em class="sig-param">only_isomorphs=False</em><span class="sig-paren">)</span><a class="headerlink" href="#moore_braidgenerator.markovchain.MarkovChain.tocsv" title="Permalink to this definition">¶</a></dt>
-<dd><p>Method to export logs, isomorphs to csv.</p>
-<p>If path_or_filename not given, will export the csv to
+<dd><p>Method to export logs, isomorphs to csv.
+If path_or_filename not given, will export the csv to
 current directory with the name <cite>Isomorphs.csv</cite> or
 <cite>Isomorphs_and_Logs.csv</cite>. The name is implicitly determined
 by the parameter passed to only_isomorphs.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>path_or_filename</strong> (<em>str</em>) – Path or filename to store csv.</p></li>
-<li><p><strong>only_isomorphs</strong> (<em>bool</em>) – Determines if only isomorphs</p></li>
-<li><p><strong>be returned</strong><strong> or </strong><strong>both isomorphs and logs.</strong> (<em>should</em>) – </p></li>
-</ul>
+<dl>
+<dt>Parameters</dt><dd><blockquote>
+<div></div></blockquote>
+<dl class="simple">
+<dt>path_or_filename<span class="classifier">str</span></dt><dd><p>Path or filename to store csv.</p>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A csv file containing a dataframe with either only
+<dt>only_isomorphs<span class="classifier">bool</span></dt><dd><p>Determines if only isomorphs should be returned or
+both isomorphs and logs.</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns</dt><dd><blockquote>
+<div></div></blockquote>
+<p>A csv file containing a dataframe with either only
 isomorphs or both isomorphs and logs, depending on parameter
 passed to only_isomorphs.</p>
 </dd>
@@ -353,15 +345,18 @@ passed to only_isomorphs.</p>
 <dt id="moore_braidgenerator.markovchain.MarkovChain.topandas">
 <code class="sig-name descname">topandas</code><span class="sig-paren">(</span><em class="sig-param">only_isomorphs=False</em><span class="sig-paren">)</span><a class="headerlink" href="#moore_braidgenerator.markovchain.MarkovChain.topandas" title="Permalink to this definition">¶</a></dt>
 <dd><p>Method to export logs, isomorphs to pandas df.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>only_isomorphs</strong> (<em>bool</em>) – Determines if only isomorphs</p></li>
-<li><p><strong>be returned</strong><strong> or </strong><strong>both isomorphs and logs.</strong> (<em>should</em>) – </p></li>
-</ul>
+<dl>
+<dt>Parameters</dt><dd><blockquote>
+<div></div></blockquote>
+<dl class="simple">
+<dt>only_isomorphs<span class="classifier">bool</span></dt><dd><p>Determines if only isomorphs
+should be returned or both isomorphs and logs.</p>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>If only_isomorphs=True returns a pandas dataframe of
+</dl>
+</dd>
+<dt>Returns</dt><dd><blockquote>
+<div></div></blockquote>
+<p>If only_isomorphs=True returns a pandas dataframe of
 only isomorphs. Otherwise will return a pandas dataframe
 with both isomorphs and logs.</p>
 </dd>
@@ -376,8 +371,10 @@ with both isomorphs and logs.</p>
 current directory with the name <cite>Isomorphs.txt</cite> or
 <cite>Isomorphs_and_Logs.txt</cite>. The name is implicitly determined
 by the parameter passed to only_isomorphs.</p>
-<p>The format in the .txt is vertical, as follows:</p>
-<p>isomorph[1]
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The format in the .txt is vertical, as follows:
+isomorph[1]
 isomorph[2]
 .
 .
@@ -389,16 +386,21 @@ log[2]
 .
 .
 log[n]</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>path_or_filename</strong> (<em>str</em>) – Path or filename to store txt.</p></li>
-<li><p><strong>only_isomorphs</strong> (<em>bool</em>) – Determines if only isomorphs</p></li>
-<li><p><strong>be returned</strong><strong> or </strong><strong>both isomorphs and logs.</strong> (<em>should</em>) – </p></li>
-</ul>
+</div>
+<dl>
+<dt>Parameters</dt><dd><blockquote>
+<div></div></blockquote>
+<dl class="simple">
+<dt>path_or_filename<span class="classifier">str</span></dt><dd><p>Path or filename to store txt.</p>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A txt file containing a either only isomorphs or both isomorphs
+<dt>only_isomorphs<span class="classifier">bool</span></dt><dd><p>Determines if only isomorphs should be returned
+or both isomorphs and logs.</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns</dt><dd><blockquote>
+<div></div></blockquote>
+<p>A txt file containing a either only isomorphs or both isomorphs
 and logs, depending on parameter passed to only_isomorphs.</p>
 </dd>
 </dl>

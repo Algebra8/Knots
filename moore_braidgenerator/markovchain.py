@@ -44,6 +44,7 @@ class MarkovChain:
 
 		>>> mc.maxlen
 		10
+
     """
     @checkparams_markovchain
     def __init__(self, braidword: BraidWord,
@@ -84,6 +85,7 @@ class MarkovChain:
 		-------
             String of log for BraidWord.word at Markov Move [i] for
             i in [0, 6], inclusive.
+
         """
         beg = f"MoveType: {str(movetype)}, "
         tmp = f"Attempted {name}: "
@@ -95,7 +97,7 @@ class MarkovChain:
         return beg + tmp
 
     def model(self, num_isomorphs: int = 1, msteps: int = 100):
-        '''
+        """
         Method to model the BraidWord and generate isomorphs and logs.
         A random number is picked between (0, 6), inclusive, determining the
         Markov Move to perform. Another random number is picked from
@@ -118,7 +120,8 @@ class MarkovChain:
         Returns
 		-------
             Appends isomorph and log to self.braidagg.
-        '''
+
+        """
         # msteps: number of markov steps per iteration
         # num_isomorphs: number of isomorphisms (iterations) to create
         rr = random.randrange  # Consider resetting seed
@@ -208,9 +211,10 @@ class MarkovChain:
         return
 
     def clear_model(self):
-        '''
+        """
         Method to clear braid instance. That is, it clears `braidagg`.
-        '''
+
+        """
         self.braidagg = {
             # list of isomorphisms
             'isomorphs': [],
@@ -219,7 +223,7 @@ class MarkovChain:
         }
 
     def new_braidword(braidword: BraidWord):
-        '''
+        """
         Method to set a new BraidWord.
 
         Parameters
@@ -231,7 +235,8 @@ class MarkovChain:
         Returns
 		-------
             Replaces self.braid with braidword.
-        '''
+
+        """
         # Check if is braidword
         if not isinstance(braidword, BraidWord):
             # Check if is list
@@ -245,15 +250,16 @@ class MarkovChain:
             self.braid = deepcopy(braidword)
 
     def aggregate(self):
-        '''
+        """
         Method to return a dictionary of MarkovChain instance's
         isomorphs and logs, both contained in their respective lists.
         That is, returns self.braidagg.
-        '''
+
+        """
         return deepcopy(self.braidagg)
 
     def logs(self):
-        '''
+        """
         Method to return MarkovChain instance logs in a list.
 
         Note that the length of the list is equal to the number of
@@ -262,11 +268,12 @@ class MarkovChain:
         Each log represents the logs undergone to create a specific
         isomorphism and is held in a dictionary. The size of the
         dictionary is equal to the argument passed for msteps in model.
-        '''
+
+        """
         return deepcopy(self.braidagg['logs'])
 
     def isomorphs(self, as_word=False):
-        '''
+        """
         Method to return MarkovChain instance isomorphs in a list.
 
         Parameters
@@ -279,7 +286,8 @@ class MarkovChain:
 		-------
             If True returns isomorphs as words (list).
             Otherwise returns them as BraidWords (of class BraidWord).
-        '''
+
+        """
         isos = (self.braidagg['isomorphs']).copy()
         if as_word:
             # Return list of words
@@ -295,7 +303,7 @@ class MarkovChain:
             return
 
     def topandas(self, only_isomorphs=False):
-        '''
+        """
         Method to export logs, isomorphs to pandas df.
 
         Parameters
@@ -309,7 +317,8 @@ class MarkovChain:
             If only_isomorphs=True returns a pandas dataframe of
             only isomorphs. Otherwise will return a pandas dataframe
             with both isomorphs and logs.
-        '''
+
+        """
         isos = self.isomorphs(as_word=True)
         logs = self.logs()
         dat = ({'Isomorphs': isos} if only_isomorphs
@@ -319,7 +328,7 @@ class MarkovChain:
         return df.copy()
 
     def tocsv(self, path_or_filename="", only_isomorphs=False):
-        '''
+        """
         Method to export logs, isomorphs to csv.
         If path_or_filename not given, will export the csv to
         current directory with the name `Isomorphs.csv` or
@@ -340,7 +349,8 @@ class MarkovChain:
             A csv file containing a dataframe with either only
             isomorphs or both isomorphs and logs, depending on parameter
             passed to only_isomorphs.
-        '''
+
+        """
         # Set path_or_filename if not given
         if not path_or_filename:
             path_or_filename = ("Isomorphs.csv" if only_isomorphs
@@ -353,7 +363,7 @@ class MarkovChain:
         return
 
     def totxt(self, path_or_filename="", only_isomorphs=False):
-        '''
+        """
         Method to export logs, isomorphs to a txt file.
 
         If path_or_filename not given, will export the csv to
@@ -390,7 +400,9 @@ class MarkovChain:
 		-------
             A txt file containing a either only isomorphs or both isomorphs
             and logs, depending on parameter passed to only_isomorphs.
-        '''
+
+        """
+
         # Set path_or_filename if not given
         if not path_or_filename:
             path_or_filename = ("Isomorphs.txt" if only_isomorphs
