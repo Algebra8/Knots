@@ -392,12 +392,12 @@ class MarkovChain:
                 Path or filename to store txt.
             only_isomorphs : :obj:`bool`
                 Determines if only isomorphs should be returned
-            or both isomorphs and logs.
+                or both isomorphs and logs.
 
         Returns
 		-------
             A txt file containing a either only isomorphs or both isomorphs
-        and logs, depending on parameter passed to only_isomorphs.
+            and logs, depending on parameter passed to only_isomorphs.
 
         """
 

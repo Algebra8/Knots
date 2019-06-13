@@ -158,11 +158,16 @@ a specified number of isomorphs along with the logs pertaining
 to that isomorph (i.e. which Markov Move was made at some iteration).</p>
 <dl>
 <dt>Parameters</dt><dd><dl>
-<dt>braidword<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BraidWord</span></code></span></dt><dd><p>A BraidWord to have isomorphs generated from it. Note that a simple Python list can be given as a parameter as well, which will be converted to a BraidWord behind the scenes.</p>
+<dt>braidword<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BraidWord</span></code></span></dt><dd><p>A BraidWord to have isomorphs generated
+from it. Note that a simple Python list can be given as a
+parameter as well, which will be converted to a BraidWord behind
+the scenes.</p>
 </dd>
-<dt>maxgen<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></span></dt><dd><p>The maximum absolute value a generator can be in the BraidWord and its subsequent isomorphisms.</p>
+<dt>maxgen<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></span></dt><dd><p>The maximum absolute value a generator can be in the
+BraidWord and its subsequent isomorphisms.</p>
 </dd>
-<dt>maxlen<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></span></dt><dd><p>The maxmimum length of that any subsequent isomorphs can reach.</p>
+<dt>maxlen<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></span></dt><dd><p>The maxmimum length of that any subsequent isomorphs
+can reach.</p>
 </dd>
 </dl>
 </dd>
@@ -212,13 +217,15 @@ That is, returns self.braidagg.</p>
 <dt>Parameters</dt><dd><blockquote>
 <div></div></blockquote>
 <dl>
-<dt>as_word<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></span></dt><dd><p>Determines if isomorphs should be returned as words or BraidWords.</p>
+<dt>as_word<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></span></dt><dd><p>Determines if isomorphs should be returned
+as words or BraidWords.</p>
 </dd>
 </dl>
 </dd>
 <dt>Returns</dt><dd><blockquote>
 <div></div></blockquote>
-<p>If True returns isomorphs as words (list). Otherwise returns them as BraidWords (of class BraidWord).</p>
+<p>If True returns isomorphs as words (list).
+Otherwise returns them as BraidWords (of class BraidWord).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -230,16 +237,20 @@ That is, returns self.braidagg.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>movetype</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – Markov Move[i] for i in [0, 6], inclusive. There are 7 Markov Moves that determine the braid-to-isomorph modification.</p></li>
+<li><p><strong>movetype</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – Markov Move[i] for i in [0, 6], inclusive. There
+are 7 Markov Moves that determine the braid-to-isomorph
+modification.</p></li>
 <li><p><strong>name</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – The name of the Markov Move.</p></li>
-<li><p><strong>result</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>) – Boolean representing whether the move was successfully executed or not.</p></li>
+<li><p><strong>result</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>) – Boolean representing whether the move was successfully
+executed or not.</p></li>
 </ul>
 </dd>
 </dl>
 <dl>
 <dt>Returns</dt><dd><blockquote>
 <div></div></blockquote>
-<p>String of log for BraidWord.word at Markov Move [i] for i in [0, 6], inclusive.</p>
+<p>String of log for BraidWord.word at Markov Move [i] for
+i in [0, 6], inclusive.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -269,9 +280,12 @@ random Markov Move that acts on BraidWord.word at the given index.</p>
 <dt>Parameters</dt><dd><blockquote>
 <div></div></blockquote>
 <dl>
-<dt>num_isomorphs<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></span></dt><dd><p>Number of isomorphs to be modeled from the BraidWord given to the Markov Chain.</p>
+<dt>num_isomorphs<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></span></dt><dd><p>Number of isomorphs to be modeled from
+the BraidWord given to the Markov Chain.</p>
 </dd>
-<dt>msteps<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></span></dt><dd><p>The number of steps to be taken until an isomorph is considered to be complete. That is, msteps many iterations of the model process take place on a given BraidWord.</p>
+<dt>msteps<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></span></dt><dd><p>The number of steps to be taken until an isomorph
+is considered to be complete. That is, msteps many iterations
+of the model process take place on a given BraidWord.</p>
 </dd>
 </dl>
 </dd>
@@ -290,7 +304,8 @@ random Markov Move that acts on BraidWord.word at the given index.</p>
 <dt>Parameters</dt><dd><blockquote>
 <div></div></blockquote>
 <dl>
-<dt>braidword<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BraidWord</span></code></span></dt><dd><p>The new BraidWord to replace the old BraidWord.</p>
+<dt>braidword<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BraidWord</span></code></span></dt><dd><p>The new BraidWord to replace the old
+BraidWord.</p>
 </dd>
 </dl>
 </dd>
@@ -315,13 +330,16 @@ by the parameter passed to only_isomorphs.</p>
 <dl>
 <dt>path_or_filename<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></span></dt><dd><p>Path or filename to store csv.</p>
 </dd>
-<dt>only_isomorphs<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></span></dt><dd><p>Determines if only isomorphs should be returned or both isomorphs and logs.</p>
+<dt>only_isomorphs<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></span></dt><dd><p>Determines if only isomorphs should be returned or
+both isomorphs and logs.</p>
 </dd>
 </dl>
 </dd>
 <dt>Returns</dt><dd><blockquote>
 <div></div></blockquote>
-<p>A csv file containing a dataframe with either only isomorphs or both isomorphs and logs, depending on parameter passed to only_isomorphs.</p>
+<p>A csv file containing a dataframe with either only
+isomorphs or both isomorphs and logs, depending on parameter
+passed to only_isomorphs.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -334,13 +352,16 @@ by the parameter passed to only_isomorphs.</p>
 <dt>Parameters</dt><dd><blockquote>
 <div></div></blockquote>
 <dl>
-<dt>only_isomorphs<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></span></dt><dd><p>Determines if only isomorphs should be returned or both isomorphs and logs.</p>
+<dt>only_isomorphs<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></span></dt><dd><p>Determines if only isomorphs
+should be returned or both isomorphs and logs.</p>
 </dd>
 </dl>
 </dd>
 <dt>Returns</dt><dd><blockquote>
 <div></div></blockquote>
-<p>If only_isomorphs=True returns a pandas dataframe of only isomorphs. Otherwise will return a pandas dataframe with both isomorphs and logs.</p>
+<p>If only_isomorphs=True returns a pandas dataframe of
+only isomorphs. Otherwise will return a pandas dataframe
+with both isomorphs and logs.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -356,11 +377,11 @@ by the parameter passed to only_isomorphs.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The format in the .txt is vertical, as follows:</p>
-<p>isomorph[1] </p>
+<p>isomorph[1]</p>
 <p>…</p>
-<p>isomorph[n] </p>
-<p>(<cite>newline</cite>) </p>
-<p>log[1] </p>
+<p>isomorph[n]</p>
+<p>(<cite>newline</cite>)</p>
+<p>log[1]</p>
 <p>…</p>
 <p>log[n]</p>
 </div>
@@ -370,15 +391,17 @@ by the parameter passed to only_isomorphs.</p>
 <dl>
 <dt>path_or_filename<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code></span></dt><dd><p>Path or filename to store txt.</p>
 </dd>
-<dt>only_isomorphs<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></span></dt><dd><p>Determines if only isomorphs should be returned or both isomorphs and logs.</p>
+<dt>only_isomorphs<span class="classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></span></dt><dd><p>Determines if only isomorphs should be returned</p>
 </dd>
 </dl>
+<p>or both isomorphs and logs.</p>
 </dd>
 <dt>Returns</dt><dd><blockquote>
 <div></div></blockquote>
-<p>A txt file containing a either only isomorphs or both isomorphs and logs, depending on parameter passed to only_isomorphs.</p>
+<p>A txt file containing a either only isomorphs or both isomorphs</p>
 </dd>
 </dl>
+<p>and logs, depending on parameter passed to only_isomorphs.</p>
 </dd></dl>
 
 </dd></dl>
