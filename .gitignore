@@ -2,6 +2,7 @@
 *.pyc
 dist/
 build/
+__pycache__/
 moore_braidgenerator.egg-info/
 
 
