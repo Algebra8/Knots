@@ -4,6 +4,8 @@ dist/
 build/
 __pycache__/
 moore_braidgenerator.egg-info/
+
+# Don't ignore docs/build
 !docs/build/
 
 # test-related

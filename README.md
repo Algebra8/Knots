@@ -369,6 +369,10 @@ def test_logs(self):
     self.assertTrue(mc.logs())
 ```
 
+## Documentation
+
+For more information about methods and code fragments, please refer to the [documentation](docs/build/html/index.html).
+
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
