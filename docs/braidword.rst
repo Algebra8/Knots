@@ -1,4 +1,4 @@
 braidword documentation
 =======================
-.. automodule:: moore_braidgenerator.braidword
+.. autoclass:: moore_braidgenerator.braidword
   :members:

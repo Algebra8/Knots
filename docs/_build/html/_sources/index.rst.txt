@@ -5,8 +5,7 @@ moore_braidgenerator documentation
    :maxdepth: 2
    :caption: Contents:
 
-   markovchain
-   braidword
+   code
 
 
 

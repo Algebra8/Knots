@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>markovchain documentation &mdash; Professor Moore&#39;s Braid Generator  documentation</title>
+  <title>code documentation &mdash; Professor Moore&#39;s Braid Generator  documentation</title>
   
 
   
@@ -34,7 +34,8 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="moore_braidgenerator documentation" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -79,8 +80,8 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="code.html">code documentation</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">code documentation</a></li>
 </ul>
 
             
@@ -126,13 +127,13 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>markovchain documentation</li>
+      <li>code documentation</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/markovchain.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/code.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -146,7 +147,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="module-moore_braidgenerator.markovchain">
-<span id="markovchain-documentation"></span><h1>markovchain documentation<a class="headerlink" href="#module-moore_braidgenerator.markovchain" title="Permalink to this headline">¶</a></h1>
+<span id="code-documentation"></span><h1>code documentation<a class="headerlink" href="#module-moore_braidgenerator.markovchain" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="moore_braidgenerator.markovchain.MarkovChain">
 <em class="property">class </em><code class="sig-prename descclassname">moore_braidgenerator.markovchain.</code><code class="sig-name descname">MarkovChain</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#moore_braidgenerator.markovchain.MarkovChain" title="Permalink to this definition">¶</a></dt>
@@ -404,6 +405,259 @@ and logs, depending on parameter passed to only_isomorphs.</p>
 
 </dd></dl>
 
+<span class="target" id="module-moore_braidgenerator.braidword"></span><dl class="class">
+<dt id="moore_braidgenerator.braidword.BraidWord">
+<em class="property">class </em><code class="sig-prename descclassname">moore_braidgenerator.braidword.</code><code class="sig-name descname">BraidWord</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encapsulation of a mathematical braid. BraidWord contains a word
+which consists of a list of generators and is a component to be
+used in the MarkovChain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>initword</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>) – List containing generators to be used as initial word.</p>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="moore_braidgenerator.braidword.BraidWord.word">
+<code class="sig-name descname">word</code><a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.word" title="Permalink to this definition">¶</a></dt>
+<dd><p><cite>word</cite> of BraidWord, made up of list containing integer generators.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="moore_braidgenerator.braidword.BraidWord.largestGenerator">
+<code class="sig-name descname">largestGenerator</code><a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.largestGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Largest generator in <cite>word</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="moore_braidgenerator.braidword.BraidWord.genCount">
+<code class="sig-name descname">genCount</code><a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.genCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Array of quantity of generators in <cite>word</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="moore_braidgenerator.braidword.BraidWord.canCancel">
+<code class="sig-name descname">canCancel</code><span class="sig-paren">(</span><em class="sig-param">index</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.canCancel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Boolean stating if cancel at index is a valid move.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>index</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – Index where canCancel is to be checked.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>True if successful at index, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="moore_braidgenerator.braidword.BraidWord.canDestabilize">
+<code class="sig-name descname">canDestabilize</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.canDestabilize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a boolean stating if self.destabilize() is a valid move.
+For consistent Markov probabilities we only consider search
+for <cite>largestGenerator</cite> to exist at the end of <cite>word</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>True if successful at index, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="moore_braidgenerator.braidword.BraidWord.canFlip">
+<code class="sig-name descname">canFlip</code><span class="sig-paren">(</span><em class="sig-param">index: int</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.canFlip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Boolean stating if flip at index is a valid move.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>index</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – Index where canFlip is to be checked.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>True if successful at index, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="moore_braidgenerator.braidword.BraidWord.canTranspose">
+<code class="sig-name descname">canTranspose</code><span class="sig-paren">(</span><em class="sig-param">index</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.canTranspose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Boolean stating if transpose at index is a valid move.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>index</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – Index where canTranspose is to be checked.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>True if successful at index, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="moore_braidgenerator.braidword.BraidWord.cancel">
+<code class="sig-name descname">cancel</code><span class="sig-paren">(</span><em class="sig-param">index</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.cancel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs a cancelation of the generators at
+index and (index+1)%length and decreases self.length by 2.
+Returns boolean to trigger logs in MarkovChain if True.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>index</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – Index where cancel is to be performed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>True if successful at index, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="moore_braidgenerator.braidword.BraidWord.conjugate">
+<code class="sig-name descname">conjugate</code><span class="sig-paren">(</span><em class="sig-param">index</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.conjugate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Conjugate the word by amount. Returns boolean to
+trigger logs in MarkovChain if True.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>index</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – Index where conjugate is to be performed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>True if successful at index, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="moore_braidgenerator.braidword.BraidWord.destabilize">
+<code class="sig-name descname">destabilize</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.destabilize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Destabilize the braid word and decrease self.length by 1, and
+possibly decrease self.largestGenerator. Returns boolean to trigger
+logs in MarkovChain if True.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>True if successful at index, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="moore_braidgenerator.braidword.BraidWord.flip">
+<code class="sig-name descname">flip</code><span class="sig-paren">(</span><em class="sig-param">index: int</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.flip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flips generators at index, (index+1)%length, and (index+2)%length.
+Returns boolean to trigger logs in MarkovChain if True.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>index</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – Index where flip is to be performed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>True if successful at index, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="moore_braidgenerator.braidword.BraidWord.insert">
+<code class="sig-name descname">insert</code><span class="sig-paren">(</span><em class="sig-param">index</em>, <em class="sig-param">generator</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert a generator and its inverse into word. Will insert
+the given generator and its inverse at index and increases
+self.length by 2. Returns boolean to trigger logs in MarkovChain if True.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – Index where cancel is to be performed.</p></li>
+<li><p><strong>generator</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – Generator to insert into word.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>True if successful at index, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="moore_braidgenerator.braidword.BraidWord.length">
+<code class="sig-name descname">length</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dynamically returns the length of the word.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Length of the word.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="moore_braidgenerator.braidword.BraidWord.stabilize">
+<code class="sig-name descname">stabilize</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.stabilize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stabilize the braid word, increase self.length by 1, and increase self.largestGenerator.
+Returns boolean to trigger logs in MarkovChain if True.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>True if successful at index, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="moore_braidgenerator.braidword.BraidWord.transpose">
+<code class="sig-name descname">transpose</code><span class="sig-paren">(</span><em class="sig-param">index</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#moore_braidgenerator.braidword.BraidWord.transpose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transposes generators at index and (index+1)%length.
+Returns boolean to trigger logs in MarkovChain if True.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>index</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – Index where transpose is to be performed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>True if successful at index, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -411,6 +665,13 @@ and logs, depending on parameter passed to only_isomorphs.</p>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="moore_braidgenerator documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
