@@ -1,7 +1,0 @@
-code documentation
-==================
-.. automodule:: moore_braidgenerator.markovchain
-  :members:
-
-.. automodule:: moore_braidgenerator.braidword
-  :members:

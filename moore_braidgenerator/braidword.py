@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-# BraidWord.py
 import random
 from copy import copy, deepcopy
 from moore_braidgenerator.decorators.braidword import checkparams_braidword
@@ -9,23 +7,23 @@ class BraidWord:
 	which consists of a list of generators and is a component to be
 	used in the MarkovChain.
 
-	Parameters
+    Parameters
 	----------
-		initword : :obj:`list`
-			List containing generators to be used as initial word.
+        initword : :obj:`list`
+            List containing generators to be used as initial word.
 
-	Attributes
+    Attributes
 	----------
-		word : :obj:`list`
-			`word` of BraidWord, made up of list containing integer generators.
+        word : :obj:`list`
+            `word` of BraidWord, made up of list containing integer generators
 
 		largestGenerator : :obj:`int`
-			Largest generator in `word`.
+			Largest Generator in `word`.
 
 		genCount : :obj:`list`
 			Array of quantity of generators in `word`.
 
-	"""
+    """
 	@checkparams_braidword
 	def __init__(self, initword: list):
 		self.word = initword
@@ -47,29 +45,29 @@ class BraidWord:
 
 	def length(self) -> int:
 		r"""
-		Dynamically returns the length of the word.
+        Dynamically returns the length of the `word`.
 
-		Returns
+        Returns
 		-------
-			Length of the word.
+            Length of `word`.
 
-		"""
+        """
 		return len(self.word)
 
 	def canCancel(self, index) -> bool:
 		r"""
-		Boolean stating if cancel at index is a valid move.
+        Boolean stating if cancel at index is a valid move.
 
-		Parameters
-		----------
-			index : :obj:`int`
-				Index where canCancel is to be checked.
+        Parameters
+    	----------
+            index : :obj:`int`
+                Index where canCancel is to be checked.
 
-		Returns
+        Returns
 		-------
-			True if successful at index, False otherwise.
+            True if successful, False otherwise.
 
-		"""
+        """
 		word = self.word
 		nextIdx = (index + 1) % len(word)
 		indexes = [ word[index], word[nextIdx] ]
@@ -80,18 +78,19 @@ class BraidWord:
 
 	def canTranspose(self, index) -> bool:
 		r"""
-		Boolean stating if transpose at index is a valid move.
+        Boolean stating if transpose at index is a valid move.
 
-		Parameters
-		----------
-			index : :obj:`int`
-				Index where canTranspose is to be checked.
+        Parameters
+    	----------
+            index : :obj:`int`
+                Index where canTranspose is to be checked.
 
-		Returns
+
+        Returns
 		-------
-			True if successful at index, False otherwise.
+            True if successful, False otherwise.
 
-		"""
+        """
 		word = self.word
 		indexes = list(map(abs, [word[index], word[(index + 1) % len(word)]]))
 		if ( abs(indexes[0] - indexes[1]) > 1 ):
@@ -101,18 +100,19 @@ class BraidWord:
 
 	def canFlip(self, index: int) -> bool:
 		r"""
-		Boolean stating if flip at index is a valid move.
+        Function that checks if flip can be performed at index.
 
-		Parameters
-		----------
-			index : :obj:`int`
-				Index where canFlip is to be checked.
+        Parameters
+    	----------
+            index : :obj:`int`
+                Index where canFlip is to be checked.
 
-		Returns
+
+        Returns
 		-------
-			True if successful at index, False otherwise.
+            True if successful, False otherwise.
 
-		"""
+        """
 		l = self.word.copy()
 		# positive moves
 		condP1 = ( l[index] == l[(index+2) % len(l)] )
@@ -127,15 +127,19 @@ class BraidWord:
 
 	def canDestabilize(self) -> bool:
 		r"""
-		Returns a boolean stating if self.destabilize() is a valid move.
-		For consistent Markov probabilities we only consider search
-		for `largestGenerator` to exist at the end of `word`.
+        Function to check if destabilize() is a valid move.
 
-		Returns
+		Note
+		----
+		For consistent Markov probabilities, `largestGenerator` is only \
+		checked for at the last index of `word`.
+
+
+        Returns
 		-------
-			True if successful at index, False otherwise.
+            True if successful, False otherwise.
 
-		"""
+        """
 		# Make sure only one of the largestGenerator exists
 		if self.genCount[-1] > 1:
 			return False
@@ -149,38 +153,46 @@ class BraidWord:
 
 	def conjugate(self, index) -> bool:
 		r"""
-		Conjugate the word by amount. Returns boolean to
-		trigger logs in MarkovChain if True.
+        Method to conjugate the `word` at index.
 
-		Parameters
-		----------
-			index : :obj:`int`
-				Index where conjugate is to be performed.
+        Parameters
+    	----------
+            index : :obj:`int`
+                Index where conjugate is to be performed.
 
-		Returns
+
+        Returns
 		-------
-			True if successful at index, False otherwise.
+            Boolean that triggers state of Markov Move in
+			`logs`.
 
-		"""
+        """
 		self.word = self.word[index:] + self.word[:index]
 		return True
 
 	def cancel(self, index) -> bool:
 		r"""
-		Performs a cancelation of the generators at
-		index and (index+1)%length and decreases self.length by 2.
-		Returns boolean to trigger logs in MarkovChain if True.
+        Performs cancellation of the genrators at index and (index+1) % length
+		and decreases length of `word` by two.
 
-		Parameters
-		----------
-			index : :obj:`int`
-				Index where cancel is to be performed.
+        Parameters
+    	----------
+            index : :obj:`int`
+                Index where cancel is to be performed.
 
-		Returns
+            name : :obj:`str`
+                The name of the Markov Move.
+
+            result : :obj:`bool`
+                Boolean representing whether the move was successfully
+                executed or not.
+
+        Returns
 		-------
-			True if successful at index, False otherwise.
+            Boolean that triggers state of Markov Move in
+			`logs`.
 
-		"""
+        """
 		if self.canCancel(index):
 			word = self.word
 			indexes = [index, (index + 1) % len(word)]
@@ -195,23 +207,24 @@ class BraidWord:
 
 	def insert(self, index, generator) -> bool:
 		r"""
-		Insert a generator and its inverse into word. Will insert
-		the given generator and its inverse at index and increases
-		self.length by 2. Returns boolean to trigger logs in MarkovChain if True.
+        Insert a generator and its inverse into word. Will insert the
+		given generator and its inverse at index and increases `word`
+		length by two.
 
-		Parameters
-		----------
-			index : :obj:`int`
-				Index where cancel is to be performed.
+        Parameters
+    	----------
+            index : :obj:`int`
+                Index where insert is to be performed.
 
-			generator : :obj:`int`
-				Generator to insert into word.
+            generator : :obj:`int`
+                Generator to be inserted into `word`.
 
-		Returns
+        Returns
 		-------
-			True if successful at index, False otherwise.
+            Boolean that triggers state of Markov Move in
+			`logs`.
 
-		"""
+        """
 		# generator must be | generator| <= |self.largestGenerator|
 		if (abs(generator) > abs(self.largestGenerator)):
 			raise ValueError("""Absolute value of Generator must be less
@@ -227,19 +240,20 @@ class BraidWord:
 
 	def transpose(self, index) -> bool:
 		r"""
-		Transposes generators at index and (index+1)%length.
-		Returns boolean to trigger logs in MarkovChain if True.
+        Transposes generators at index and (index+1) % length.
 
-		Parameters
-		----------
-			index : :obj:`int`
-				Index where transpose is to be performed.
+        Parameters
+    	----------
+            index : :obj:`int`
+                Index where transpose is to be performed.
 
-		Returns
+
+        Returns
 		-------
-			True if successful at index, False otherwise.
+            Boolean that triggers state of Markov Move in
+			`logs`.
 
-		"""
+        """
 		if self.canTranspose(index):
 			word = self.word
 			nextIdx = (index + 1) % len(word)
@@ -250,19 +264,19 @@ class BraidWord:
 
 	def flip(self, index: int) -> bool:
 		r"""
-		Flips generators at index, (index+1)%length, and (index+2)%length.
-		Returns boolean to trigger logs in MarkovChain if True.
+        Flips generators at index, (index+1)%length, and (index+2)%length.
 
-		Parameters
-		----------
-			index : :obj:`int`
-				Index where flip is to be performed.
+        Parameters
+    	----------
+            index : :obj:`int`
+                Index where flip is to be performed.
 
-		Returns
+        Returns
 		-------
-			True if successful at index, False otherwise.
+            Boolean that triggers state of Markov Move in
+			`logs`.
 
-		"""
+        """
 		l = self.word
 		idx0 = index
 		idx1 = (index+1)%len(l)
@@ -285,14 +299,15 @@ class BraidWord:
 
 	def stabilize(self) -> bool:
 		r"""
-		Stabilize the braid word, increase self.length by 1, and increase self.largestGenerator.
-		Returns boolean to trigger logs in MarkovChain if True.
+        Stabilizes the `BraidWord`, increases `word` length by one,
+		and increases `largestGenerator` by one if successful.
 
-		Returns
+        Returns
 		-------
-			True if successful at index, False otherwise.
+            Boolean that triggers state of Markov Move in
+			`logs`.
 
-		"""
+        """
 		self.largestGenerator += 1
 		(self.word).append(self.largestGenerator)
 		# Modify genCount
@@ -302,15 +317,15 @@ class BraidWord:
 
 	def destabilize(self) -> bool:
 		r"""
-		Destabilize the braid word and decrease self.length by 1, and
-		possibly decrease self.largestGenerator. Returns boolean to trigger
-		logs in MarkovChain if True.
+        Destabilizes the `BraidWord`, decreases `word` length by one,
+		and decreases `largestGenerator` if successful.
 
-		Returns
+        Returns
 		-------
-			True if successful at index, False otherwise.
+            Boolean that triggers state of Markov Move in
+			`logs`.
 
-		"""
+        """
 		if self.canDestabilize():
 			# Pop largest generator and decrement self.largestGenerator
 			(self.word).pop()
