@@ -15,24 +15,24 @@ class MarkovChain:
 
     Parameters
 	----------
-        braidword : :obj:`BraidWord`
-            A BraidWord to have isomorphs generated
-            from it. Note that a simple Python list can be given as a
-            parameter as well, which will be converted to a BraidWord behind
-            the scenes.
+    braidword : :obj:`BraidWord`
+        A BraidWord to have isomorphs generated
+        from it. Note that a simple Python list can be given as a
+        parameter as well, which will be converted to a BraidWord behind
+        the scenes.
 
-        maxgen : :obj:`int`
-            The maximum absolute value a generator can be in the
-            BraidWord and its subsequent isomorphisms.
+    maxgen : :obj:`int`
+        The maximum absolute value a generator can be in the
+        BraidWord and its subsequent isomorphisms.
 
-        maxlen : :obj:`int`
-            The maxmimum length of that any subsequent isomorphs
-            can reach.
+    maxlen : :obj:`int`
+        The maxmimum length of that any subsequent isomorphs
+        can reach.
 
     Attributes
 	----------
-        braidagg : :obj:`dictionary`
-            Dictionary that holds isomorphs and logs.
+    braidagg : :obj:`dictionary`
+        Dictionary that holds isomorphs and logs.
 
 	Examples
     --------
@@ -71,15 +71,15 @@ class MarkovChain:
 
         Parameters
     	----------
-            movetype : :obj:`int`
-                Markov Move[i] for i in [0, 6], inclusive. There
-                are 7 Markov Moves that determine the braid-to-isomorph
-                modification.
-            name : :obj:`str`
-                The name of the Markov Move.
-            result : :obj:`bool`
-                Boolean representing whether the move was successfully
-                executed or not.
+        movetype : :obj:`int`
+            Markov Move[i] for i in [0, 6], inclusive. There
+            are 7 Markov Moves that determine the braid-to-isomorph
+            modification.
+        name : :obj:`str`
+            The name of the Markov Move.
+        result : :obj:`bool`
+            Boolean representing whether the move was successfully
+            executed or not.
 
         Returns
 		-------
@@ -108,14 +108,14 @@ class MarkovChain:
 
         Parameters
 		----------
-            num_isomorphs : :obj:`int`
-                Number of isomorphs to be modeled from
-                the BraidWord given to the Markov Chain.
+        num_isomorphs : :obj:`int`
+            Number of isomorphs to be modeled from
+            the BraidWord given to the Markov Chain.
 
-            msteps : :obj:`int`
-                The number of steps to be taken until an isomorph
-                is considered to be complete. That is, msteps many iterations
-                of the model process take place on a given BraidWord.
+        msteps : :obj:`int`
+            The number of steps to be taken until an isomorph
+            is considered to be complete. That is, msteps many iterations
+            of the model process take place on a given BraidWord.
 
         Returns
 		-------
@@ -228,9 +228,9 @@ class MarkovChain:
 
         Parameters
 		----------
-            braidword : :obj:`BraidWord`
-                The new BraidWord to replace the old
-                BraidWord.
+        braidword : :obj:`BraidWord`
+            The new BraidWord to replace the old
+            BraidWord.
 
         Returns
 		-------
@@ -362,7 +362,6 @@ class MarkovChain:
     def totxt(self, path_or_filename="", only_isomorphs=False):
         r"""
         Method to export logs, isomorphs to a txt file.
-
         If path_or_filename not given, will export the csv to
         current directory with the name `Isomorphs.txt` or
         `Isomorphs_and_Logs.txt`. The name is implicitly determined

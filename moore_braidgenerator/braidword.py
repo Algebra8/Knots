@@ -51,7 +51,7 @@ class BraidWord:
 
 		Returns
 		-------
-			Getter method that returns the length of the word.
+			Length of the word.
 
 		"""
 		return len(self.word)
