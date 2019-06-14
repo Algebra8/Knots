@@ -1,6 +1,7 @@
-# Markov Chain and Braids
+# Braid Generator
 
-A project from the University of California, Davis' Department of Mathematics, to be used to generate braid isomorphisms from a given braid. The project was born when researchers at UC Davis attempted to use Machine Learning techniques on braids but found the data to be too small. This should help others generate data to help better understand the topology of knots.
+
+Braid Generator is a project from the Department of Mathematics in the University of California, Davis. Braid Generator implements a Markov chain algorithm to generate an ensemble of braid representatives from a given braid representative of a fixed knot or link type. The project was born when we attempted to use Machine Learning techniques to study braids but found the existing data sets of braid representatives to be too small. The hope is that this program will help others generate data to help better understand braids, knot invariants, and the topology of the space of knots.
 
 ## Getting Started
 
