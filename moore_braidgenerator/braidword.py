@@ -51,7 +51,6 @@ class BraidWord:
 
 		Returns
 		-------
-		:obj:`int`
 			Getter method that returns the length of the word.
 
 		"""
@@ -68,7 +67,6 @@ class BraidWord:
 
 		Returns
 		-------
-		:obj:`bool`
 			True if successful at index, False otherwise.
 
 		"""
@@ -91,7 +89,6 @@ class BraidWord:
 
 		Returns
 		-------
-		:obj:`bool`
 			True if successful at index, False otherwise.
 
 		"""
@@ -113,7 +110,6 @@ class BraidWord:
 
 		Returns
 		-------
-		:obj:`bool`
 			True if successful at index, False otherwise.
 
 		"""
@@ -137,7 +133,6 @@ class BraidWord:
 
 		Returns
 		-------
-		:obj:`bool`
 			True if successful at index, False otherwise.
 
 		"""
@@ -164,7 +159,6 @@ class BraidWord:
 
 		Returns
 		-------
-		:obj:`bool`
 			True if successful at index, False otherwise.
 
 		"""
@@ -184,7 +178,6 @@ class BraidWord:
 
 		Returns
 		-------
-		:obj:`bool`
 			True if successful at index, False otherwise.
 
 		"""
@@ -215,7 +208,6 @@ class BraidWord:
 
 		Returns
 		-------
-		:obj:`bool`
 			True if successful at index, False otherwise.
 
 		"""
@@ -244,7 +236,6 @@ class BraidWord:
 
 		Returns
 		-------
-		:obj:`bool`
 			True if successful at index, False otherwise.
 
 		"""
@@ -268,7 +259,6 @@ class BraidWord:
 
 		Returns
 		-------
-		:obj:`bool`
 			True if successful at index, False otherwise.
 
 		"""
@@ -299,7 +289,6 @@ class BraidWord:
 
 		Returns
 		-------
-		:obj:`bool`
 			True if successful at index, False otherwise.
 
 		"""
@@ -318,7 +307,6 @@ class BraidWord:
 
 		Returns
 		-------
-		:obj:`bool`
 			True if successful at index, False otherwise.
 
 		"""
