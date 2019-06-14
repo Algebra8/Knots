@@ -276,9 +276,9 @@ class MarkovChain:
 
         Parameters
 		----------
-            as_word : :obj:`bool`
-                Determines if isomorphs should be returned
-                as words or BraidWords.
+        as_word : :obj:`bool`
+            Determines if isomorphs should be returned
+            as words or BraidWords.
 
         Returns
 		-------
@@ -306,9 +306,9 @@ class MarkovChain:
 
         Parameters
 		----------
-            only_isomorphs : :obj:`bool`
-                Determines if only isomorphs
-                should be returned or both isomorphs and logs.
+        only_isomorphs : :obj:`bool`
+            Determines if only isomorphs
+            should be returned or both isomorphs and logs.
 
         Returns
 		-------
@@ -335,11 +335,11 @@ class MarkovChain:
 
         Parameters
 		----------
-            path_or_filename : :obj:`str`
-                Path or filename to store csv.
-            only_isomorphs : :obj:`bool`
-                Determines if only isomorphs should be returned or
-                both isomorphs and logs.
+        path_or_filename : :obj:`str`
+            Path or filename to store csv.
+        only_isomorphs : :obj:`bool`
+            Determines if only isomorphs should be returned or
+            both isomorphs and logs.
 
         Returns
 		-------
@@ -388,11 +388,11 @@ class MarkovChain:
 
         Parameters
 		----------
-            path_or_filename : :obj:`str`
-                Path or filename to store txt.
-            only_isomorphs : :obj:`bool`
-                Determines if only isomorphs should be returned
-                or both isomorphs and logs.
+        path_or_filename : :obj:`str`
+            Path or filename to store txt.
+        only_isomorphs : :obj:`bool`
+            Determines if only isomorphs should be returned
+            or both isomorphs and logs.
 
         Returns
 		-------

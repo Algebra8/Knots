@@ -11,17 +11,19 @@ class BraidWord:
 
 	Parameters
 	----------
-		initword : :obj:`list`
-			List containing generators to be used as initial word.
+	initword : :obj:`list`
+		List containing generators to be used as initial word.
 
 	Attributes
 	----------
-		word : :obj:`list`
-			`word` of BraidWord, made up of list containing integer generators.
-		largestGenerator : :obj:`int`
-			Largest generator in `word`.
-		genCount : :obj:`list`
-			Array of quantity of generators in `word`.
+	word : :obj:`list`
+		`word` of BraidWord, made up of list containing integer generators.
+
+	largestGenerator : :obj:`int`
+		Largest generator in `word`.
+
+	genCount : :obj:`list`
+		Array of quantity of generators in `word`.
 
 	"""
 	@checkparams_braidword
@@ -51,22 +53,24 @@ class BraidWord:
 		-------
 		:obj:`int`
 			Getter method that returns the length of the word.
+
 		"""
 		return len(self.word)
 
 	def canCancel(self, index) -> bool:
 		r"""
-		Returns a boolean stating if self.cancel(index) is a valid move.
+		Boolean stating if cancel at index is a valid move.
 
 		Parameters
 		----------
-			index : :obj:`int`
-				Index where canCancel is to be checked.
+		index : :obj:`int`
+			Index where canCancel is to be checked.
 
 		Returns
 		-------
 		:obj:`bool`
 			True if successful at index, False otherwise.
+
 		"""
 		word = self.word
 		nextIdx = (index + 1) % len(word)
@@ -78,16 +82,18 @@ class BraidWord:
 
 	def canTranspose(self, index) -> bool:
 		r"""
-		Returns a boolean stating if self.transpose(index) is a valid move.
+		Boolean stating if transpose at index is a valid move.
 
 		Parameters
 		----------
-			index : :obj:`int`
-				Index where canTranspose is to be checked.
+		index : :obj:`int`
+			Index where canTranspose is to be checked.
+
 		Returns
 		-------
 		:obj:`bool`
 			True if successful at index, False otherwise.
+
 		"""
 		word = self.word
 		indexes = list(map(abs, [word[index], word[(index + 1) % len(word)]]))
@@ -98,16 +104,18 @@ class BraidWord:
 
 	def canFlip(self, index: int) -> bool:
 		r"""
-		Returns a boolean stating if self.flip(index) is a valid move.
+		Boolean stating if flip at index is a valid move.
 
 		Parameters
 		----------
-			index : :obj:`int`
-				Index where canFlip is to be checked.
+		index : :obj:`int`
+			Index where canFlip is to be checked.
+
 		Returns
 		-------
 		:obj:`bool`
 			True if successful at index, False otherwise.
+
 		"""
 		l = self.word.copy()
 		# positive moves
@@ -131,6 +139,7 @@ class BraidWord:
 		-------
 		:obj:`bool`
 			True if successful at index, False otherwise.
+
 		"""
 		# Make sure only one of the largestGenerator exists
 		if self.genCount[-1] > 1:
@@ -150,12 +159,14 @@ class BraidWord:
 
 		Parameters
 		----------
-			index : :obj:`int`
-				Index where conjugate is to be performed.
+		index : :obj:`int`
+			Index where conjugate is to be performed.
+
 		Returns
 		-------
 		:obj:`bool`
 			True if successful at index, False otherwise.
+
 		"""
 		self.word = self.word[index:] + self.word[:index]
 		return True
@@ -168,12 +179,14 @@ class BraidWord:
 
 		Parameters
 		----------
-			index : :obj:`int`
-				Index where cancel is to be performed.
+		index : :obj:`int`
+			Index where cancel is to be performed.
+
 		Returns
 		-------
 		:obj:`bool`
 			True if successful at index, False otherwise.
+
 		"""
 		if self.canCancel(index):
 			word = self.word
@@ -195,14 +208,16 @@ class BraidWord:
 
 		Parameters
 		----------
-			index : :obj:`int`
-				Index where cancel is to be performed.
-			generator : :obj:`int`
-				Generator to insert into word.
+		index : :obj:`int`
+			Index where cancel is to be performed.
+		generator : :obj:`int`
+			Generator to insert into word.
+
 		Returns
 		-------
 		:obj:`bool`
 			True if successful at index, False otherwise.
+
 		"""
 		# generator must be | generator| <= |self.largestGenerator|
 		if (abs(generator) > abs(self.largestGenerator)):
@@ -224,12 +239,14 @@ class BraidWord:
 
 		Parameters
 		----------
-			index : :obj:`int`
-				Index where transpose is to be performed.
+		index : :obj:`int`
+			Index where transpose is to be performed.
+
 		Returns
 		-------
 		:obj:`bool`
 			True if successful at index, False otherwise.
+
 		"""
 		if self.canTranspose(index):
 			word = self.word
@@ -246,12 +263,14 @@ class BraidWord:
 
 		Parameters
 		----------
-			index : :obj:`int`
-				Index where flip is to be performed.
+		index : :obj:`int`
+			Index where flip is to be performed.
+
 		Returns
 		-------
 		:obj:`bool`
 			True if successful at index, False otherwise.
+
 		"""
 		l = self.word
 		idx0 = index
@@ -282,6 +301,7 @@ class BraidWord:
 		-------
 		:obj:`bool`
 			True if successful at index, False otherwise.
+
 		"""
 		self.largestGenerator += 1
 		(self.word).append(self.largestGenerator)
@@ -300,6 +320,7 @@ class BraidWord:
 		-------
 		:obj:`bool`
 			True if successful at index, False otherwise.
+
 		"""
 		if self.canDestabilize():
 			# Pop largest generator and decrement self.largestGenerator
