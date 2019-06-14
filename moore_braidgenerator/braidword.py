@@ -11,19 +11,19 @@ class BraidWord:
 
 	Parameters
 	----------
-	initword : :obj:`list`
-		List containing generators to be used as initial word.
+		initword : :obj:`list`
+			List containing generators to be used as initial word.
 
 	Attributes
 	----------
-	word : :obj:`list`
-		`word` of BraidWord, made up of list containing integer generators.
+		word : :obj:`list`
+			`word` of BraidWord, made up of list containing integer generators.
 
-	largestGenerator : :obj:`int`
-		Largest generator in `word`.
+		largestGenerator : :obj:`int`
+			Largest generator in `word`.
 
-	genCount : :obj:`list`
-		Array of quantity of generators in `word`.
+		genCount : :obj:`list`
+			Array of quantity of generators in `word`.
 
 	"""
 	@checkparams_braidword
@@ -62,8 +62,8 @@ class BraidWord:
 
 		Parameters
 		----------
-		index : :obj:`int`
-			Index where canCancel is to be checked.
+			index : :obj:`int`
+				Index where canCancel is to be checked.
 
 		Returns
 		-------
@@ -84,8 +84,8 @@ class BraidWord:
 
 		Parameters
 		----------
-		index : :obj:`int`
-			Index where canTranspose is to be checked.
+			index : :obj:`int`
+				Index where canTranspose is to be checked.
 
 		Returns
 		-------
@@ -105,8 +105,8 @@ class BraidWord:
 
 		Parameters
 		----------
-		index : :obj:`int`
-			Index where canFlip is to be checked.
+			index : :obj:`int`
+				Index where canFlip is to be checked.
 
 		Returns
 		-------
@@ -154,8 +154,8 @@ class BraidWord:
 
 		Parameters
 		----------
-		index : :obj:`int`
-			Index where conjugate is to be performed.
+			index : :obj:`int`
+				Index where conjugate is to be performed.
 
 		Returns
 		-------
@@ -173,8 +173,8 @@ class BraidWord:
 
 		Parameters
 		----------
-		index : :obj:`int`
-			Index where cancel is to be performed.
+			index : :obj:`int`
+				Index where cancel is to be performed.
 
 		Returns
 		-------
@@ -201,10 +201,11 @@ class BraidWord:
 
 		Parameters
 		----------
-		index : :obj:`int`
-			Index where cancel is to be performed.
-		generator : :obj:`int`
-			Generator to insert into word.
+			index : :obj:`int`
+				Index where cancel is to be performed.
+
+			generator : :obj:`int`
+				Generator to insert into word.
 
 		Returns
 		-------
@@ -231,8 +232,8 @@ class BraidWord:
 
 		Parameters
 		----------
-		index : :obj:`int`
-			Index where transpose is to be performed.
+			index : :obj:`int`
+				Index where transpose is to be performed.
 
 		Returns
 		-------
@@ -254,8 +255,8 @@ class BraidWord:
 
 		Parameters
 		----------
-		index : :obj:`int`
-			Index where flip is to be performed.
+			index : :obj:`int`
+				Index where flip is to be performed.
 
 		Returns
 		-------
