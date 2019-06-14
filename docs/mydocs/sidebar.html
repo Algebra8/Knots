@@ -1,8 +1,25 @@
-<div id="sidebar">
-  <div class="toggle-btn"><span></span> <span></span> <span></span></div>
-  <ul>
-    <li>HOME</li>
-    <li>ABOUT</li>
-    <li>CONTACT</li>
-  </ul>
-</div>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="sidebar.css" />
+  </head>
+  <body>
+    <div id="sidebar">
+      <div class="toggle-btn" onclick="toggleSidebar()">
+        <span></span> <span></span> <span></span>
+      </div>
+      <ul id="buttons">
+        <li><a href="#131">HOME</a></li>
+        <li><a href="#131">ABOUT</a></li>
+        <li><a href="#131">CONTACT</a></li>
+      </ul>
+    </div>
+    <script>
+      function toggleSidebar() {
+        document.getElementById("sidebar").classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>
