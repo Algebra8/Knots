@@ -75,8 +75,10 @@ class MarkovChain:
                 Markov Move[i] for i in [0, 6], inclusive. There
                 are 7 Markov Moves that determine the braid-to-isomorph
                 modification.
+
             name : :obj:`str`
                 The name of the Markov Move.
+
             result : :obj:`bool`
                 Boolean representing whether the move was successfully
                 executed or not.
