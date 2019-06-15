@@ -1,4 +1,4 @@
-moore_braidgenerator documentation
+Braid Generator Documentation
 ==================================
 
 .. toctree::

@@ -17,7 +17,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # -- Project information -----------------------------------------------------
 
-project = "Professor Moore's Braid Generator"
+project = "Braid Generator"
 copyright = '2019, Professor Allison Moore, Milad Michael Nasrollahi, Shawn Witte'
 author = 'Professor Allison Moore, Milad Michael Nasrollahi, Shawn Witte'
 
