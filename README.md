@@ -1,6 +1,5 @@
 # Braid Generator
 
-
 Braid Generator is a project from the Department of Mathematics in the University of California, Davis. Braid Generator implements a Markov chain algorithm to generate an ensemble of braid representatives from a given braid representative of a fixed knot or link type. The project was born when we attempted to use Machine Learning techniques to study braids but found the existing data sets of braid representatives to be too small. The hope is that this program will help others generate data to help better understand braids, knot invariants, and the topology of the space of knots.
 
 ## Getting Started
@@ -32,7 +31,7 @@ If downloading through pip then only _pandas_ is required. Otherwise, consider t
     └── test_markovchain.py
 ```
 
-> The tree represents the hierarchy of the github repository.
+> The tree represents the relevant hierarchy of the github repository.
 
 ### Installation and setup
 
