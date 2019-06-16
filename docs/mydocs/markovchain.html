@@ -1,0 +1,694 @@
+<!-- DOC - BRAIDWORD -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Braid Generator Documentation</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <!-- Bootstrap CSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+      integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+      crossorigin="anonymous"
+    />
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font Awesome JS -->
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+      integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+      integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar -->
+      <nav id="sidebar">
+        <div class="sidebar-header"><h3>Braid Generator</h3></div>
+
+        <ul class="list-unstyled components">
+          <!-- <p>Content</p> -->
+          <li class="active">
+            <a
+              href="#homeSubmenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Modules</a
+            >
+            <ul class="collapse list-unstyled" id="homeSubmenu">
+              <li><a href="index.html">Docs</a></li>
+              <li><a href="markovchain.html">MarkovChain</a></li>
+              <li><a href="braidword.html">BraidWord</a></li>
+            </ul>
+          </li>
+          <li><a href="#">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <!-- !Sidebar -->
+
+      <!-- Content -->
+      <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <button type="button" id="sidebarCollapse" class="btn btn-info">
+              <i class="fas fa-align-left"></i> <span></span>
+            </button>
+            <button
+              class="btn btn-dark d-inline-block d-lg-none ml-auto"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <i class="fas fa-align-justify"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <!-- <a class="nav-link" href="#"> Github Repository</a> -->
+                  <a
+                    href="https://github.com/Algebra8/Knots"
+                    class="btn btn-default btn-lg"
+                    role="button"
+                    >Github Repository</a
+                  >
+                </li>
+                <!--
+                  <li class="nav-item"><a class="nav-link" href="#">Page</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Page</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Page</a></li>
+                -->
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <h1>MarkovChain</h1>
+        <div class="category">
+          <h3 class="category-heading">
+            class braidgenerator.MarkovChain(**kwargs)
+          </h3>
+        </div>
+        <p class="category">
+          MarkovChain is an encapsulation of the Markov Chain. It takes a
+          BraidWord and allows modelling, which creates a specified number of
+          isomorphs along with the logs pertaining to that isomorph (i.e. which
+          Markov Move was made at some iteration).
+        </p>
+        <!-- __init__ params -->
+        <dl class="params">
+          <p class="text-info">Parameters</p>
+          <dt class="aparam">
+            <!-- braidword -->
+            <code
+              >braidword<code class="text-secondary"> BraidWord </code></code
+            >
+          </dt>
+          <dd class="aparam">
+            A BraidWord to have isomorphs generated from it. Note that a simple
+            Python list can be given as a parameter as well, which will be
+            converted to a BraidWord behind the scenes.
+          </dd>
+          <!-- maxgen -->
+          <dt class="aparam">
+            <code>maxgen<code class="text-secondary"> int </code></code>
+          </dt>
+          <dd class="aparam">
+            The maximum absolute value a generator can be in the BraidWord and
+            its subsequent isomorphisms.
+          </dd>
+          <!-- maxlen -->
+          <dt class="aparam">
+            <code>maxlen<code class="text-secondary"> int </code></code>
+          </dt>
+          <dd class="aparam">
+            The maxmimum length of that any subsequent isomorphs can reach.
+          </dd>
+        </dl>
+        <!-- __init__ attributes -->
+        <dl class="attrs">
+          <p class="text-info">Attributes</p>
+          <!-- braidagg -->
+          <dt class="aattr">
+            <code
+              >braidagg <code class="text-secondary"> dictionary </code></code
+            >
+          </dt>
+          <dd class="aattr">Dictionary that holds isomorphs and logs.</dd>
+          <!-- braid -->
+          <dt class="aattr">
+            <code>braid<code class="text-secondary"> BraidWord </code></code>
+          </dt>
+          <dd class="aattr">Contains braidword parameter.</dd>
+          <!-- maxgen -->
+          <dt class="aattr">
+            <code>maxgen<code class="text-secondary"> int </code></code>
+          </dt>
+
+          <dd class="aattr">Contains maxgen parameter.</dd>
+
+          <!-- maxlen -->
+          <dt class="aattr">
+            <code>maxlen<code class="text-secondary"> int </code></code>
+          </dt>
+
+          <dd class="aattr">Contains maxlen parameter.</dd>
+        </dl>
+
+        <div class="line"></div>
+
+        <!-- Methods -->
+        <div class="category">
+          <h3 class="category-heading">&lt<i>MarkovChain</i>&gt.methods</h3>
+        </div>
+        <!-- aggregate -->
+        <dl class="method">
+          <dt id="canCancel">
+            <button class="btn btn-md">
+              <code class="text-primary">aggregate</code>
+              <span class="sig-parent">(</span>
+              <!--
+                <code>index: <code class="text-secondary"> int </code></code>
+              -->
+              <span class="sig-parent">)</span>
+            </button>
+          </dt>
+          <dd>
+            <p class="category">
+              Getter method that returns a dictionary of MarkovChain instance’s
+              isomorphs and logs, both contained in their respective lists.
+            </p>
+          </dd>
+        </dl>
+
+        <!-- Returns -->
+        <dl class="returns">
+          <p class="text-info">Returns</p>
+          <dd class="aparam"><code class="text-danger">self.braidagg</code></dd>
+        </dl>
+        <!-- !aggregate -->
+
+        <!-- clear_model -->
+        <dl class="method">
+          <dt id="canCancel">
+            <button class="btn btn-md">
+              <code class="text-primary">clear_model</code>
+              <span class="sig-parent">(</span>
+              <!--
+                <code>index: <code class="text-secondary"> int </code></code>
+              -->
+              <span class="sig-parent">)</span>
+            </button>
+          </dt>
+          <dd>
+            <p class="category">
+              Method to clear braid instance. That is, it clears braidagg.
+            </p>
+          </dd>
+        </dl>
+
+        <!-- Returns -->
+        <dl class="returns">
+          <p class="text-info">Returns</p>
+          <dd class="aparam"><code class="text-danger">None</code></dd>
+        </dl>
+
+        <!-- !clear_model -->
+
+        <!-- isomorphs -->
+        <dl class="method">
+          <dt id="canCancel">
+            <button class="btn btn-md">
+              <code class="text-primary">isomorphs</code>
+              <span class="sig-parent">(</span>
+
+              <code
+                >as_word:
+                <code class="text-secondary"> bool = False </code></code
+              >
+
+              <span class="sig-parent">)</span> ->
+              <code class="text-primary">list</code>
+            </button>
+          </dt>
+          <dd>
+            <p class="category">
+              Method to return MarkovChain instance isomorphs as a list.
+            </p>
+          </dd>
+        </dl>
+
+        <!-- Parameters -->
+
+        <dl class="params">
+          <p class="text-info">Parameters</p>
+          <dt class="aparam">
+            <!-- braidword -->
+            <code>as_word<code class="text-secondary"> bool </code></code>
+          </dt>
+          <dd class="aparam">
+            Defaults to return list populated by BraidWords. Setting
+            <code>as_word<code class="text-secondary">=True </code></code>
+            returns the list populated by BraidWord.word (i.e. lists).
+          </dd>
+        </dl>
+
+        <!-- Returns -->
+        <dl class="returns">
+          <p class="text-info">Returns</p>
+          <dd class="aparam">
+            <code class="text-danger"
+              ><code class="text-danger">self.braidagg['isomorphs']</code></code
+            >
+          </dd>
+        </dl>
+        <!-- !isomorphs -->
+
+        <!-- log_message -->
+        <dl class="method">
+          <dt id="canCancel">
+            <button class="btn btn-md">
+              static <code class="text-primary"> log_message</code>
+              <span class="sig-parent">(</span>
+              <code>movetype: <code class="text-secondary"> int, </code></code>
+              <code>name: <code class="text-secondary"> str, </code></code>
+              <code>result: <code class="text-secondary"> bool </code></code>
+              <span class="sig-parent"
+                >) -> <code class="text-primary">str</code></span
+              >
+            </button>
+          </dt>
+          <dd>
+            <p class="category">
+              Function to dynamically create log of Markov Move @[mstep]
+            </p>
+          </dd>
+        </dl>
+        <!-- Params -->
+        <dl class="params">
+          <p class="text-info">Parameters</p>
+          <!-- movetype -->
+          <dt class="aparam">
+            <code>movetype<code class="text-secondary"> int </code></code>
+          </dt>
+          <dd class="aparam">
+            Markov Move[i] for i in [0, 6], inclusive. There are 7 Markov Moves
+            that determine the braid-to-isomorph modification.
+          </dd>
+          <!-- name -->
+          <dt class="aparam">
+            <code>name<code class="text-secondary"> str </code></code>
+          </dt>
+          <dd class="aparam">The name of the Markov Move.</dd>
+          <!-- result -->
+          <dt class="aparam">
+            <code>result<code class="text-secondary"> bool </code></code>
+          </dt>
+          <dd class="aparam">
+            Boolean representing whether the move was successfully executed or
+            not.
+          </dd>
+        </dl>
+
+        <!-- Returns -->
+        <dl class="returns">
+          <p class="text-info">Returns</p>
+          <dd class="aparam">
+            String of log for BraidWord.word at Markov Move [i] for i in [0, 6],
+            inclusive.
+          </dd>
+        </dl>
+
+        <!-- !log_message -->
+
+        <!-- logs -->
+        <dl class="method">
+          <dt id="canCancel">
+            <button class="btn btn-md">
+              <code class="text-primary">logs</code>
+              <span class="sig-parent">(</span>
+              <!--
+                <code>index: <code class="text-secondary"> int </code></code>
+              -->
+              <span class="sig-parent">)</span>
+            </button>
+          </dt>
+          <dd>
+            <p class="category">
+              Method to return MarkovChain instance logs in a list. Note that
+              the length of the list is equal to the number of isomorphisms
+              requested in the num_isomorphs argument of model. Each log
+              represents the logs undergone to create a specific isomorphism and
+              is held in a dictionary. The size of the dictionary is equal to
+              the argument passed for msteps in model.
+            </p>
+          </dd>
+        </dl>
+        <!-- Returns -->
+        <dl class="returns">
+          <p class="text-info">Returns</p>
+          <dd class="aparam">
+            <code class="text-danger">self.braidagg['logs']</code>
+          </dd>
+        </dl>
+
+        <!-- !logs -->
+
+        <!-- model -->
+        <dl class="method">
+          <dt id="canCancel">
+            <button class="btn btn-md">
+              <code class="text-primary">model</code>
+              <span class="sig-parent">(</span>
+              <!-- num_isomorphs -->
+              <code
+                >num_isomorphs:
+                <code class="text-secondary"> int = 1, </code></code
+              >
+              <!-- msteps -->
+              <code
+                >msteps: <code class="text-secondary"> int = 100</code></code
+              >
+              <span class="sig-parent">)</span>
+            </button>
+          </dt>
+          <dd>
+            <p class="category">
+              Method to model the BraidWord and generate isomorphs and logs. A
+              random number is picked between (0, 6), inclusive, determining the
+              Markov Move to perform. Another random number is picked from
+              range(len(BraidWord.word)) that represents the index of
+              BraidWord.word to perform the Markov Move on. The isomorph is
+              generated by picking a random index from the set of possible
+              indices for BraidWord.word and a random Markov Move that acts on
+              BraidWord.word at the given index.
+            </p>
+          </dd>
+        </dl>
+        <!-- Params -->
+        <dl class="params">
+          <p class="text-info">Parameters</p>
+          <dt class="aparam">
+            <code>num_isomorphs<code class="text-secondary"> int </code></code>
+          </dt>
+          <dd class="aparam">
+            Number of isomorphs to be modeled from the BraidWord given to the
+            Markov Chain.
+          </dd>
+          <dt class="aparam">
+            <code>msteps<code class="text-secondary"> int </code></code>
+          </dt>
+          <dd class="aparam">
+            The number of steps to be taken until an isomorph is considered to
+            be complete. That is, msteps many iterations of the model process
+            take place on a given BraidWord.
+          </dd>
+        </dl>
+
+        <!-- Returns -->
+        <dl class="returns">
+          <p class="text-info">Returns</p>
+          <dd class="aparam">
+            Appends isomorph and log to
+            <code class="text-danger">self.braidagg['logs']</code>.
+          </dd>
+        </dl>
+
+        <!-- !model -->
+
+        <!-- new_braidword -->
+        <dl class="method">
+          <dt id="canCancel">
+            <button class="btn btn-md">
+              <code class="text-primary">new_braidword</code>
+              <span class="sig-parent">(</span>
+
+              <code
+                >braidword:
+                <code class="text-secondary"> BraidWord </code></code
+              >
+
+              <span class="sig-parent">)</span>
+            </button>
+          </dt>
+          <dd><p class="category">Method to set a new BraidWord.</p></dd>
+        </dl>
+
+        <!-- Params -->
+        <dl class="params">
+          <p class="text-info">Parameters</p>
+          <dt class="aparam">
+            <code
+              >braidword<code class="text-secondary"> BraidWord </code></code
+            >
+          </dt>
+          <dd class="aparam">
+            The new BraidWord to replace the old BraidWord.
+          </dd>
+        </dl>
+
+        <!-- Returns -->
+        <dl class="returns">
+          <p class="text-info">Returns</p>
+          <dd class="aparam"><code class="text-danger">None</code></dd>
+        </dl>
+
+        <!-- !new_braidword -->
+
+        <!-- tocsv -->
+        <dl class="method">
+          <dt id="canCancel">
+            <button class="btn btn-md">
+              <code class="text-primary">tocsv</code>
+              <span class="sig-parent">(</span>
+              <code
+                >path_or_filename:
+                <code class="text-secondary"> str = "" , </code></code
+              >
+              <code
+                >only_isomorphs:
+                <code class="text-secondary"> bool = False </code></code
+              >
+              <span class="sig-parent">)</span>
+            </button>
+          </dt>
+          <dd>
+            <p class="category">
+              Method to export logs, isomorphs to csv. If path_or_filename not
+              given, will export the csv to current directory with the name
+              Isomorphs.csv or Isomorphs_and_Logs.csv. The name is implicitly
+              determined by the parameter passed to only_isomorphs.
+            </p>
+          </dd>
+        </dl>
+        <!-- Params -->
+        <dl class="params">
+          <p class="text-info">Parameters</p>
+          <dt class="aparam">
+            <code
+              >path_or_filename<code class="text-secondary"> str </code></code
+            >
+          </dt>
+          <dd class="aparam">
+            Path or filename to store csv. If none is given, will store file in
+            current directory under the name 'Isomorphs.csv' or
+            'Isomorphs_and_Logs.csv', based on the value assigned to
+            only_isomorphs.
+          </dd>
+          <dt class="aparam">
+            <code
+              >only_isomorphs<code class="text-secondary"> bool </code></code
+            >
+          </dt>
+          <dd class="aparam">
+            Determines if only isomorphs should be returned or both isomorphs
+            and logs.
+          </dd>
+        </dl>
+
+        <!-- Returns -->
+        <dl class="returns">
+          <p class="text-info">Returns</p>
+          <dd class="aparam">
+            A csv file containing a dataframe with either only isomorphs or both
+            isomorphs and logs, depending on parameter passed to only_isomorphs.
+          </dd>
+        </dl>
+
+        <!-- !tocsv -->
+
+        <!-- topandas -->
+        <dl class="method">
+          <dt id="canCancel">
+            <button class="btn btn-md">
+              <code class="text-primary">topandas</code>
+              <span class="sig-parent">(</span>
+              <code
+                >only_isomorphs:
+                <code class="text-secondary"> bool = False </code></code
+              >
+              <span class="sig-parent">) </span>
+            </button>
+          </dt>
+          <dd>
+            <p class="category">
+              Method to export logs and/or isomorphs to a pandas dataframe.
+            </p>
+          </dd>
+        </dl>
+        <!-- Params -->
+        <dl class="params">
+          <p class="text-info">Parameters</p>
+          <dt class="aparam">
+            <code
+              >only_isomorphs<code class="text-secondary"> bool </code></code
+            >
+          </dt>
+          <dd class="aparam">
+            Determines if only isomorphs should be returned or both isomorphs
+            and logs.
+          </dd>
+        </dl>
+
+        <!-- Returns -->
+        <dl class="returns">
+          <p class="text-info">Returns</p>
+          <dd class="aparam">
+            If only_isomorphs=True returns a pandas dataframe of only isomorphs.
+            Otherwise will return a pandas dataframe with both isomorphs and
+            logs.
+          </dd>
+        </dl>
+
+        <!-- !topandas -->
+
+        <!-- totxt -->
+        <dl class="method">
+          <dt id="canCancel">
+            <button class="btn btn-md">
+              <code class="text-primary">totxt</code>
+              <span class="sig-parent">(</span>
+              <code
+                >path_or_filename:
+                <code class="text-secondary"> str = "" , </code></code
+              >
+              <code
+                >only_isomorphs:
+                <code class="text-secondary"> bool = False </code></code
+              >
+              <span class="sig-parent">) </span>
+            </button>
+          </dt>
+          <dd>
+            <p class="category">
+              Method to export logs, isomorphs to a txt file. If
+              path_or_filename not given, will export the csv to current
+              directory with the name Isomorphs.txt or Isomorphs_and_Logs.txt.
+              The name is implicitly determined by the parameter passed to
+              only_isomorphs.
+            </p>
+          </dd>
+        </dl>
+        <!-- NOTE -->
+        <div class="noteblock">
+          <div class="card">
+            <div class="card-header"><h3 class="text-primary">Note</h3></div>
+            <div class="card-body">
+              <h5 class="card-title">Output Format</h5>
+              <p class="card-text">
+                The format in the resulting .txt file is as follows:
+              </p>
+
+              <p>isomorph[1]</p>
+              <p>...</p>
+              <p>isomorph[n]</p>
+              <p>(newline)</p>
+              <p>log[1]</p>
+              <p>...</p>
+              <p>log[n]</p>
+            </div>
+          </div>
+        </div>
+        <!-- Params -->
+        <dl class="params">
+          <p class="text-info">Parameters</p>
+          <dt class="aparam">
+            <code
+              >path_or_filename<code class="text-secondary"> str </code></code
+            >
+          </dt>
+          <dd class="aparam">
+            Path or filename to store csv. If none is given, will store file in
+            current directory under the name 'Isomorphs.csv' or
+            'Isomorphs_and_Logs.csv', based on the value assigned to
+            only_isomorphs.
+          </dd>
+          <dt class="aparam">
+            <code
+              >only_isomorphs<code class="text-secondary"> bool </code></code
+            >
+          </dt>
+          <dd class="aparam">
+            Determines if only isomorphs should be returned or both isomorphs
+            and logs.
+          </dd>
+        </dl>
+
+        <!-- Returns -->
+        <dl class="returns">
+          <p class="text-info">Returns</p>
+          <dd class="aparam">
+            A txt file containing a either only isomorphs or both isomorphs and
+            logs, depending on parameter passed to only_isomorphs.
+          </dd>
+        </dl>
+
+        <!-- !totxt -->
+
+        <div class="line"></div>
+        <!-- </div> -->
+      </div>
+      <!-- !Content -->
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Popper.JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+      integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap JS -->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+      integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Local Vanilla JS -->
+    <script src="van.js"></script>
+  </body>
+</html>
