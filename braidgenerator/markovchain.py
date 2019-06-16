@@ -3,8 +3,8 @@ import copy
 import pandas as pd
 import functools
 from copy import copy, deepcopy
-from moore_braidgenerator.braidword import BraidWord
-from moore_braidgenerator.decorators.markovchain import checkparams_markovchain
+from braidgenerator.braidword import BraidWord
+from braidgenerator.decorators.markovchain import checkparams_markovchain
 
 
 class MarkovChain:
