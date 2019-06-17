@@ -1,0 +1,598 @@
+<!-- DOC - BRAIDWORD -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Braid Generator Documentation</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <!-- Bootstrap CSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+      integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+      crossorigin="anonymous"
+    />
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Scrollbar Custom CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css"
+    />
+
+    <!-- Font Awesome JS -->
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+      integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+      integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar -->
+      <nav id="sidebar">
+        <div class="sidebar-header"><h3>Braid Generator</h3></div>
+
+        <ul class="list-unstyled components">
+          <!-- <p>Content</p> -->
+          <li class="active">
+            <a
+              href="#homeSubmenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Modules</a
+            >
+            <ul class="collapse list-unstyled" id="homeSubmenu">
+              <li><a href="index.html">Docs</a></li>
+              <li><a href="markovchain.html">MarkovChain</a></li>
+              <li><a href="braidword.html">BraidWord</a></li>
+            </ul>
+          </li>
+          <li><a href="#">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <!-- !Sidebar -->
+
+      <!-- Content -->
+      <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <button type="button" id="sidebarCollapse" class="btn btn-info">
+              <i class="fas fa-align-left"></i> <span></span>
+            </button>
+            <button
+              class="btn btn-dark d-inline-block d-lg-none ml-auto"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <i class="fas fa-align-justify"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <!-- <a class="nav-link" href="#"> Github Repository</a> -->
+                  <a
+                    href="https://github.com/Algebra8/Knots"
+                    class="btn btn-default btn-lg"
+                    role="button"
+                    >Github Repository</a
+                  >
+                </li>
+                <!--
+                  <li class="nav-item"><a class="nav-link" href="#">Page</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Page</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Page</a></li>
+                -->
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <h1>BraidWord</h1>
+        <div class="category">
+          <h3 class="category-heading">
+            class braidgenerator.BraidWord(**kwargs)
+          </h3>
+        </div>
+        <p class="category">
+          An encapsulation of a mathematical braid. BraidWord contains a word
+          which consists of a list of generators and is a component to be used
+          in the MarkovChain.
+        </p>
+        <!-- __init__ params -->
+        <dl class="params">
+          <p class="text-info">Parameters</p>
+          <dt class="aparam">
+            <code>braidword<code class="text-secondary"> list </code></code>
+          </dt>
+          <dd class="aparam">
+            List containing generators to be used as initial word.
+          </dd>
+        </dl>
+        <!-- __init__ attributes -->
+        <dl class="attrs">
+          <p class="text-info">Attributes</p>
+          <dt class="aattr">
+            <code>word <code class="text-secondary"> list </code></code>
+          </dt>
+          <dd class="aattr">
+            word of BraidWord, made up of list containing integer generators.
+          </dd>
+          <dt class="aattr">
+            <code
+              >largestGenerator<code class="text-secondary"> int </code></code
+            >
+          </dt>
+          <dd class="aattr">Largest Generator in word.</dd>
+          <dt class="aattr">
+            <code>genCount<code class="text-secondary"> list </code></code>
+          </dt>
+          <dd class="aattr">Array of quantity of generators in word.</dd>
+        </dl>
+
+        <div class="line"></div>
+
+        <!-- Methods -->
+        <div class="category">
+          <h3 class="category-heading">&lt<i>BraidWord</i>&gt.methods</h3>
+        </div>
+        <!-- canCancel -->
+        <dl class="method">
+          <dt id="canCancel">
+            <button class="btn btn-md">
+              <code class="text-primary">canCancel</code>
+              <span class="sig-parent">(</span>
+              <code>index: <code class="text-secondary"> int </code></code>
+              <span class="sig-parent">)</span>
+            </button>
+          </dt>
+          <dd>
+            <p class="category">
+              Boolean stating if cancel at index is a valid move.
+            </p>
+          </dd>
+        </dl>
+        <!-- Params -->
+        <dl class="params">
+          <p class="text-info">Parameters</p>
+          <dt class="aparam">
+            <code>index<code class="text-secondary"> int </code></code>
+          </dt>
+          <dd class="aparam">Index where canCancel is to be checked.</dd>
+        </dl>
+
+        <!-- Returns -->
+        <dl class="returns">
+          <p class="text-info">Returns</p>
+          <dd class="aparam">True if successful, False otherwise.</dd>
+        </dl>
+        <!-- !canCancel -->
+
+        <!-- canDestabilize -->
+        <dl class="method">
+          <dt id="canCancel">
+            <button class="btn btn-md">
+              <code class="text-primary">canDestabilize</code>
+              <span class="sig-parent">(</span>
+              <!--
+                <code>index: <code class="text-secondary"> int </code></code>
+              -->
+              <span class="sig-parent">)</span>
+            </button>
+          </dt>
+          <dd>
+            <p class="category">
+              Checks if destabilize() is a valid move. For consistent Markov
+              probabilities, largestGenerator is only checked for at the last
+              index of word.
+            </p>
+          </dd>
+        </dl>
+
+        <!-- Returns -->
+        <dl class="returns">
+          <p class="text-info">Returns</p>
+          <dd class="aparam">True if successful, False otherwise.</dd>
+        </dl>
+
+        <!-- !canDestabilize -->
+
+        <!-- canFlip -->
+        <dl class="method">
+          <dt id="canCancel">
+            <button class="btn btn-md">
+              <code class="text-primary">canFlip</code>
+              <span class="sig-parent">(</span>
+              <code>index: <code class="text-secondary"> int </code></code>
+              <span class="sig-parent"
+                >) -> <code class="text-primary">bool</code></span
+              >
+            </button>
+          </dt>
+          <dd>
+            <p class="category">Checks if flip can be performed at index.</p>
+          </dd>
+        </dl>
+        <!-- Params -->
+        <dl class="params">
+          <p class="text-info">Parameters</p>
+          <dt class="aparam">
+            <code>index<code class="text-secondary"> int </code></code>
+          </dt>
+          <dd class="aparam">Index where canFlip is to be checked.</dd>
+        </dl>
+
+        <!-- Returns -->
+        <dl class="returns">
+          <p class="text-info">Returns</p>
+          <dd class="aparam">True if successful, False otherwise.</dd>
+        </dl>
+        <!-- !canFlip -->
+
+        <!-- canTranspose -->
+        <dl class="method">
+          <dt id="canCancel">
+            <button class="btn btn-md">
+              <code class="text-primary">canTranspose</code>
+              <span class="sig-parent">(</span>
+              <code>index: <code class="text-secondary"> int </code></code>
+              <span class="sig-parent"
+                >) -> <code class="text-primary">bool</code></span
+              >
+            </button>
+          </dt>
+          <dd>
+            <p class="category">
+              Checks if transpose at index is a valid move.
+            </p>
+          </dd>
+        </dl>
+        <!-- Params -->
+        <dl class="params">
+          <p class="text-info">Parameters</p>
+          <dt class="aparam">
+            <code>index<code class="text-secondary"> int </code></code>
+          </dt>
+          <dd class="aparam">Index where canTranspose is to be checked.</dd>
+        </dl>
+
+        <!-- Returns -->
+        <dl class="returns">
+          <p class="text-info">Returns</p>
+          <dd class="aparam">True if successful, False otherwise.</dd>
+        </dl>
+
+        <!-- !canTranspose -->
+
+        <!-- cancel -->
+        <dl class="method">
+          <dt id="canCancel">
+            <button class="btn btn-md">
+              <code class="text-primary">cancel</code>
+              <span class="sig-parent">(</span>
+              <code>index: <code class="text-secondary"> int </code></code>
+              <span class="sig-parent"
+                >) -> <code class="text-primary">bool</code></span
+              >
+            </button>
+          </dt>
+          <dd>
+            <p class="category">
+              Performs cancellation of the genrators at index and (index+1)
+              modulo length and decreases length of word by two.
+            </p>
+          </dd>
+        </dl>
+        <!-- Params -->
+        <dl class="params">
+          <p class="text-info">Parameters</p>
+          <dt class="aparam">
+            <code>index<code class="text-secondary"> int </code></code>
+          </dt>
+          <dd class="aparam">Index where cancel is to be performed.</dd>
+        </dl>
+
+        <!-- Returns -->
+        <dl class="returns">
+          <p class="text-info">Returns</p>
+          <dd class="aparam">
+            Boolean that triggers state of Markov Move in logs.
+          </dd>
+        </dl>
+
+        <!-- !cancel -->
+
+        <!-- conjugate -->
+        <dl class="method">
+          <dt id="canCancel">
+            <button class="btn btn-md">
+              <code class="text-primary">conjugate</code>
+              <span class="sig-parent">(</span>
+              <code>index: <code class="text-secondary"> int </code></code>
+              <span class="sig-parent"
+                >) -> <code class="text-primary">bool</code></span
+              >
+            </button>
+          </dt>
+          <dd>
+            <p class="category">Method to conjugate the word at index.</p>
+          </dd>
+        </dl>
+        <!-- Params -->
+        <dl class="params">
+          <p class="text-info">Parameters</p>
+          <dt class="aparam">
+            <code>index<code class="text-secondary"> int </code></code>
+          </dt>
+          <dd class="aparam">Index where conjugate is to be performed.</dd>
+        </dl>
+
+        <!-- Returns -->
+        <dl class="returns">
+          <p class="text-info">Returns</p>
+          <dd class="aparam">
+            Boolean that triggers state of Markov Move in logs.
+          </dd>
+        </dl>
+
+        <!-- !conjugate -->
+
+        <!-- destabilize -->
+        <dl class="method">
+          <dt id="canCancel">
+            <button class="btn btn-md">
+              <code class="text-primary">destabilize</code>
+              <span class="sig-parent">(</span>
+              <!--
+                <code>index: <code class="text-secondary"> int </code></code>
+              -->
+              <span class="sig-parent"
+                >) -> <code class="text-primary">bool</code></span
+              >
+            </button>
+          </dt>
+          <dd>
+            <p class="category">
+              Destabilizes the BraidWord, decreases word length by one, and
+              decreases largestGenerator if successful.
+            </p>
+          </dd>
+        </dl>
+
+        <!-- Returns -->
+        <dl class="returns">
+          <p class="text-info">Returns</p>
+          <dd class="aparam">
+            Boolean that triggers state of Markov Move in logs.
+          </dd>
+        </dl>
+
+        <!-- !destabilize -->
+
+        <!-- flip -->
+        <dl class="method">
+          <dt id="canCancel">
+            <button class="btn btn-md">
+              <code class="text-primary">flip</code>
+              <span class="sig-parent">(</span>
+              <code>index: <code class="text-secondary"> int </code></code>
+              <span class="sig-parent"
+                >) -> <code class="text-primary">bool</code></span
+              >
+            </button>
+          </dt>
+          <dd>
+            <p class="category">
+              Flips generators at index, (index+1) modulo length, and (index+2)
+              modulo length.
+            </p>
+          </dd>
+        </dl>
+        <!-- Params -->
+        <dl class="params">
+          <p class="text-info">Parameters</p>
+          <dt class="aparam">
+            <code>index<code class="text-secondary"> int </code></code>
+          </dt>
+          <dd class="aparam">Index where flip is to be performed.</dd>
+        </dl>
+
+        <!-- Returns -->
+        <dl class="returns">
+          <p class="text-info">Returns</p>
+          <dd class="aparam">
+            Boolean that triggers state of Markov Move in logs.
+          </dd>
+        </dl>
+
+        <!-- !flip -->
+
+        <!-- insert -->
+        <dl class="method">
+          <dt id="canCancel">
+            <button class="btn btn-md">
+              <code class="text-primary">insert</code>
+              <span class="sig-parent">(</span>
+              <code>index: <code class="text-secondary"> int </code></code>,
+              <code>generator: <code class="text-secondary"> int </code></code>
+              <span class="sig-parent"
+                >) -> <code class="text-primary">bool</code></span
+              >
+            </button>
+          </dt>
+          <dd>
+            <p class="category">
+              Insert a generator and its inverse into word. Will insert the
+              given generator and its inverse at index and increases word length
+              by two.
+            </p>
+          </dd>
+        </dl>
+        <!-- Params -->
+        <dl class="params">
+          <p class="text-info">Parameters</p>
+          <dt class="aparam">
+            <code>index<code class="text-secondary"> int </code></code>
+          </dt>
+          <dd class="aparam">Index where insert is to be performed.</dd>
+          <dt class="aparam">
+            <code>generator<code class="text-secondary"> int </code></code>
+          </dt>
+          <dd class="aparam">Generator to be inserted into word.</dd>
+        </dl>
+
+        <!-- Returns -->
+        <dl class="returns">
+          <p class="text-info">Returns</p>
+          <dd class="aparam">
+            Boolean that triggers state of Markov Move in logs.
+          </dd>
+        </dl>
+
+        <!-- !insert -->
+
+        <!-- length -->
+        <dl class="method">
+          <dt id="canCancel">
+            <button class="btn btn-md">
+              <code class="text-primary">length</code>
+              <span class="sig-parent">(</span>
+              <!--
+                <code>index: <code class="text-secondary"> int </code></code>
+              -->
+              <span class="sig-parent"
+                >) -> <code class="text-primary">int</code></span
+              >
+            </button>
+          </dt>
+          <dd>
+            <p class="category">Dynamically returns the length of the word.</p>
+          </dd>
+        </dl>
+
+        <!-- Returns -->
+        <dl class="returns">
+          <p class="text-info">Returns</p>
+          <dd class="aparam">Length of word.</dd>
+        </dl>
+
+        <!-- !length -->
+
+        <!-- stabilize -->
+        <dl class="method">
+          <dt id="canCancel">
+            <button class="btn btn-md">
+              <code class="text-primary">stabilize</code>
+              <span class="sig-parent">(</span>
+              <!--
+                <code>index: <code class="text-secondary"> int </code></code>
+              -->
+              <span class="sig-parent"
+                >) -> <code class="text-primary">bool</code></span
+              >
+            </button>
+          </dt>
+          <dd>
+            <p class="category">
+              Stabilizes the BraidWord, increases word length by one, and
+              increases largestGenerator by one if successful.
+            </p>
+          </dd>
+        </dl>
+
+        <!-- Returns -->
+        <dl class="returns">
+          <p class="text-info">Returns</p>
+          <dd class="aparam">
+            Boolean that triggers state of Markov Move in logs.
+          </dd>
+        </dl>
+
+        <!-- !stabilize -->
+
+        <!-- transpose -->
+        <dl class="method">
+          <dt id="canCancel">
+            <button class="btn btn-md">
+              <code class="text-primary">transpose</code>
+              <span class="sig-parent">(</span>
+              <code>index: <code class="text-secondary"> int </code></code>
+              <span class="sig-parent"
+                >) -> <code class="text-primary">bool</code></span
+              >
+            </button>
+          </dt>
+          <dd>
+            <p class="category">
+              Transposes generators at index and (index+1) modulo length.
+            </p>
+          </dd>
+        </dl>
+        <!-- Params -->
+        <dl class="params">
+          <p class="text-info">Parameters</p>
+          <dt class="aparam">
+            <code>index<code class="text-secondary"> int </code></code>
+          </dt>
+          <dd class="aparam">Index where transpose is to be performed.</dd>
+        </dl>
+
+        <!-- Returns -->
+        <dl class="returns">
+          <p class="text-info">Returns</p>
+          <dd class="aparam">
+            Boolean that triggers state of Markov Move in logs.
+          </dd>
+        </dl>
+
+        <!-- !transpose -->
+
+        <div class="line"></div>
+        <!-- </div> -->
+      </div>
+      <!-- !Content -->
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Popper.JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+      integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap JS -->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+      integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+      crossorigin="anonymous"
+    ></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- Local Vanilla JS -->
+    <script src="van.js"></script>
+  </body>
+</html>
