@@ -12,8 +12,12 @@ The only required dependency for this package is _pandas_. If installing with a 
 
 ```
 .
-├── LICENSE
+├── CONTRIBUTING.md
+├── LICENSE.md
 ├── README.md
+├── ThirdPartyLicenses
+│   └── Pandas
+│       └── LICENSE.md
 ├── braidgenerator
 │   ├── __init__.py
 │   ├── braidword.py
