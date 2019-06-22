@@ -5,13 +5,13 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name="moore_braidgenerator",
-    version="1.0.4",
-    description="Professor Moore's Braid Generator",
+    name="braidgenerator",
+    version="1.0.0",
+    description="Braid Generator",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/pypa/sampleproject",
-    author="Milad Nasrollahi",
+    url="https://github.com/Algebra8/Knots",
+    author="Braid Generator Team",
     author_email="algebra8@yahoo.com",
     license="MIT",
     classifiers=[
