@@ -162,7 +162,9 @@
               <code class="text-primary">canCancel</code>
               <span class="sig-parent">(</span>
               <code>index: <code class="text-secondary"> int </code></code>
-              <span class="sig-parent">)</span>
+              <span class="sig-parent"
+                >) -> <code class="text-primary">bool</code></span
+              >
             </button>
           </dt>
           <dd>
@@ -196,14 +198,18 @@
               <!--
                 <code>index: <code class="text-secondary"> int </code></code>
               -->
-              <span class="sig-parent">)</span>
+              <span class="sig-parent"
+                >) -> <code class="text-primary">bool</code></span
+              >
             </button>
           </dt>
           <dd>
             <p class="category">
-              Checks if destabilize() is a valid move. For consistent Markov
-              probabilities, largestGenerator is only checked for at the last
-              index of word.
+              Checks if destabilize() is a valid move.
+              <code>destabilize</code> is the inverse operation of
+              <code> stabilize </code> and is only permissible when the
+              `largestGenerator` appears exactly once at the last index of
+              `word`.
             </p>
           </dd>
         </dl>

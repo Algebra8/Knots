@@ -116,7 +116,7 @@
         <p class="category">
           MarkovChain is an encapsulation of the Markov Chain. It takes a
           BraidWord and allows modelling, which creates a specified number of
-          isomorphs along with the logs pertaining to that isomorph (i.e. which
+          braidreps along with the logs pertaining to that braidrep (i.e. which
           Markov Move was made at some iteration).
         </p>
         <!-- __init__ params -->
@@ -129,7 +129,7 @@
             >
           </dt>
           <dd class="aparam">
-            A BraidWord to have isomorphs generated from it. Note that a simple
+            A BraidWord to have braidreps generated from it. Note that a simple
             Python list can be given as a parameter as well, which will be
             converted to a BraidWord behind the scenes.
           </dd>
@@ -139,14 +139,14 @@
           </dt>
           <dd class="aparam">
             The maximum absolute value a generator can be in the BraidWord and
-            its subsequent isomorphisms.
+            its subsequent braidreps.
           </dd>
           <!-- maxlen -->
           <dt class="aparam">
             <code>maxlen<code class="text-secondary"> int </code></code>
           </dt>
           <dd class="aparam">
-            The maxmimum length of that any subsequent isomorphs can reach.
+            The maxmimum length of that any subsequent braidreps can reach.
           </dd>
         </dl>
         <!-- __init__ attributes -->
@@ -158,7 +158,7 @@
               >braidagg <code class="text-secondary"> dictionary </code></code
             >
           </dt>
-          <dd class="aattr">Dictionary that holds isomorphs and logs.</dd>
+          <dd class="aattr">Dictionary that holds braidreps and logs.</dd>
           <!-- braid -->
           <dt class="aattr">
             <code>braid<code class="text-secondary"> BraidWord </code></code>
@@ -200,7 +200,7 @@
           <dd>
             <p class="category">
               Getter method that returns a dictionary of MarkovChain instance’s
-              isomorphs and logs, both contained in their respective lists.
+              braidreps and logs, both contained in their respective lists.
             </p>
           </dd>
         </dl>
@@ -239,11 +239,11 @@
 
         <!-- !clear_model -->
 
-        <!-- isomorphs -->
+        <!-- braidreps -->
         <dl class="method">
           <dt id="canCancel">
             <button class="btn btn-md">
-              <code class="text-primary">isomorphs</code>
+              <code class="text-primary">braidreps</code>
               <span class="sig-parent">(</span>
 
               <code
@@ -257,7 +257,7 @@
           </dt>
           <dd>
             <p class="category">
-              Method to return MarkovChain instance isomorphs as a list.
+              Method to return MarkovChain instance braidreps as a list.
             </p>
           </dd>
         </dl>
@@ -282,11 +282,11 @@
           <p class="text-info">Returns</p>
           <dd class="aparam">
             <code class="text-danger"
-              ><code class="text-danger">self.braidagg['isomorphs']</code></code
+              ><code class="text-danger">self.braidagg['braidreps']</code></code
             >
           </dd>
         </dl>
-        <!-- !isomorphs -->
+        <!-- !braidreps -->
 
         <!-- log_message -->
         <dl class="method">
@@ -317,7 +317,7 @@
           </dt>
           <dd class="aparam">
             Markov Move[i] for i in [0, 6], inclusive. There are 7 Markov Moves
-            that determine the braid-to-isomorph modification.
+            that determine the braid-to-braidrep modification.
           </dd>
           <!-- name -->
           <dt class="aparam">
@@ -360,11 +360,11 @@
           <dd>
             <p class="category">
               Method to return MarkovChain instance logs in a list. Note that
-              the length of the list is equal to the number of isomorphisms
-              requested in the num_isomorphs argument of model. Each log
-              represents the logs undergone to create a specific isomorphism and
-              is held in a dictionary. The size of the dictionary is equal to
-              the argument passed for msteps in model.
+              the length of the list is equal to the number of braidreps
+              requested in the num_braidreps argument of model. Each log
+              represents the logs undergone to create a specific braidrep and is
+              held in a dictionary. The size of the dictionary is equal to the
+              argument passed for msteps in model.
             </p>
           </dd>
         </dl>
@@ -384,9 +384,9 @@
             <button class="btn btn-md">
               <code class="text-primary">model</code>
               <span class="sig-parent">(</span>
-              <!-- num_isomorphs -->
+              <!-- num_braidreps -->
               <code
-                >num_isomorphs:
+                >num_braidreps:
                 <code class="text-secondary"> int = 1, </code></code
               >
               <!-- msteps -->
@@ -398,11 +398,11 @@
           </dt>
           <dd>
             <p class="category">
-              Method to model the BraidWord and generate isomorphs and logs. A
+              Method to model the BraidWord and generate braidreps and logs. A
               random number is picked between (0, 6), inclusive, determining the
               Markov Move to perform. Another random number is picked from
               range(len(BraidWord.word)) that represents the index of
-              BraidWord.word to perform the Markov Move on. The isomorph is
+              BraidWord.word to perform the Markov Move on. The braidrep is
               generated by picking a random index from the set of possible
               indices for BraidWord.word and a random Markov Move that acts on
               BraidWord.word at the given index.
@@ -413,17 +413,17 @@
         <dl class="params">
           <p class="text-info">Parameters</p>
           <dt class="aparam">
-            <code>num_isomorphs<code class="text-secondary"> int </code></code>
+            <code>num_braidreps<code class="text-secondary"> int </code></code>
           </dt>
           <dd class="aparam">
-            Number of isomorphs to be modeled from the BraidWord given to the
+            Number of braidreps to be modeled from the BraidWord given to the
             Markov Chain.
           </dd>
           <dt class="aparam">
             <code>msteps<code class="text-secondary"> int </code></code>
           </dt>
           <dd class="aparam">
-            The number of steps to be taken until an isomorph is considered to
+            The number of steps to be taken until an braidrep is considered to
             be complete. That is, msteps many iterations of the model process
             take place on a given BraidWord.
           </dd>
@@ -433,7 +433,7 @@
         <dl class="returns">
           <p class="text-info">Returns</p>
           <dd class="aparam">
-            Appends isomorph and log to
+            Appends braidrep and log to
             <code class="text-danger">self.braidagg['logs']</code>.
           </dd>
         </dl>
@@ -490,7 +490,7 @@
                 <code class="text-secondary"> str = "" , </code></code
               >
               <code
-                >only_isomorphs:
+                >only_braidreps:
                 <code class="text-secondary"> bool = False </code></code
               >
               <span class="sig-parent">)</span>
@@ -498,10 +498,10 @@
           </dt>
           <dd>
             <p class="category">
-              Method to export logs, isomorphs to csv. If path_or_filename not
+              Method to export logs, braidreps to csv. If path_or_filename not
               given, will export the csv to current directory with the name
-              Isomorphs.csv or Isomorphs_and_Logs.csv. The name is implicitly
-              determined by the parameter passed to only_isomorphs.
+              braidreps.csv or braidreps_and_Logs.csv. The name is implicitly
+              determined by the parameter passed to only_braidreps.
             </p>
           </dd>
         </dl>
@@ -515,17 +515,17 @@
           </dt>
           <dd class="aparam">
             Path or filename to store csv. If none is given, will store file in
-            current directory under the name 'Isomorphs.csv' or
-            'Isomorphs_and_Logs.csv', based on the value assigned to
-            only_isomorphs.
+            current directory under the name 'braidreps.csv' or
+            'braidreps_and_Logs.csv', based on the value assigned to
+            only_braidreps.
           </dd>
           <dt class="aparam">
             <code
-              >only_isomorphs<code class="text-secondary"> bool </code></code
+              >only_braidreps<code class="text-secondary"> bool </code></code
             >
           </dt>
           <dd class="aparam">
-            Determines if only isomorphs should be returned or both isomorphs
+            Determines if only braidreps should be returned or both braidreps
             and logs.
           </dd>
         </dl>
@@ -534,8 +534,8 @@
         <dl class="returns">
           <p class="text-info">Returns</p>
           <dd class="aparam">
-            A csv file containing a dataframe with either only isomorphs or both
-            isomorphs and logs, depending on parameter passed to only_isomorphs.
+            A csv file containing a dataframe with either only braidreps or both
+            braidreps and logs, depending on parameter passed to only_braidreps.
           </dd>
         </dl>
 
@@ -548,7 +548,7 @@
               <code class="text-primary">topandas</code>
               <span class="sig-parent">(</span>
               <code
-                >only_isomorphs:
+                >only_braidreps:
                 <code class="text-secondary"> bool = False </code></code
               >
               <span class="sig-parent">) </span>
@@ -556,7 +556,7 @@
           </dt>
           <dd>
             <p class="category">
-              Method to export logs and/or isomorphs to a pandas dataframe.
+              Method to export logs and/or braidreps to a pandas dataframe.
             </p>
           </dd>
         </dl>
@@ -565,11 +565,11 @@
           <p class="text-info">Parameters</p>
           <dt class="aparam">
             <code
-              >only_isomorphs<code class="text-secondary"> bool </code></code
+              >only_braidreps<code class="text-secondary"> bool </code></code
             >
           </dt>
           <dd class="aparam">
-            Determines if only isomorphs should be returned or both isomorphs
+            Determines if only braidreps should be returned or both braidreps
             and logs.
           </dd>
         </dl>
@@ -578,8 +578,8 @@
         <dl class="returns">
           <p class="text-info">Returns</p>
           <dd class="aparam">
-            If only_isomorphs=True returns a pandas dataframe of only isomorphs.
-            Otherwise will return a pandas dataframe with both isomorphs and
+            If only_braidreps=True returns a pandas dataframe of only braidreps.
+            Otherwise will return a pandas dataframe with both braidreps and
             logs.
           </dd>
         </dl>
@@ -597,7 +597,7 @@
                 <code class="text-secondary"> str = "" , </code></code
               >
               <code
-                >only_isomorphs:
+                >only_braidreps:
                 <code class="text-secondary"> bool = False </code></code
               >
               <span class="sig-parent">) </span>
@@ -605,11 +605,11 @@
           </dt>
           <dd>
             <p class="category">
-              Method to export logs, isomorphs to a txt file. If
+              Method to export logs, braidreps to a txt file. If
               path_or_filename not given, will export the csv to current
-              directory with the name Isomorphs.txt or Isomorphs_and_Logs.txt.
+              directory with the name braidreps.txt or braidreps_and_Logs.txt.
               The name is implicitly determined by the parameter passed to
-              only_isomorphs.
+              only_braidreps.
             </p>
           </dd>
         </dl>
@@ -623,9 +623,9 @@
                 The format in the resulting .txt file is as follows:
               </p>
 
-              <p>isomorph[1]</p>
+              <p>braidrep[1]</p>
               <p>...</p>
-              <p>isomorph[n]</p>
+              <p>braidrep[n]</p>
               <p>(newline)</p>
               <p>log[1]</p>
               <p>...</p>
@@ -643,17 +643,17 @@
           </dt>
           <dd class="aparam">
             Path or filename to store csv. If none is given, will store file in
-            current directory under the name 'Isomorphs.csv' or
-            'Isomorphs_and_Logs.csv', based on the value assigned to
-            only_isomorphs.
+            current directory under the name 'braidreps.csv' or
+            'braidreps_and_Logs.csv', based on the value assigned to
+            only_braidreps.
           </dd>
           <dt class="aparam">
             <code
-              >only_isomorphs<code class="text-secondary"> bool </code></code
+              >only_braidreps<code class="text-secondary"> bool </code></code
             >
           </dt>
           <dd class="aparam">
-            Determines if only isomorphs should be returned or both isomorphs
+            Determines if only braidreps should be returned or both braidreps
             and logs.
           </dd>
         </dl>
@@ -662,8 +662,8 @@
         <dl class="returns">
           <p class="text-info">Returns</p>
           <dd class="aparam">
-            A txt file containing a either only isomorphs or both isomorphs and
-            logs, depending on parameter passed to only_isomorphs.
+            A txt file containing a either only braidreps or both braidreps and
+            logs, depending on parameter passed to only_braidreps.
           </dd>
         </dl>
 
