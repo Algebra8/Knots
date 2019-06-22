@@ -68,7 +68,7 @@ python setup.py install
 
 #### A quick example for the impatient user
 
-Try the following example snippet, which takes as its input a braid representative for the trefoil knot ([1, 1, 1]), and returns three randomized braid representatives.
+Try the following example snippet, which takes as its input a braid representative for the trefoil knot (`[1, 1, 1]`), and returns three randomized braid representatives.
 
 ```
 from markovchain import MarkovChain
@@ -391,4 +391,8 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Acknowledgements
+
+This package makes use of _pandas_ as a requirement. Please refer to the [_pandas_ license](https://github.com/pandas-dev/pandas/blob/master/LICENSE) for more information on their license.
