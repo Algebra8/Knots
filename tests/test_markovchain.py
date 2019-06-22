@@ -10,7 +10,7 @@ class TestMarkovChainMethods(unittest.TestCase):
         Should return non-empty self.braidagg
         '''
         mc = MarkovChain(BraidWord([1, 2, 3]))
-        mc.model(num_isomorphs=1, msteps=10)
+        mc.model(num_braidreps=1, msteps=10)
         # Check if non-empty
         self.assertTrue(mc.aggregate())
 
@@ -19,31 +19,31 @@ class TestMarkovChainMethods(unittest.TestCase):
         Should return non-empty self.braidagg.logs
         '''
         mc = MarkovChain(BraidWord([1, 2, 3]))
-        mc.model(num_isomorphs=1, msteps=10)
+        mc.model(num_braidreps=1, msteps=10)
         # Check if non-empty
         self.assertTrue(mc.logs())
 
-    def test_isomorphs_0(self):
+    def test_braidreps_0(self):
         '''
-        Should return non-empty self.braidagg.isomorphs
+        Should return non-empty self.braidagg.braidreps
         in BraidWord form
         '''
         mc = MarkovChain(BraidWord([1, 2, 3]))
-        mc.model(num_isomorphs=1, msteps=10)
-        isos = mc.isomorphs(as_word=False)
+        mc.model(num_braidreps=1, msteps=10)
+        isos = mc.braidreps(as_word=False)
         # Check if non-empty
         self.assertTrue(isos)
         # Check types
         self.assertIsInstance(isos[0], BraidWord)
 
-    def test_isomorphs_1(self):
+    def test_braidreps_1(self):
         '''
-        Should return non-empty self.braidagg.isomorphs
+        Should return non-empty self.braidagg.braidreps
         in word form
         '''
         mc = MarkovChain(BraidWord([1, 2, 3]))
-        mc.model(num_isomorphs=1, msteps=10)
-        isos = mc.isomorphs(as_word=True)
+        mc.model(num_braidreps=1, msteps=10)
+        isos = mc.braidreps(as_word=True)
         # Check if non-empty
         self.assertTrue(isos)
         # Check types
@@ -52,37 +52,37 @@ class TestMarkovChainMethods(unittest.TestCase):
     def test_topandas_0(self):
         '''
         Should return non-empty pandas df
-        of logs and Isomorphs in word form
-        only_isomorphs=False
+        of logs and braidreps in word form
+        only_braidreps=False
         '''
         mc = MarkovChain(BraidWord([1, 2, 3]))
-        mc.model(num_isomorphs=1, msteps=10)
-        df = mc.topandas(only_isomorphs=False)
+        mc.model(num_braidreps=1, msteps=10)
+        df = mc.topandas(only_braidreps=False)
         # Check df columns
         self.assertTrue(df.shape[1] == 2)
-        self.assertTrue(list(df.columns) == ['Isomorphs', 'Logs'])
+        self.assertTrue(list(df.columns) == ['braidreps', 'Logs'])
         # Check if non-empty
-        self.assertFalse(df['Isomorphs'].empty)
+        self.assertFalse(df['braidreps'].empty)
         self.assertFalse(df['Logs'].empty)
-        # Check types of Isomorphs
-        self.assertIsInstance(df['Isomorphs'][0], list)
+        # Check types of braidreps
+        self.assertIsInstance(df['braidreps'][0], list)
 
     def test_topandas_1(self):
         '''
         Should return non-empty pandas df
         of only BraidWords in word form
-        only_isomorphs=True
+        only_braidreps=True
         '''
         mc = MarkovChain(BraidWord([1, 2, 3]))
-        mc.model(num_isomorphs=1, msteps=10)
-        df = mc.topandas(only_isomorphs=True)
+        mc.model(num_braidreps=1, msteps=10)
+        df = mc.topandas(only_braidreps=True)
         # Check df columns
         self.assertTrue(df.shape[1] == 1)
-        self.assertTrue(list(df.columns) == ['Isomorphs'])
+        self.assertTrue(list(df.columns) == ['braidreps'])
         # Check if non-empty
-        self.assertFalse(df['Isomorphs'].empty)
-        # Check types of Isomorphs
-        self.assertIsInstance(df['Isomorphs'][0], list)
+        self.assertFalse(df['braidreps'].empty)
+        # Check types of braidreps
+        self.assertIsInstance(df['braidreps'][0], list)
 
     def test_clear_model(self):
         '''
@@ -90,10 +90,10 @@ class TestMarkovChainMethods(unittest.TestCase):
         self.braid_agg's components empty
         '''
         mc = MarkovChain(BraidWord([1, 2, 3]))
-        mc.model(num_isomorphs=1, msteps=10)
+        mc.model(num_braidreps=1, msteps=10)
         mc.clear_model()
         # Check if empty
-        self.assertFalse(mc.braidagg['isomorphs'])
+        self.assertFalse(mc.braidagg['braidreps'])
         self.assertFalse(mc.braidagg['logs'])
 
 class TestMarkovChainInit(unittest.TestCase):
@@ -214,28 +214,28 @@ if __name__ == '__main__':
     # mc.model(10)
 
     # z = mc.topandas()
-    # t = mc.topandas(only_isomorphs=True)
+    # t = mc.topandas(only_braidreps=True)
 
-    # Should export isomorphs and logs
+    # Should export braidreps and logs
     # mc.tocsv()
 
     # # Should export both
     # mc.tocsv("both.csv")
 
-    # # Should only export isomorphs
-    # mc.tocsv(only_isomorphs=True)
+    # # Should only export braidreps
+    # mc.tocsv(only_braidreps=True)
 
-    # # Should export isomorphs and logs
+    # # Should export braidreps and logs
     # mc.totxt()
 
-    # # Should export isomorphs and logs to a.txt
+    # # Should export braidreps and logs to a.txt
     # mc.totxt('a.txt')
 
-    # # Should only export isomorphs
-    # mc.totxt(only_isomorphs=True)
+    # # Should only export braidreps
+    # mc.totxt(only_braidreps=True)
 
-    # # Should only export isomorphs to b.txt
-    # mc.totxt('b.txt', only_isomorphs=True)
+    # # Should only export braidreps to b.txt
+    # mc.totxt('b.txt', only_braidreps=True)
 
     # Should export both to path given
     # mc.totxt('/Users/miladnasrollahi/Desktop/f.txt')
