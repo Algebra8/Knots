@@ -8,16 +8,13 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-If downloading through pip then only _pandas_ is required. Otherwise, consider the list below.
-
-- moore_braidgenerator (repository)
-- pandas
+The only required dependency for this package is _pandas_. If installing with a local clone, make sure to have _pandas_ 0.23.4 or greater installed in the desired environment.
 
 ```
 .
 ├── LICENSE
 ├── README.md
-├── moore_braidgenerator
+├── braidgenerator
 │   ├── __init__.py
 │   ├── braidword.py
 │   ├── decorators
@@ -25,67 +22,70 @@ If downloading through pip then only _pandas_ is required. Otherwise, consider t
 │   │   ├── braidword.py
 │   │   └── markovchain.py
 │   └── markovchain.py
+├── docs
+│   ├── braidword.html
+│   ├── contact.html
+│   ├── index.html
+│   ├── markovchain.html
+│   ├── style.css
+│   └── van.js
 ├── setup.py
 └── tests
     ├── test_braidword.py
     └── test_markovchain.py
 ```
 
-> The tree represents the relevant hierarchy of the github repository.
+> The tree represents the hierarchy of the github repository.
 
-### Installation and setup
+### Installation
 
-#### Installation with pip
+#### Install BraidGenerator from PyPI
 
-The package **moore_braidgenerator** is currently only available on _TestPypi_. To download it via pip, simply run the command given below in a virtual environment. To learn how to set up a virtual Python environment, refer to the [documentation](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/) for creating virtual environments in Python3 or follow the code below.
-
-```
-# Install virtualenv globally
-$ python3 -m pip install --user virtualenv
-
-# Create virtual environment in ~/Desktop
-# Should create folder ~/Desktop/env
-$ python3 -m venv env
-
-# Activate virtualenv
-$ source env/bin/activate
-
-# Check that the virtualenv is being used
-# Should output "../env/bin/python"
-$ which python
-
-
-```
-
-> Note that since this package exists in _TestPypi_, whereby dependencies are not allowed, and requires the _pandas_ dependency, it is imperative to first download _pandas_ in the virtual environment.
-
-After the virtual environment is set up, install the dependencies.
-
-```
-$ pip install pandas
-```
-
-Finally, install the actual package from pip's _TestPypi_ imports index url.
+To install via pip, use the following
 
 ```
 $ python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps moore_braidgenerator
 ```
 
-To start the process, simply create a script or module in any directory in the virtual environment that the **moore_braidgenerator** package was installed in and import the required modules as follows:
+#### Install BraidGenerator from the GitHub source
+
+First, clone BraidGenerator using `git`.
 
 ```
-from moore_braidgenerator import MarkovChain
-from moore_braidgenerator import BraidWord
+git clone https://github.com/Algebra8/Knots
+```
+
+Then, `cd` into the BraidGenerator folder and run the install command:
+
+```
+cd BraidGenerator
+python setup.py install
+```
+
+> As mentioned above, if installing with a local clone, make sure to have _pandas_ 0.23.4 or greater installed.
+
+### Setup and Examples
+
+#### A quick example for the impatient user
+
+Try the following example snippet, which takes as its input a braid representative for the trefoil knot ([1, 1, 1]), and returns three randomized braid representatives.
+
+```
+from markovchain import MarkovChain
 import pandas as pd
+
+# Create markov chain
+mc = MarkovChain(braidword=[1, 1, 1], maxgen=9, maxlen=10)
+
+# Model markov chain
+mc.model(num_braidreps=3, msteps=500)
+
+# Get braid representatives as words (i.e. as lists)
+braidreps = mc.braidreps(as_word = True)
+
 ```
 
-From here please refer to the setup section below for reference on how to use the braid generator package to generate braid braidreps.
-
-> Due to current structure conflicts between the installable package and the code from the repository, it is important to ignore the import methods used in the setup below when installing the package from _TestPypi_.
-
-#### Importing modules from repository
-
-To use the following scripts straight from the github repository, it is necessary to clone the repository onto the user's system and pull the package **moore_braidgenerator** into the desired working directory. Please refer to **Prerequisites** for additional dependencies that need installing. Once this is done, the `MarkovChain` can be imported into any script that exists in the working directory. Note that the method `topandas` in _MarkovChain_ requires _pandas_.
+Explanations and definitions are given in detail in the sections below.
 
 #### Setting up the Braid Generator
 
@@ -296,8 +296,8 @@ mc.new_braidword(BraidWord([1, 2, 3]))
 Tests for these scripts are included in the github repository under the paths shown below.
 
 ```
-Repo
-│
+.
+|
 └───tests
         test_braidword.py
         test_markovchain.py
@@ -383,22 +383,12 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-- **Professor Allison Moore** - _Initial work_ - [allisonhmoore](https://github.com/allisonhmoore)
+- **Allison Moore** - _Initial work_ - [allisonhmoore](https://github.com/allisonhmoore)
 - **Milad Michael Nasrollahi** - _Initial work_ - [Algebra8](https://github.com/Algebra8)
-- **Shawn Witte, PhD Candidate** - _Initial work_ - [Minirogue](https://github.com/Minirogue)
+- **Shawn Witte** - _Initial work_ - [Minirogue](https://github.com/Minirogue)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+<!-- See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project. -->
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
-
-```
-
-```
