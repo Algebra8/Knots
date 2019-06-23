@@ -328,7 +328,7 @@ class TestBraidWordMethods(unittest.TestCase):
         # genCount modification
         self.assertEqual(bw.genCount, [1, 1, 1, 1])
 
-    def test_destabilize_pathfail(self):
+    def test_destabilize_pathfail_0(self):
         """Should return False if
         Cond1:
         more than one largestGenerator exist
@@ -340,19 +340,19 @@ class TestBraidWordMethods(unittest.TestCase):
         # (No) genCount modification
         self.assertEqual(bw.genCount, [1, 1, 2])
 
-    def test_destabilize_pathfail(self):
+    def test_destabilize_pathfail_1(self):
         """Should return False if
         Cond2:
         one largestGenerator exists but not at end
         and should not modify word or genCount"""
-        bw = BraidWord([1, 2, 3])
+        bw = BraidWord([1, 3, 2])
         self.assertFalse(bw.destabilize())
         # (No) Word modification
         self.assertEqual(bw.word, [1, 2, 3])
         # (No) genCount modification
         self.assertEqual(bw.genCount, [1, 1, 1])
 
-    def test_destabilize_pathsuccess(self):
+    def test_destabilize_pathsuccess_0(self):
         """Should return True if
         Cond1 and Cond2 are satisfied
         and should modifiy word and genCount"""
