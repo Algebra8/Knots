@@ -24,7 +24,7 @@ class BraidWord:
 			Array of quantity of generators in `word`.
 
     """
-	# @checkparams_braidword
+	@checkparams_braidword
 	def __init__(self, initword: list):
 		self.word = initword
 		# self.length = self.wordlength()

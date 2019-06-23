@@ -328,7 +328,7 @@ class TestBraidWordMethods(unittest.TestCase):
         # genCount modification
         self.assertEqual(bw.genCount, [1, 1, 1, 1])
 
-    def destabilize_pathfail(self):
+    def test_destabilize_pathfail(self):
         """Should return False if
         Cond1:
         more than one largestGenerator exist
@@ -340,7 +340,7 @@ class TestBraidWordMethods(unittest.TestCase):
         # (No) genCount modification
         self.assertEqual(bw.genCount, [1, 1, 2])
 
-    def destabilize_pathfail(self):
+    def test_destabilize_pathfail(self):
         """Should return False if
         Cond2:
         one largestGenerator exists but not at end
@@ -352,7 +352,7 @@ class TestBraidWordMethods(unittest.TestCase):
         # (No) genCount modification
         self.assertEqual(bw.genCount, [1, 1, 1])
 
-    def destabilize_pathsuccess(self):
+    def test_destabilize_pathsuccess(self):
         """Should return True if
         Cond1 and Cond2 are satisfied
         and should modifiy word and genCount"""
@@ -363,23 +363,23 @@ class TestBraidWordMethods(unittest.TestCase):
         # genCount modification
         self.assertEqual(bw.genCount, [1, 1])
 
-    def resolution_pathsuccess_0(self):
+    def test_resolution_pathsuccess_0(self):
         """Should return new BraidWord with
         random generator cut out"""
         bw = BraidWord([1, 2, 3])
-        bw.resolution()
+        newbraidword = bw.resolution()
         # Check that word length shortened by one
-        self.assertEqual(bw.length(), 2)
+        self.assertEqual(newbraidword.length(), 2)
 
-    def resolution_pathsuccess_1(self):
+    def test_resolution_pathsuccess_1(self):
         """Should return new BraidWord with
         manually set generator cut out"""
         bw = BraidWord([1, 2, 3])
-        bw.resolution(random_index=False, index=1)
+        newbraidword = bw.resolution(random_index=False, index=1)
         # Check that word length shortened by one
-        self.assertEqual(bw.word, [1, 3])
+        self.assertEqual(newbraidword.word, [1, 3])
 
-    def resolution_pathfail_0(self):
+    def test_resolution_pathfail_0(self):
         """Should raise error if randon_index
         set to False and index not set or
         not set to int"""
@@ -387,26 +387,31 @@ class TestBraidWordMethods(unittest.TestCase):
         with self.assertRaises(ValueError) as te:
             bw.resolution(random_index=False)
 
-    def crossing_change_pathsuccess_0(self):
+    def test_crossing_change_pathsuccess_0(self):
         """Should return new BraidWord with
-        random generator cut out"""
+        random generator inverted"""
         bw = BraidWord([1, 2, 3])
-        bw.crossing_change()
-        # Check that word length not changed
-        self.assertEqual(bw.length(), 3)
+        newbraidword = bw.crossing_change()
         # Check that one generator has been inverted
-        x = list((i == -abs(i) for i in bw))
+        x = list((i == -abs(i) for i in newbraidword.word))
         self.assertTrue(any(x) and not all(x))
 
-    def crossing_change_pathsuccess_1(self):
+    def test_crossing_change_pathsuccess_1(self):
         """Should return new BraidWord with
-        manually set generator cut out"""
+        same length as previous"""
         bw = BraidWord([1, 2, 3])
-        bw.crossing_change(random_index=False, index=1)
-        # Check that manually set generator has been inverted
-        self.assertEqual(bw.word, [1, -2, 3])
+        newbraidword = bw.crossing_change()
+        self.assertEqual(len(newbraidword.word), 3)
 
-    def crossing_change_pathfail_0(self):
+    def test_crossing_change_pathsuccess_2(self):
+        """Should return new BraidWord with
+        manually set generator inverted"""
+        bw = BraidWord([1, 2, 3])
+        newbraidword = bw.crossing_change(random_index=False, index=1)
+        # Check that manually set generator has been inverted
+        self.assertEqual(newbraidword.word, [1, -2, 3])
+
+    def test_crossing_change_pathfail_0(self):
         """Should raise error if randon_index
         set to False and index not set or
         not set to int"""
