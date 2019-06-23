@@ -24,7 +24,7 @@ class BraidWord:
 			Array of quantity of generators in `word`.
 
     """
-	@checkparams_braidword
+	# @checkparams_braidword
 	def __init__(self, initword: list):
 		self.word = initword
 		# self.length = self.wordlength()
@@ -352,3 +352,70 @@ class BraidWord:
 		for k, v in self.__dict__.items():
 			setattr(result, k, deepcopy(v, memo))
 		return result
+
+	def crossing_change(self, random_index=True, index=None):
+		r"""
+		Performs crossing change on braid. That is, returns a new BraidWord
+		excluding the generator that existed at the resulting index.
+		If random_index is set to True, will select a random index
+		in [0, len(self.word)]. Else if random_index is set to False
+		then `index` must be set manually.
+
+        Returns
+		-------
+            BraidWord
+
+        """
+		if random_index:
+			# Get random index in range of word's length
+			random_idx = random.randrange(self.length())
+			# Create new BraidWord without generator @ random index
+			newbraidword = [gen for idx, gen in enumerate(self.word) if idx != random_idx]
+			return BraidWord(newbraidword)
+		else:
+			# Use input index to create new BraidWord wihtout generator @ index
+			newbraidword = [gen for idx, gen in enumerate(self.word) if idx != index]
+			return BraidWord(newbraidword)
+
+
+
+# elif not random_index and index:
+# 	if not type(random_index) == bool:
+# 		raise TypeError('`random_idx` must be a boolean value.')
+# 	elif not type(index) == int:
+# 		raise TypeError('`index` must be an integer value in [0, len(word)]')
+# 	else:
+# 		# Use input index to create new BraidWord wihtout generator @ index
+# 		newbraidword = [gen for idx, gen in enumerate(self.word) if idx != index]
+# 		return BraidWord(newbraidword)
+#
+# else:
+# 	raise ValueError(
+# 	'If `random_index` is not set, `index` must be '
+# 	+ 'set to an integer value.'
+# 	)
+
+
+
+
+# bw = BraidWord([1, 2, 3])
+# bw.crossing_change(random_index=False, index=True)
+# bw.crossing_change(random_index=False, index=1)
+# bw.crossing_change(random_index=True, index=True)
+# bw.crossing_change(random_index=True, index=10)
+#
+
+
+# def f(random=True, index=None):
+# 	if not type(random) == bool:
+# 		raise ValueError('random must be set to a boolean value.')
+#
+# 	elif random == True:
+# 		index = random.randrange(self.length())
+#
+# 	else:
+# 		if 'index' in kwargs:
+# 			return kwargs['index']
+# 		else:
+# 			raise KeyError(f'If random is set to false, must have index '
+# 			 + 'set to integer value for value in [0, len(word)].')
