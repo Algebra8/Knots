@@ -348,7 +348,7 @@ class TestBraidWordMethods(unittest.TestCase):
         bw = BraidWord([1, 3, 2])
         self.assertFalse(bw.destabilize())
         # (No) Word modification
-        self.assertEqual(bw.word, [1, 2, 3])
+        self.assertEqual(bw.word, [1, 3, 2])
         # (No) genCount modification
         self.assertEqual(bw.genCount, [1, 1, 1])
 
