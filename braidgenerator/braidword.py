@@ -353,10 +353,11 @@ class BraidWord:
 			setattr(result, k, deepcopy(v, memo))
 		return result
 
-	def crossing_change(self, random_index=True, index=None):
+	def crossing_change(self, *, random_index: bool = True, index: int = None):
 		r"""
 		Performs crossing change on braid. That is, returns a new BraidWord
-		excluding the generator that existed at the resulting index.
+		with generator at resulting index inverted.
+
 		If random_index is set to True, will select a random index
 		in [0, len(self.word)]. Else if random_index is set to False
 		then `index` must be set manually.
@@ -366,56 +367,47 @@ class BraidWord:
             BraidWord
 
         """
+		if (random_index == False
+			and type(index) != int):
+			raise ValueError('crossing_change parameter index must be an '
+				+ 'integer value if random_index is set to False.')
+		newbraidword = self.word.copy()
+		if random_index:
+			# Get random index in range of word's length
+			random_idx = random.randrange(self.length())
+			# Set generator at random index to inverse
+			newbraidword[random_idx] = -newbraidword[random_idx]
+		else:
+			# Set generator at manual index to inverse
+			newbraidword[index] = -newbraidword[index]
+
+		return BraidWord(newbraidword)
+
+	def resolution(self, *, random_index: bool = True, index: int = None):
+		r"""
+		Performs resolution on braid. That is, returns a new BraidWord
+		excluding the generator that existed at the resulting index.
+
+		If random_index is set to True, will select a random index
+		in [0, len(self.word)]. Else if random_index is set to False
+		then `index` must be set manually.
+
+        Returns
+		-------
+            BraidWord
+
+        """
+		if (random_index == False
+			and type(index) != int):
+			raise ValueError('resolution parameter index must be an '
+				+ 'integer value if random_index is set to False.')
 		if random_index:
 			# Get random index in range of word's length
 			random_idx = random.randrange(self.length())
 			# Create new BraidWord without generator @ random index
 			newbraidword = [gen for idx, gen in enumerate(self.word) if idx != random_idx]
-			return BraidWord(newbraidword)
 		else:
 			# Use input index to create new BraidWord wihtout generator @ index
 			newbraidword = [gen for idx, gen in enumerate(self.word) if idx != index]
-			return BraidWord(newbraidword)
 
-
-
-# elif not random_index and index:
-# 	if not type(random_index) == bool:
-# 		raise TypeError('`random_idx` must be a boolean value.')
-# 	elif not type(index) == int:
-# 		raise TypeError('`index` must be an integer value in [0, len(word)]')
-# 	else:
-# 		# Use input index to create new BraidWord wihtout generator @ index
-# 		newbraidword = [gen for idx, gen in enumerate(self.word) if idx != index]
-# 		return BraidWord(newbraidword)
-#
-# else:
-# 	raise ValueError(
-# 	'If `random_index` is not set, `index` must be '
-# 	+ 'set to an integer value.'
-# 	)
-
-
-
-
-# bw = BraidWord([1, 2, 3])
-# bw.crossing_change(random_index=False, index=True)
-# bw.crossing_change(random_index=False, index=1)
-# bw.crossing_change(random_index=True, index=True)
-# bw.crossing_change(random_index=True, index=10)
-#
-
-
-# def f(random=True, index=None):
-# 	if not type(random) == bool:
-# 		raise ValueError('random must be set to a boolean value.')
-#
-# 	elif random == True:
-# 		index = random.randrange(self.length())
-#
-# 	else:
-# 		if 'index' in kwargs:
-# 			return kwargs['index']
-# 		else:
-# 			raise KeyError(f'If random is set to false, must have index '
-# 			 + 'set to integer value for value in [0, len(word)].')
+		return BraidWord(newbraidword)
