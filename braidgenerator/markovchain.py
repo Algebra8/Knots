@@ -3,7 +3,7 @@ import copy
 import pandas as pd
 import functools
 from copy import copy, deepcopy
-from braidgenerator.braidword import BraidWord
+from braidgenerator import BraidWord
 from braidgenerator.decorators.markovchain import checkparams_markovchain
 
 
