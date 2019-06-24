@@ -1,5 +1,5 @@
 """Unit Tests for BraidWord"""
-from braidgenerator.braidword import BraidWord
+from braidgenerator import BraidWord
 import unittest
 
 class TestBraidWordInit(unittest.TestCase):

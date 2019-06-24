@@ -1,6 +1,6 @@
 """Unit Tests for MarkovChain"""
-from braidgenerator.markovchain import MarkovChain
-from braidgenerator.braidword import BraidWord
+from braidgenerator import MarkovChain
+from braidgenerator import BraidWord
 import pandas as pd
 import unittest
 

@@ -79,7 +79,7 @@ python setup.py install
 Try the following example snippet, which takes as its input a braid representative for the trefoil knot (`[1, 1, 1]`), and returns three randomized braid representatives.
 
 ```
-from markovchain import MarkovChain
+from braidgenerator import MarkovChain
 import pandas as pd
 
 # Create markov chain
@@ -101,7 +101,7 @@ To create a Markov Chain, simply call `MarkovChain` with at least the `braidword
 nine and ten for the `maxgen` and `maxlen` parameters, respectively.
 
 ```
-from markovchain import MarkovChain
+from braidgenerator import MarkovChain
 import pandas as pd
 
 mc = MarkovChain(braidword=[1, 2, 3], maxgen=9, maxlen=10)
@@ -111,8 +111,8 @@ mc = MarkovChain(braidword=[1, 2, 3], maxgen=9, maxlen=10)
 Alternatively, the Markov Chain can be initialized with a `BraidWord` instead of a list. The BraidWord is wrapped around a list (the _word_).
 
 ```
-from markovchain import MarkovChain
-from braidword import BraidWord
+from braidgenerator import MarkovChain
+from braidgenerator import BraidWord
 import pandas as pd
 
 mc = MarkovChain(braidword=BraidWord([1, 2, 3]), maxgen=9, maxlen=10)
@@ -309,7 +309,7 @@ the generator at a specified index is inverted.
 The resulting index can be set randomly with `random_index` set to `True`, or it can be set manually by setting `random_index=False` and assigning `index` with an integer value between zero and the length of the word of the BraidWord.
 
 ```
-from BraidGenerator import BraidWord
+from braidgenerator import BraidWord
 
 braidword = BraidWord([1, 2, 3])
 
@@ -334,7 +334,7 @@ the generator at a specified index is removed and the new BraidWord's length is 
 The resulting index can be set randomly with `random_index` set to `True`, or it can be set manually by setting `random_index=False` and assigning `index` with an integer value between zero and the length of the word of the BraidWord.
 
 ```
-from BraidGenerator import BraidWord
+from braidgenerator import BraidWord
 
 braidword = BraidWord([1, 2, 3])
 
