@@ -51,6 +51,10 @@ To install via pip, use the following
 $ python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps moore_braidgenerator
 ```
 
+> Please note the actual project has not been put up on PyPi yet. Please
+> follow installation by repository. Package will be uploaded to PyPi in the
+> coming few days.
+
 #### Install BraidGenerator from the GitHub source
 
 First, clone BraidGenerator using `git`.
@@ -295,6 +299,58 @@ mc.new_braidword(BraidWord([1, 2, 3]))
 
 > As is the case with the initializor, if a list is passed in as an argument it will be converted to a BraidWord behind the scenes.
 
+### Bonus BraidWord functionality
+
+#### `crossing_change`
+
+The `crossing_change` method performs a crossing change on a BraidWord. That is, it returns a new BraidWord whereby
+the generator at a specified index is inverted.
+
+The resulting index can be set randomly with `random_index` set to `True`, or it can be set manually by setting `random_index=False` and assigning `index` with an integer value between zero and the length of the word of the BraidWord.
+
+```
+from BraidGenerator import BraidWord
+
+braidword = BraidWord([1, 2, 3])
+
+# Randomly set generator to be inverted
+random_newbraidword = braidword.crossing_change(random_index=True)
+
+# Manually set generator to be inverted
+manual_newbraidword = braidword.crossing_change(random_index=False, index=1)
+
+random_newbraidword.word
+>>> [1, 2, -3]
+
+manual_newbraidword.word
+>>> [1, -2, 3]
+```
+
+#### `resolution`
+
+The `resolution` method performs a resolution on a BraidWord. That is, it returns a new BraidWord whereby
+the generator at a specified index is removed and the new BraidWord's length is decreased by one.
+
+The resulting index can be set randomly with `random_index` set to `True`, or it can be set manually by setting `random_index=False` and assigning `index` with an integer value between zero and the length of the word of the BraidWord.
+
+```
+from BraidGenerator import BraidWord
+
+braidword = BraidWord([1, 2, 3])
+
+# Randomly set generator to be removed
+random_newbraidword = braidword.resolution(random_index=True)
+
+# Manually set generator to be removed
+manual_newbraidword = braidword.resolution(random_index=False, index=1)
+
+random_newbraidword.word
+>>> [2, 3]
+
+manual_newbraidword.word
+>>> [1, 3]
+```
+
 ## Running the tests
 
 Tests for these scripts are included in the github repository under the paths shown below.
@@ -372,6 +428,8 @@ def test_logs(self):
     # Check if non-empty
     self.assertTrue(mc.logs())
 ```
+
+> BraidWord's `crossing_change` and `resolution` methods follow similar formats and can be viewed in the `tests\test_braidword` module in the repository.
 
 ## Documentation
 

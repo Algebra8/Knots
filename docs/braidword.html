@@ -572,6 +572,91 @@
 
         <!-- !transpose -->
 
+        <!-- crossing_change -->
+        <dl class="method">
+          <dt id="crossing_change">
+            <button class="btn btn-md">
+              <code class="text-primary">crossing_change</code>
+              <span class="sig-parent">(</span>
+
+              <code
+                >random_index:
+                <code class="text-secondary"> bool = True, </code></code
+              >
+
+              <code
+                >index: <code class="text-secondary"> int = None </code></code
+              >
+
+              <span class="sig-parent"
+                >) -> <code class="text-primary">BraidWord</code></span
+              >
+            </button>
+          </dt>
+          <dd>
+            <p class="category">
+              The <code>crossing_change</code> method performs a crossing change
+              on a BraidWord. That is, it returns a new BraidWord whereby the
+              generator at a specified index is inverted. The resulting index
+              can be set randomly with <code>random_index</code> set to
+              <code>True</code>, or it can be set manually by setting
+              <code>random_index=False</code> and assigning
+              <code>index</code> with an integer value between zero and the
+              length of the word of the BraidWord.
+            </p>
+          </dd>
+        </dl>
+
+        <!-- Returns -->
+        <dl class="returns">
+          <p class="text-info">Returns</p>
+          <dd class="aparam"><code>BraidWord</code></dd>
+        </dl>
+
+        <!-- !crossing_change -->
+
+        <!-- resolution -->
+        <dl class="method">
+          <dt id="resolution">
+            <button class="btn btn-md">
+              <code class="text-primary">resolution</code>
+              <span class="sig-parent">(</span>
+
+              <code
+                >random_index:
+                <code class="text-secondary"> bool = True, </code></code
+              >
+              <code
+                >index: <code class="text-secondary"> int = None </code></code
+              >
+              <span class="sig-parent"
+                >) -> <code class="text-primary">BraidWord</code></span
+              >
+            </button>
+          </dt>
+          <dd>
+            <p class="category">
+              The <code>resolution</code> method performs a resolution on a
+              BraidWord. That is, it returns a new BraidWord whereby the
+              generator at a specified index is removed and the new BraidWord's
+              length is decreased by one. The resulting index can be set
+              randomly with <code>random_index</code> set to <code>True</code>,
+              or it can be set manually by setting
+              <code>random_index=False</code> and assigning
+              <code>index</code> with an integer value between zero and the
+              length of the word of the BraidWord.
+            </p>
+          </dd>
+        </dl>
+
+        <!-- Returns -->
+        <dl class="returns">
+          <p class="text-info">Returns</p>
+          <dd class="aparam"><code>BraidWord</code></dd>
+        </dl>
+
+        <!-- !resolution -->
+
         <div class="line"></div>
         <!-- </div> -->
       </div>
