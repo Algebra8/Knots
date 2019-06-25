@@ -63,7 +63,7 @@ First, clone the Knots repository onto your local machine using `git`. For more 
 git clone https://github.com/Algebra8/Knots
 ```
 
-Then, `cd` into the directory that contains the clone repository on your local machine and run the install command:
+Then, `cd` to the Knots folder and run the install command:
 
 ```
 cd Knots
