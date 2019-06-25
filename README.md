@@ -76,7 +76,7 @@ python setup.py install
 
 #### A quick example for the impatient user
 
-With Python runnin, try the following example snippet, which takes as its input a braid representative for the trefoil knot (`[1, 1, 1]`), and returns three randomized braid representatives.
+Within Python try the following example snippet, which takes as its input a braid representative for the trefoil knot (`[1, 1, 1]`), and returns three randomized braid representatives.
 
 ```
 from braidgenerator import MarkovChain
