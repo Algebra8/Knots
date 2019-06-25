@@ -1,6 +1,6 @@
 # Braid Generator
 
-Braid Generator is a project from the Department of Mathematics in the University of California, Davis. Braid Generator implements a Markov chain algorithm to generate an ensemble of braid representatives from a given braid representative of a fixed knot or link type. The project was born when we attempted to use Machine Learning techniques to study braids but found the existing data sets of braid representatives to be too small. The hope is that this program will help others generate data to help better understand braids, knot invariants, and the topology of the space of knots.
+Braid Generator is a project from the Department of Mathematics in the University of California, Davis. Braid Generator implements a Markov chain algorithm to generate an ensemble of braid representatives (``braidreps") from a given braid representative of a fixed knot or link type. The project was born when we attempted to use Machine Learning techniques to study braids but found the existing data sets of braid representatives to be too small. The hope is that this program will help others generate data to help better understand braids, knot invariants, and the topology of the space of knots.
 
 ## Getting Started
 
@@ -76,7 +76,7 @@ python setup.py install
 
 #### A quick example for the impatient user
 
-Try the following example snippet, which takes as its input a braid representative for the trefoil knot (`[1, 1, 1]`), and returns three randomized braid representatives.
+With Python runnin, try the following example snippet, which takes as its input a braid representative for the trefoil knot (`[1, 1, 1]`), and returns three randomized braid representatives.
 
 ```
 from braidgenerator import MarkovChain
@@ -98,7 +98,7 @@ Explanations and definitions are given in detail in the sections below.
 #### Setting up the Braid Generator
 
 To create a Markov Chain, simply call `MarkovChain` with at least the `braidword` argument given. The `MarkovChain` initializor has default values of
-nine and ten for the `maxgen` and `maxlen` parameters, respectively.
+nine and ten for the `maxgen` and `maxlen` parameters, respectively. The speficied argument of `braidword` is the initial state of the Markov process; the state space consists of other braid words representating the same knot as the (closed) initial braid. 
 
 ```
 from braidgenerator import MarkovChain
@@ -120,8 +120,7 @@ mc = MarkovChain(braidword=BraidWord([1, 2, 3]), maxgen=9, maxlen=10)
 
 > Note that if the Markov Chain is initialized with a list instead of a BraidWord, it will be processed into a BraidWord behind the scenes.
 
-To create braidreps it suffices to call the `model` method. `model` takes two parameters,
-`num_braidreps` and `msteps`, where `num_braidreps` is the number of braidreps that are to be generated and `msteps` is the amount of Markov Moves to apply to the BraidWord for each braidrep. Default values are one and 100, respectively.
+To create new braidreps it suffices to call the `model` method. The method `model` takes two parameters, `num_braidreps` and `msteps`, where `num_braidreps` is the number of braidreps that are to be generated and `msteps` is the number of Markov steps taken in each random walk that produces such a braidrep. Default values are one and 100, respectively. Markov chain steps are comprised of braid relations and ``Markov moves" (in the sense of moves on closed braids).
 
 ```
 mc.model(num_braidreps=10, msteps=50)
@@ -138,7 +137,7 @@ Once the modelling is complete, the braidreps and/or logs can be accessed via th
 
 #### `MarkovChain.aggregate`
 
-The `aggregate` method will return a dictionary with two keys: _braidreps_ and _logs_, whereby _braidreps_ is a list that contains the generated braidreps and _logs_ is a list that contains the relevant Markov Moves per iteration and if they were successful or not.
+The `aggregate` method will return a dictionary with two keys: _braidreps_ and _logs_, whereby _braidreps_ is a list that contains the generated braidreps and _logs_ is a list that contains the relevant Markov steps per iteration and if they were successful or not.
 
 > This aggregate dictionary is mainly a container for the relevant data and while this getter method is available, it is not recommended for retrieving the data. Better alternative methods exist for this.
 
@@ -152,7 +151,7 @@ agg
 
 #### `MarkovChain.logs`
 
-The `logs` method returns only the logs in the list format. Each element of the log is itself a dictionary that represents all the Markov Moves for each braidrep created. Thus, the size of _braidreps_ and _logs_ will be the same, but each entry will contain a larger set of logs. The example below shows a MarkovChain's logs with `num_braidreps=1` and `msteps=5`
+The `logs` method returns only the logs in the list format. Each element of the log is itself a dictionary that represents all the Markov steps for each braidrep created. Thus, the size of _braidreps_ and _logs_ will be the same, but each entry will contain a larger set of logs. The example below shows a MarkovChain's logs with `num_braidreps=1` and `msteps=5`
 
 ```
 logs = mc.logs()
@@ -200,7 +199,7 @@ braidreps_asword
 > [[1, 2, 3], [2, 3, 1], [1, 2]]
 ```
 
-> Note that the Braid that was fed into the model is not included. The first word of the second example above is a coincidence resulting from one successful destabilize and one successful stabilize.
+> Note that the braid that was fed into the model is not included. The first word of the second example above is a coincidence resulting from one successful destabilize and one successful stabilize.
 
 #### `MarkovChain.topandas`
 
@@ -398,7 +397,7 @@ def test_cancel_pathsuccess(self):
     self.assertEqual(bw.word, [2, 3])
 ```
 
-**test_markovchain.py** contains roughly 200 lines of tests with 18+ test cases (at the time of writing this readme). The test cases contain suites that test mainly for initialization and that containers, such as _logs_, _braidrepisms_, and _braidagg_, vis-a-vis the `aggregate`, `logs`, and `braidreps` methods, as well as exporting methods, such as `tocsv`, `topandas`, and `totxt`, are valid (i.e. not empty). The lack of automated tests for said script is due to the probabilistic nature of the results of the `model` method. Results for this method are tested by hand by Professor Moore. Examples of **test_markovchain.py** include:
+**test_markovchain.py** contains roughly 200 lines of tests with 18+ test cases (at the time of writing this readme). The test cases contain suites that test mainly for initialization and that containers, such as _logs_, _braidrepisms_, and _braidagg_, vis-a-vis the `aggregate`, `logs`, and `braidreps` methods, as well as exporting methods, such as `tocsv`, `topandas`, and `totxt`, are valid (i.e. not empty). The lack of automated tests for said script is due to the probabilistic nature of the results of the `model` method. Results for this method may be tested by hand or an auxiliary program, such as ``KnotPlot." Examples of **test_markovchain.py** include:
 
 ```
 def test_init_pathfail_0(self):
