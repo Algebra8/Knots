@@ -163,7 +163,7 @@ class BraidWord:
 
         Returns
 		-------
-            Boolean that triggers state of Markov Move in
+            Boolean that triggers state of Markov step in
 			`logs`.
 
         """
@@ -181,7 +181,7 @@ class BraidWord:
                 Index where cancel is to be performed.
 
             name : :obj:`str`
-                The name of the Markov Move.
+                The name of the Markov step.
 
             result : :obj:`bool`
                 Boolean representing whether the move was successfully
@@ -189,7 +189,7 @@ class BraidWord:
 
         Returns
 		-------
-            Boolean that triggers state of Markov Move in
+            Boolean that triggers state of Markov step in
 			`logs`.
 
         """
@@ -221,7 +221,7 @@ class BraidWord:
 
         Returns
 		-------
-            Boolean that triggers state of Markov Move in
+            Boolean that triggers state of Markov step in
 			`logs`.
 
         """
@@ -250,7 +250,7 @@ class BraidWord:
 
         Returns
 		-------
-            Boolean that triggers state of Markov Move in
+            Boolean that triggers state of Markov step in
 			`logs`.
 
         """
@@ -273,7 +273,7 @@ class BraidWord:
 
         Returns
 		-------
-            Boolean that triggers state of Markov Move in
+            Boolean that triggers state of Markov step in
 			`logs`.
 
         """
@@ -304,7 +304,7 @@ class BraidWord:
 
         Returns
 		-------
-            Boolean that triggers state of Markov Move in
+            Boolean that triggers state of Markov step in
 			`logs`.
 
         """
@@ -322,7 +322,7 @@ class BraidWord:
 
         Returns
 		-------
-            Boolean that triggers state of Markov Move in
+            Boolean that triggers state of Markov step in
 			`logs`.
 
         """
