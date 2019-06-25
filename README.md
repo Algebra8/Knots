@@ -57,20 +57,18 @@ $ python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps moo
 
 #### Install BraidGenerator from the GitHub source
 
-First, clone BraidGenerator using `git`.
+First, clone the Knots repository onto your local machine using `git`. For more information on `git` cloning, visit this [resource](https://www.git-tower.com/learn/git/commands/git-clone).
 
 ```
 git clone https://github.com/Algebra8/Knots
 ```
 
-Then, `cd` into the BraidGenerator folder and run the install command:
+Then, `cd` into the directory that contains the clone repository on your local machine and run the install command:
 
 ```
-cd BraidGenerator
+cd Knots
 python setup.py install
 ```
-
-> As mentioned above, if installing with a local clone, make sure to have _pandas_ 0.23.4 or greater installed.
 
 ### Setup and Examples
 
@@ -98,7 +96,7 @@ Explanations and definitions are given in detail in the sections below.
 #### Setting up the Braid Generator
 
 To create a Markov Chain, simply call `MarkovChain` with at least the `braidword` argument given. The `MarkovChain` initializor has default values of
-nine and ten for the `maxgen` and `maxlen` parameters, respectively. The speficied argument of `braidword` is the initial state of the Markov process; the state space consists of other braid words representating the same knot as the (closed) initial braid. 
+nine and ten for the `maxgen` and `maxlen` parameters, respectively. The speficied argument of `braidword` is the initial state of the Markov process; the state space consists of other braid words representating the same knot as the (closed) initial braid.
 
 ```
 from braidgenerator import MarkovChain
