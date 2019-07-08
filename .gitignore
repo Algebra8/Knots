@@ -12,3 +12,5 @@ moore_braidgenerator.egg-info/
 .coverage
 .cache
 .pytest_cache
+
+braidgenerator.egg-info/
