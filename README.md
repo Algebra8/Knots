@@ -1,6 +1,7 @@
 # Braid Generator
 
-Braid Generator is a project from the Department of Mathematics in the University of California, Davis. Braid Generator implements a Markov chain algorithm to generate an ensemble of braid representatives (``braidreps") from a given braid representative of a fixed knot or link type. The project was born when we attempted to use Machine Learning techniques to study braids but found the existing data sets of braid representatives to be too small. The hope is that this program will help others generate data to help better understand braids, knot invariants, and the topology of the space of knots.
+Braid Generator is a project from the Department of Mathematics in the University of California, Davis. Braid Generator implements a Markov chain algorithm to generate an ensemble of braid representatives (``braidreps") from a given braid representative of a fixed knot or link type. The project was born when we attempted to use Machine Learning techniques to study braids but found the existing data sets of braid representatives to be too small. The hope is that this program will help others generate data to help better understand braids, knot invariants, and the topology of the space of knots. For more information on
+mathematical braid groups, please refer to this [resource](https://en.wikipedia.org/wiki/Braid_group).
 
 ## Getting Started
 
@@ -8,7 +9,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-The only required dependency for this package is _pandas_. If installing with a local clone, make sure to have _pandas_ 0.23.4 or greater installed in the desired environment.
+Due to the formatting styles used in this package, `braidgenerator` is compatible with Python 3.6 or 3.7.
+
+The only required dependency for this package is _pandas_. If installing with a local clone, make sure to have _pandas_ installed in the desired environment.
 
 ```
 .
