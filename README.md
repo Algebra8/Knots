@@ -51,7 +51,7 @@ The only required dependency for this package is _pandas_. If installing with a 
 To install via pip, use the following
 
 ```
-$ python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps moore_braidgenerator
+$ pip install braidgenerator
 ```
 
 > Please note the actual project has not been put up on PyPi yet. Please
