@@ -60,7 +60,7 @@
               <li><a href="braidword.html">BraidWord</a></li>
             </ul>
           </li>
-          <li><a href="#">About</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="ack.html">Acknowledgements</a></li>
         </ul>
@@ -114,7 +114,11 @@
           </h3>
         </div>
         <p class="category">
-          A BraidWord represents a mathematical braid. A mathematical braid is a word expressed as a finite list of Artin generators or their inverses. Generators are represented here as positive or negative integers. An object of BraidWord (i.e. a braid) is the main component acted upon by the MarkovChain class.
+          A BraidWord represents a mathematical braid. A mathematical braid is a
+          word expressed as a finite list of Artin generators or their inverses.
+          Generators are represented here as positive or negative integers. An
+          object of BraidWord (i.e. a braid) is the main component acted upon by
+          the MarkovChain class.
         </p>
         <!-- __init__ params -->
         <dl class="params">
@@ -123,7 +127,8 @@
             <code>braidword<code class="text-secondary"> list </code></code>
           </dt>
           <dd class="aparam">
-            List containing integers (representing Artin generators) to be used as initial word.
+            List containing integers (representing Artin generators) to be used
+            as initial word.
           </dd>
         </dl>
         <!-- __init__ attributes -->
@@ -167,7 +172,9 @@
           </dt>
           <dd>
             <p class="category">
-              Boolean stating if cancel at index is a valid move. Cancellation refers to the cancellation of a generator and its consecutive inverse in the braid group.
+              Boolean stating if cancel at index is a valid move. Cancellation
+              refers to the cancellation of a generator and its consecutive
+              inverse in the braid group.
             </p>
           </dd>
         </dl>
@@ -203,11 +210,11 @@
           </dt>
           <dd>
             <p class="category">
-              Checks if destabilize() is a valid move. Destabilization refers to destabilization of a closed braid. 
-              <code>destabilize</code> is the inverse operation of
-              <code> stabilize </code> and is only permissible when the
-              `largestGenerator` appears exactly once at the last index of
-              `word`.
+              Checks if destabilize() is a valid move. Destabilization refers to
+              destabilization of a closed braid. <code>destabilize</code> is the
+              inverse operation of <code> stabilize </code> and is only
+              permissible when the `largestGenerator` appears exactly once at
+              the last index of `word`.
             </p>
           </dd>
         </dl>
@@ -233,7 +240,10 @@
             </button>
           </dt>
           <dd>
-            <p class="category">Checks if flip can be performed at index. A `flip' refers to the second braid relation in the braid group.</p>
+            <p class="category">
+              Checks if flip can be performed at index. A `flip' refers to the
+              second braid relation in the braid group.
+            </p>
           </dd>
         </dl>
         <!-- Params -->
@@ -266,7 +276,8 @@
           </dt>
           <dd>
             <p class="category">
-              Checks if transpose at index is a valid move. A transpose is the first braid relation in the braid group.
+              Checks if transpose at index is a valid move. A transpose is the
+              first braid relation in the braid group.
             </p>
           </dd>
         </dl>
@@ -302,7 +313,9 @@
           <dd>
             <p class="category">
               Performs cancellation of the generators at index and (index+1)
-              modulo length and decreases length of word by two. Cancellation refers to the cancellation of a generator and its consecutive inverse in the braid group.
+              modulo length and decreases length of word by two. Cancellation
+              refers to the cancellation of a generator and its consecutive
+              inverse in the braid group.
             </p>
           </dd>
         </dl>
@@ -338,7 +351,10 @@
             </button>
           </dt>
           <dd>
-            <p class="category">Method to conjugate the word at index. Conjugation is defined for closed braids by AB = BA. </p>
+            <p class="category">
+              Method to conjugate the word at index. Conjugation is defined for
+              closed braids by AB = BA.
+            </p>
           </dd>
         </dl>
         <!-- Params -->
@@ -377,7 +393,8 @@
           <dd>
             <p class="category">
               Destabilizes the BraidWord, decreases word length by one, and
-              decreases largestGenerator if successful. Destabilization is a Markov Move defined for closed braids.
+              decreases largestGenerator if successful. Destabilization is a
+              Markov Move defined for closed braids.
             </p>
           </dd>
         </dl>
@@ -406,7 +423,9 @@
           </dt>
           <dd>
             <p class="category">
-              Flips generators at index, (index+1) modulo length, and (index+2) modulo length. A flip performs the second braid relation in the braid group.
+              Flips generators at index, (index+1) modulo length, and (index+2)
+              modulo length. A flip performs the second braid relation in the
+              braid group.
             </p>
           </dd>
         </dl>
@@ -445,7 +464,9 @@
           <dd>
             <p class="category">
               Insert a generator and its inverse into word. Will insert the
-              given generator and its inverse at index and increases word length by two. Insertion is permissible because the braid group is a group.
+              given generator and its inverse at index and increases word length
+              by two. Insertion is permissible because the braid group is a
+              group.
             </p>
           </dd>
         </dl>
@@ -516,7 +537,8 @@
           <dd>
             <p class="category">
               Stabilizes the BraidWord, increases word length by one, and
-              increases largestGenerator by one if successful. Stabilization is a Markov Move defined for closed braids.
+              increases largestGenerator by one if successful. Stabilization is
+              a Markov Move defined for closed braids.
             </p>
           </dd>
         </dl>
@@ -545,7 +567,8 @@
           </dt>
           <dd>
             <p class="category">
-              Transposes generators at index and (index+1) modulo length. Transpose performs the first braid relation in the braid group.
+              Transposes generators at index and (index+1) modulo length.
+              Transpose performs the first braid relation in the braid group.
             </p>
           </dd>
         </dl>
@@ -650,7 +673,8 @@
             <p class="category">
               The <code>resolution</code> method performs a resolution on a
               BraidWord. That is, it returns a new BraidWord whereby the
-              generator at a specified index is removed and the length of the new BraidWord is decreased by one. The resulting index can be set
+              generator at a specified index is removed and the length of the
+              new BraidWord is decreased by one. The resulting index can be set
               randomly with <code>random_index</code> set to <code>True</code>,
               or it can be set manually by setting
               <code>random_index=False</code> and assigning
