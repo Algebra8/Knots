@@ -3,7 +3,7 @@
 dist/
 build/
 __pycache__/
-moore_braidgenerator.egg-info/
+braidgenerator.egg-info/
 
 # Don't ignore docs/build
 !docs/build/
@@ -12,5 +12,3 @@ moore_braidgenerator.egg-info/
 .coverage
 .cache
 .pytest_cache
-
-braidgenerator.egg-info/
