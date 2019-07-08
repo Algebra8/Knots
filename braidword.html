@@ -1,4 +1,3 @@
-<!-- DOC - BRAIDWORD -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -61,8 +60,9 @@
               <li><a href="braidword.html">BraidWord</a></li>
             </ul>
           </li>
-          <li><a href="#">About</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a href="ack.html">Acknowledgements</a></li>
         </ul>
       </nav>
       <!-- !Sidebar -->
@@ -114,9 +114,11 @@
           </h3>
         </div>
         <p class="category">
-          An encapsulation of a mathematical braid. BraidWord contains a word
-          which consists of a list of generators and is a component to be used
-          in the MarkovChain.
+          A BraidWord represents a mathematical braid. A mathematical braid is a
+          word expressed as a finite list of Artin generators or their inverses.
+          Generators are represented here as positive or negative integers. An
+          object of BraidWord (i.e. a braid) is the main component acted upon by
+          the MarkovChain class.
         </p>
         <!-- __init__ params -->
         <dl class="params">
@@ -125,7 +127,8 @@
             <code>braidword<code class="text-secondary"> list </code></code>
           </dt>
           <dd class="aparam">
-            List containing generators to be used as initial word.
+            List containing integers (representing Artin generators) to be used
+            as initial word.
           </dd>
         </dl>
         <!-- __init__ attributes -->
@@ -169,7 +172,9 @@
           </dt>
           <dd>
             <p class="category">
-              Boolean stating if cancel at index is a valid move.
+              Boolean stating if cancel at index is a valid move. Cancellation
+              refers to the cancellation of a generator and its consecutive
+              inverse in the braid group.
             </p>
           </dd>
         </dl>
@@ -205,11 +210,11 @@
           </dt>
           <dd>
             <p class="category">
-              Checks if destabilize() is a valid move.
-              <code>destabilize</code> is the inverse operation of
-              <code> stabilize </code> and is only permissible when the
-              `largestGenerator` appears exactly once at the last index of
-              `word`.
+              Checks if destabilize() is a valid move. Destabilization refers to
+              destabilization of a closed braid. <code>destabilize</code> is the
+              inverse operation of <code> stabilize </code> and is only
+              permissible when the `largestGenerator` appears exactly once at
+              the last index of `word`.
             </p>
           </dd>
         </dl>
@@ -235,7 +240,10 @@
             </button>
           </dt>
           <dd>
-            <p class="category">Checks if flip can be performed at index.</p>
+            <p class="category">
+              Checks if flip can be performed at index. A `flip' refers to the
+              second braid relation in the braid group.
+            </p>
           </dd>
         </dl>
         <!-- Params -->
@@ -268,7 +276,8 @@
           </dt>
           <dd>
             <p class="category">
-              Checks if transpose at index is a valid move.
+              Checks if transpose at index is a valid move. A transpose is the
+              first braid relation in the braid group.
             </p>
           </dd>
         </dl>
@@ -303,8 +312,10 @@
           </dt>
           <dd>
             <p class="category">
-              Performs cancellation of the genrators at index and (index+1)
-              modulo length and decreases length of word by two.
+              Performs cancellation of the generators at index and (index+1)
+              modulo length and decreases length of word by two. Cancellation
+              refers to the cancellation of a generator and its consecutive
+              inverse in the braid group.
             </p>
           </dd>
         </dl>
@@ -321,7 +332,7 @@
         <dl class="returns">
           <p class="text-info">Returns</p>
           <dd class="aparam">
-            Boolean that triggers state of Markov Move in logs.
+            Boolean that triggers state of Markov step in logs.
           </dd>
         </dl>
 
@@ -340,7 +351,10 @@
             </button>
           </dt>
           <dd>
-            <p class="category">Method to conjugate the word at index.</p>
+            <p class="category">
+              Method to conjugate the word at index. Conjugation is defined for
+              closed braids by AB = BA.
+            </p>
           </dd>
         </dl>
         <!-- Params -->
@@ -356,7 +370,7 @@
         <dl class="returns">
           <p class="text-info">Returns</p>
           <dd class="aparam">
-            Boolean that triggers state of Markov Move in logs.
+            Boolean that triggers state of Markov step in logs.
           </dd>
         </dl>
 
@@ -379,7 +393,8 @@
           <dd>
             <p class="category">
               Destabilizes the BraidWord, decreases word length by one, and
-              decreases largestGenerator if successful.
+              decreases largestGenerator if successful. Destabilization is a
+              Markov Move defined for closed braids.
             </p>
           </dd>
         </dl>
@@ -388,7 +403,7 @@
         <dl class="returns">
           <p class="text-info">Returns</p>
           <dd class="aparam">
-            Boolean that triggers state of Markov Move in logs.
+            Boolean that triggers state of Markov step in logs.
           </dd>
         </dl>
 
@@ -409,7 +424,8 @@
           <dd>
             <p class="category">
               Flips generators at index, (index+1) modulo length, and (index+2)
-              modulo length.
+              modulo length. A flip performs the second braid relation in the
+              braid group.
             </p>
           </dd>
         </dl>
@@ -426,7 +442,7 @@
         <dl class="returns">
           <p class="text-info">Returns</p>
           <dd class="aparam">
-            Boolean that triggers state of Markov Move in logs.
+            Boolean that triggers state of Markov step in logs.
           </dd>
         </dl>
 
@@ -449,7 +465,8 @@
             <p class="category">
               Insert a generator and its inverse into word. Will insert the
               given generator and its inverse at index and increases word length
-              by two.
+              by two. Insertion is permissible because the braid group is a
+              group.
             </p>
           </dd>
         </dl>
@@ -470,7 +487,7 @@
         <dl class="returns">
           <p class="text-info">Returns</p>
           <dd class="aparam">
-            Boolean that triggers state of Markov Move in logs.
+            Boolean that triggers state of Markov step in logs.
           </dd>
         </dl>
 
@@ -520,7 +537,8 @@
           <dd>
             <p class="category">
               Stabilizes the BraidWord, increases word length by one, and
-              increases largestGenerator by one if successful.
+              increases largestGenerator by one if successful. Stabilization is
+              a Markov Move defined for closed braids.
             </p>
           </dd>
         </dl>
@@ -529,7 +547,7 @@
         <dl class="returns">
           <p class="text-info">Returns</p>
           <dd class="aparam">
-            Boolean that triggers state of Markov Move in logs.
+            Boolean that triggers state of Markov step in logs.
           </dd>
         </dl>
 
@@ -550,6 +568,7 @@
           <dd>
             <p class="category">
               Transposes generators at index and (index+1) modulo length.
+              Transpose performs the first braid relation in the braid group.
             </p>
           </dd>
         </dl>
@@ -566,11 +585,128 @@
         <dl class="returns">
           <p class="text-info">Returns</p>
           <dd class="aparam">
-            Boolean that triggers state of Markov Move in logs.
+            Boolean that triggers state of Markov step in logs.
           </dd>
         </dl>
 
         <!-- !transpose -->
+
+        <!-- crossing_change -->
+        <dl class="method">
+          <dt id="crossing_change">
+            <button class="btn btn-md">
+              <code class="text-primary">crossing_change</code>
+              <span class="sig-parent">(</span>
+
+              <code
+                >random_index:
+                <code class="text-secondary"> bool = True, </code></code
+              >
+
+              <code
+                >index: <code class="text-secondary"> int = None </code></code
+              >
+
+              <span class="sig-parent"
+                >) -> <code class="text-primary">BraidWord</code></span
+              >
+            </button>
+          </dt>
+          <dd>
+            <p class="category">
+              The <code>crossing_change</code> method performs a crossing change
+              on a BraidWord. That is, it returns a new BraidWord whereby the
+              generator at a specified index is inverted. The resulting index
+              can be set randomly with <code>random_index</code> set to
+              <code>True</code>, or it can be set manually by setting
+              <code>random_index=False</code> and assigning
+              <code>index</code> with an integer value between zero and the
+              length of the word of the BraidWord.
+            </p>
+          </dd>
+        </dl>
+
+        <!-- Params -->
+        <dl class="params">
+          <p class="text-info">Parameters</p>
+          <dt class="aparam">
+            <code>random_index<code class="text-secondary"> bool </code></code>
+          </dt>
+          <dd class="aparam">
+            Determines whether method randomly selects index or not.
+          </dd>
+
+          <dt class="aparam">
+            <code>index<code class="text-secondary"> int </code></code>
+          </dt>
+          <dd class="aparam">Index where generator will be inverted.</dd>
+        </dl>
+
+        <!-- Returns -->
+        <dl class="returns">
+          <p class="text-info">Returns</p>
+          <dd class="aparam"><code>BraidWord</code></dd>
+        </dl>
+
+        <!-- !crossing_change -->
+
+        <!-- resolution -->
+        <dl class="method">
+          <dt id="resolution">
+            <button class="btn btn-md">
+              <code class="text-primary">resolution</code>
+              <span class="sig-parent">(</span>
+
+              <code
+                >random_index:
+                <code class="text-secondary"> bool = True, </code></code
+              >
+              <code
+                >index: <code class="text-secondary"> int = None </code></code
+              >
+              <span class="sig-parent"
+                >) -> <code class="text-primary">BraidWord</code></span
+              >
+            </button>
+          </dt>
+          <dd>
+            <p class="category">
+              The <code>resolution</code> method performs a resolution on a
+              BraidWord. That is, it returns a new BraidWord whereby the
+              generator at a specified index is removed and the length of the
+              new BraidWord is decreased by one. The resulting index can be set
+              randomly with <code>random_index</code> set to <code>True</code>,
+              or it can be set manually by setting
+              <code>random_index=False</code> and assigning
+              <code>index</code> with an integer value between zero and the
+              length of the word of the BraidWord.
+            </p>
+          </dd>
+        </dl>
+
+        <!-- Params -->
+        <dl class="params">
+          <p class="text-info">Parameters</p>
+          <dt class="aparam">
+            <code>random_index<code class="text-secondary"> bool </code></code>
+          </dt>
+          <dd class="aparam">
+            Determines whether method randomly selects index or not.
+          </dd>
+
+          <dt class="aparam">
+            <code>index<code class="text-secondary"> int </code></code>
+          </dt>
+          <dd class="aparam">Index where generator will be removed.</dd>
+        </dl>
+
+        <!-- Returns -->
+        <dl class="returns">
+          <p class="text-info">Returns</p>
+          <dd class="aparam"><code>BraidWord</code></dd>
+        </dl>
+
+        <!-- !resolution -->
 
         <div class="line"></div>
         <!-- </div> -->
