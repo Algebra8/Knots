@@ -1,6 +1,6 @@
 # Braid Generator
 
-Braid Generator is a project from the Department of Mathematics in the University of California, Davis. Braid Generator implements a Markov chain algorithm to generate an ensemble of braid representatives (``braidreps") from a given braid representative of a fixed knot or link type. The project was born when we attempted to use Machine Learning techniques to study braids but found the existing data sets of braid representatives to be too small. The hope is that this program will help others generate data to help better understand braids, knot invariants, and the topology of the space of knots. For more information on
+Braid Generator is a project from the Department of Mathematics in the University of California, Davis. Braid Generator implements a Markov chain algorithm to generate an ensemble of braid representatives ("braidreps") from a given braid representative of a fixed knot or link type. The project was born when we attempted to use Machine Learning techniques to study braids but found the existing data sets of braid representatives to be too small. The hope is that this program will help others generate data to help better understand braids, knot invariants, and the topology of the space of knots. For more information on
 mathematical braid groups, please refer to this [resource](https://en.wikipedia.org/wiki/Braid_group).
 
 ## Getting Started
@@ -80,8 +80,9 @@ python setup.py install
 Within Python try the following example snippet, which takes as its input a braid representative for the trefoil knot (`[1, 1, 1]`), and returns three randomized braid representatives.
 
 ```
-from braidgenerator import MarkovChain
 import pandas as pd
+
+from braidgenerator import MarkovChain
 
 # Create markov chain
 mc = MarkovChain(braidword=[1, 1, 1], maxgen=9, maxlen=10)
@@ -90,7 +91,7 @@ mc = MarkovChain(braidword=[1, 1, 1], maxgen=9, maxlen=10)
 mc.model(num_braidreps=3, msteps=500)
 
 # Get braid representatives as words (i.e. as lists)
-braidreps = mc.braidreps(as_word = True)
+braidreps = mc.braidreps(as_word=True)
 
 ```
 
