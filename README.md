@@ -11,7 +11,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 Due to the formatting styles used in this package, `braidgenerator` is compatible with Python 3.6 or 3.7.
 
-The only required dependency for this package is _pandas_. If installing with a local clone, make sure to have _pandas_ installed in the desired environment.
+The only third-party dependency used in this package is _pandas_.
 
 ```
 .
