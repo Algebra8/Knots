@@ -461,3 +461,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 This package makes use of _pandas_ as a requirement. Please refer to the [_pandas_ license](https://github.com/pandas-dev/pandas/blob/master/LICENSE) for more information on their license.
 
 The CONTRIBUTING.md content was adapted from PurpleBooth's [Good-CONTRIBUTING.md-template.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426).
+
+A. Moore and S. Witte acknowledge the partial support of NSF grant DMS-1716987.
