@@ -1,4 +1,5 @@
-from braidgenerator import BraidWord
+from ..braidword import BraidWord
+
 
 def _check_braidword(braidword: BraidWord) -> BraidWord:
     # Checks if input is BraidWord object

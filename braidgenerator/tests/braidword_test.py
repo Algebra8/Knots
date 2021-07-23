@@ -1,6 +1,8 @@
 """Unit Tests for BraidWord"""
-from braidgenerator import BraidWord
 import unittest
+
+from ..braidword import BraidWord
+
 
 class TestBraidWordInit(unittest.TestCase):
     def test_init_pathfail_0(self):

@@ -1,6 +1,7 @@
 import random
-from copy import copy, deepcopy
-from braidgenerator.decorators.braidword import checkparams_braidword
+from copy import deepcopy
+from .decorators.braidword import checkparams_braidword
+
 
 class BraidWord:
 	r"""Encapsulation of a mathematical braid. BraidWord contains a word
