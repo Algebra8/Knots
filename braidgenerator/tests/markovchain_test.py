@@ -1,8 +1,10 @@
 """Unit Tests for MarkovChain"""
-from braidgenerator import MarkovChain
-from braidgenerator import BraidWord
-import pandas as pd
 import unittest
+#import pandas as pd
+
+from ..markovchain import MarkovChain
+from ..braidword import BraidWord
+
 
 class TestMarkovChainMethods(unittest.TestCase):
     def test_aggregate(self):
